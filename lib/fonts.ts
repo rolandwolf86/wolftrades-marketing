@@ -9,7 +9,7 @@ export const barlow = Barlow({
 
 export const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["900"],
+  weight: ["700", "900"],
   variable: "--font-barlow-condensed",
   display: "swap",
 });

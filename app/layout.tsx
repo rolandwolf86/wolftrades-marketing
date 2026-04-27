@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { barlow, barlowCondensed } from "@/lib/fonts";
 import "./globals.css";
 
@@ -30,9 +31,9 @@ export default function RootLayout({
       className={`${barlow.variable} ${barlowCondensed.variable}`}
     >
       <body className="min-h-screen bg-black text-parchment antialiased flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome header={<Header />} footer={<Footer />}>
+          {children}
+        </SiteChrome>
         <Analytics />
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>

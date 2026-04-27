@@ -1,0 +1,424 @@
+/* /go — atmospheric link page. "Trading war room at 3am."
+   All styles scoped via CSS Modules; no globals touched. */
+
+.page {
+  position: relative;
+  min-height: 100dvh;
+  background: var(--black);
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+/* ── Atmosphere: pulsing gold radial behind everything ──────────── */
+
+.atmosphere {
+  position: fixed;
+  inset: -10%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(201, 168, 76, 0.07) 0%,
+      rgba(201, 168, 76, 0.025) 28%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 50% 105%,
+      rgba(201, 168, 76, 0.04) 0%,
+      transparent 55%
+    );
+  animation: atmosphere-pulse 9s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes atmosphere-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08) translateY(-6px);
+  }
+}
+
+/* Vignette — keeps focus centered, sells the room */
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+/* SVG noise grain overlay — anchors the screen, kills banding */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* ── Shell ──────────────────────────────────────────────────────── */
+
+.shell {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 26.5rem; /* 424px — comfortable on iPhone 14/15 widths */
+  margin: 0 auto;
+  padding: 3rem 1.25rem 3.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+/* ── Brand ──────────────────────────────────────────────────────── */
+
+.brand {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.wordmark {
+  display: block;
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.wolfWord {
+  color: var(--parchment);
+}
+
+.wordmarkDivider {
+  display: inline-block;
+  width: 0.35em;
+}
+
+.tradesWord {
+  color: var(--gold);
+}
+
+@media (min-width: 480px) {
+  .wordmark {
+    font-size: 2.5rem;
+  }
+}
+
+.proof {
+  margin: 0.875rem 0 0;
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: var(--gray);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.proofDot {
+  color: var(--gold);
+  margin: 0 0.4em;
+  opacity: 0.7;
+}
+
+/* ── Primary featured CTA ───────────────────────────────────────── */
+
+.primary {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  min-height: 4.75rem; /* 76px */
+  padding: 1rem 1.25rem;
+  margin-top: 0.5rem;
+  border: 1.5px solid var(--gold);
+  background: var(--black2);
+  color: var(--parchment);
+  text-decoration: none;
+  text-align: center;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) 120ms forwards;
+}
+
+.primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(201, 168, 76, 0.06) 0%,
+    transparent 40%
+  );
+}
+
+.primary:hover,
+.primary:focus-visible {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: 0 0 28px -8px rgba(201, 168, 76, 0.6);
+  outline: none;
+}
+
+.primary:active {
+  transform: translateY(1px);
+}
+
+.primaryLabel {
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.primarySublabel {
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+/* ── Link list ──────────────────────────────────────────────────── */
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.linkItem {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: rise 600ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 3.5rem; /* 56px tap target */
+  padding: 0.875rem 1.125rem;
+  background: var(--black2);
+  color: var(--parchment);
+  border: 1px solid rgba(247, 244, 238, 0.1);
+  text-decoration: none;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  border-color: rgba(247, 244, 238, 0.3);
+  background: #161616;
+  outline: none;
+}
+
+.link:active {
+  transform: translateY(1px);
+}
+
+.linkMuted {
+  opacity: 0.6;
+}
+
+.linkMuted:hover,
+.linkMuted:focus-visible {
+  opacity: 0.85;
+}
+
+.linkBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.linkLabel {
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--parchment);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.linkSublabel {
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: rgba(247, 244, 238, 0.55);
+}
+
+.linkArrow {
+  flex-shrink: 0;
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgba(247, 244, 238, 0.35);
+  transition: transform 200ms ease, color 200ms ease;
+}
+
+.link:hover .linkArrow,
+.link:focus-visible .linkArrow {
+  color: var(--gold);
+  transform: translateX(2px);
+}
+
+/* ── Badges ─────────────────────────────────────────────────────── */
+
+.badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.55rem;
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.badgeLive {
+  color: var(--bear);
+  border: 1px solid rgba(193, 18, 31, 0.4);
+  background: rgba(193, 18, 31, 0.08);
+}
+
+.badgeDot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--bear);
+  position: relative;
+}
+
+.badgeDot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(193, 18, 31, 0.4);
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.badgeSoon {
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+/* ── Quote / footer ─────────────────────────────────────────────── */
+
+.quote {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(247, 244, 238, 0.06);
+  opacity: 0;
+  animation: fade-in 800ms ease 1100ms forwards;
+}
+
+.quoteText {
+  margin: 0;
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--parchment);
+  letter-spacing: 0.01em;
+}
+
+.quoteAttr {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: var(--gray);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Animations ─────────────────────────────────────────────────── */
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .atmosphere,
+  .badgeDot::after {
+    animation: none;
+  }
+  .brand,
+  .primary,
+  .linkItem,
+  .quote {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
