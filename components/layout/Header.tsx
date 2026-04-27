@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MobileMenu } from "./MobileMenu";
 
 const NAV_LINKS: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/wolfpack", label: "Wolfpack" },
@@ -42,10 +43,12 @@ export function Header() {
 
         <Link
           href="/start"
-          className="font-display text-sm uppercase tracking-wider text-black bg-gold px-4 py-2 transition-opacity hover:opacity-90"
+          className="hidden md:inline-flex font-display text-sm uppercase tracking-wider text-black bg-gold px-4 py-2 transition-opacity hover:opacity-90"
         >
           Start
         </Link>
+
+        <MobileMenu links={NAV_LINKS} />
       </div>
     </header>
   );
