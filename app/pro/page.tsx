@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
 import { Reveal } from "@/components/Reveal";
-import { TierCard } from "@/components/TierCard";
 
 export const metadata: Metadata = {
   title: "Wolfpack Pro",
@@ -140,7 +139,7 @@ export default function ProPage() {
         </div>
       </section>
 
-      {/* Pricing comparison */}
+      {/* Pricing — Pro monthly vs annual */}
       <section className="bg-black">
         <div className="mx-auto w-full max-w-5xl px-6 py-24">
           <h2 className="font-display text-4xl text-parchment md:text-5xl">
@@ -148,56 +147,54 @@ export default function ProPage() {
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            <Reveal delayMs={0}>
-              <TierCard
-                tier="wolfpack"
-                name="Wolfpack"
-                price="$127"
-                cadence="month"
-                features={[
-                  "Daily live sessions",
-                  "Watchlists",
-                  "Journal",
-                  "Risk Calculator",
-                  "Playbook Builder",
-                  "Community",
-                ]}
-                cta={
-                  <CTAButton href="/wolfpack" variant="secondary">
-                    Start Here
-                  </CTAButton>
-                }
-              />
-            </Reveal>
+            {/* Monthly */}
+            <article className="flex flex-col border border-white/10 bg-black2 p-8">
+              <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+                Monthly
+              </p>
+              <div className="mt-4 font-display text-5xl text-parchment">
+                $197
+                <span className="ml-2 text-base font-normal text-gray">
+                  /mo
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-gray">Cancel anytime.</p>
+              <div className="mt-8">
+                <CTAButton
+                  href="https://join.wolftrades.com/pro"
+                  variant="primary"
+                >
+                  Upgrade to Pro
+                </CTAButton>
+              </div>
+            </article>
 
-            <Reveal className="relative" delayMs={100}>
-              <span className="absolute -top-3 left-6 z-10 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
-                The Edge Layer
+            {/* Annual — featured */}
+            <article className="relative flex flex-col border border-gold bg-black2 p-8 shadow-[0_0_0_1px_rgba(201,168,76,0.4)]">
+              <span className="absolute -top-3 left-6 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
+                Best Value
               </span>
-              <TierCard
-                tier="pro"
-                name="Wolfpack Pro"
-                price="$197"
-                cadence="month"
-                featured
-                features={[
-                  "Everything in Wolfpack",
-                  "Wolf Scanner — 10,968 stocks",
-                  "Wolf AI Coach — 5 modes",
-                  "Edge Lab advanced analytics",
-                  "Backtest Lab",
-                  "Advanced broker import",
-                ]}
-                cta={
-                  <CTAButton
-                    href="https://join.wolftrades.com/pro"
-                    variant="primary"
-                  >
-                    Upgrade to Pro
-                  </CTAButton>
-                }
-              />
-            </Reveal>
+              <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+                Annual
+              </p>
+              <div className="mt-4 font-display text-5xl text-parchment">
+                $1,597
+                <span className="ml-2 text-base font-normal text-gray">
+                  /yr
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-gray">
+                $133.08/mo · Save $767
+              </p>
+              <div className="mt-8">
+                <CTAButton
+                  href="https://join.wolftrades.com/pro/annual"
+                  variant="primary"
+                >
+                  Upgrade Annually
+                </CTAButton>
+              </div>
+            </article>
           </div>
         </div>
       </section>
