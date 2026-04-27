@@ -7,7 +7,7 @@ import { TestimonialQuote } from "@/components/TestimonialQuote";
 export const metadata: Metadata = {
   title: "Wolfpack",
   description:
-    "Wolfpack is where serious traders work. $97/mo or $879/yr. Daily live sessions, real watchlists, real journal, real community.",
+    "Wolfpack is where serious traders work. $127/mo or $997/yr. Daily live sessions, real watchlists, real journal, real community.",
 };
 
 const FEATURES: ReadonlyArray<{ title: string; body: string }> = [
@@ -41,12 +41,12 @@ export default function WolfpackPage() {
   return (
     <>
       <Hero
-        eyebrow="Wolfpack — $97/month or $879/year"
+        eyebrow="Wolfpack — $127/month or $997/year"
         headline="This is where serious traders work."
         subhead="Daily live sessions with Roland. Real watchlists. Real journal. Real community. The operating rhythm of a professional trader."
         primaryCta={
           <CTAButton href="https://join.wolftrades.com" variant="primary">
-            Join Wolfpack — $97/mo
+            Join Wolfpack — $127/mo
           </CTAButton>
         }
         secondaryCta={
@@ -54,7 +54,7 @@ export default function WolfpackPage() {
             href="https://join.wolftrades.com/annual"
             variant="secondary"
           >
-            Save $285 — Join Annually
+            Save $527 — Join Annually
           </CTAButton>
         }
       />
@@ -144,7 +144,7 @@ export default function WolfpackPage() {
                 Monthly
               </p>
               <div className="mt-4 font-display text-5xl text-parchment">
-                $97
+                $127
                 <span className="ml-2 text-base font-normal text-gray">
                   /mo
                 </span>
@@ -166,13 +166,13 @@ export default function WolfpackPage() {
                 Annual
               </p>
               <div className="mt-4 font-display text-5xl text-parchment">
-                $879
+                $997
                 <span className="ml-2 text-base font-normal text-gray">
                   /yr
                 </span>
               </div>
               <p className="mt-2 text-sm text-gray">
-                $73.25/mo · Save $285
+                $83.08/mo · Save $527
               </p>
               <div className="mt-8">
                 <CTAButton
@@ -203,7 +203,7 @@ export default function WolfpackPage() {
           </p>
           <div className="mt-10 flex justify-center">
             <CTAButton href="https://join.wolftrades.com" variant="primary">
-              Join Wolfpack — $97/mo
+              Join Wolfpack — $127/mo
             </CTAButton>
           </div>
         </div>

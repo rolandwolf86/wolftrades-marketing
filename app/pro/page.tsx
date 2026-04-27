@@ -7,7 +7,7 @@ import { TierCard } from "@/components/TierCard";
 export const metadata: Metadata = {
   title: "Wolfpack Pro",
   description:
-    "Wolfpack Pro is the data, AI, and analytics layer for serious traders. $147/mo. Wolf Scanner, Wolf AI Coach, Edge Lab, Backtest Lab.",
+    "Wolfpack Pro is the data, AI, and analytics layer for serious traders. $197/mo. Wolf Scanner, Wolf AI Coach, Edge Lab, Backtest Lab.",
 };
 
 const FEATURES: ReadonlyArray<{ title: string; body: string }> = [
@@ -33,12 +33,12 @@ export default function ProPage() {
   return (
     <>
       <Hero
-        eyebrow="Wolfpack Pro — $147/month"
+        eyebrow="Wolfpack Pro — $197/month"
         headline="Wolfpack gets you inside. Pro gets you sharp."
         subhead="Wolfpack is the foundation. Pro is the data, AI, and analytics layer that turns trading from gut feel into a measurable system."
         primaryCta={
           <CTAButton href="https://join.wolftrades.com/pro" variant="primary">
-            Upgrade to Pro — $147/mo
+            Upgrade to Pro — $197/mo
           </CTAButton>
         }
         secondaryCta={
@@ -75,7 +75,7 @@ export default function ProPage() {
               Backtest Lab lets you test ideas before you risk real capital.
             </p>
             <p className="text-parchment">
-              Fifty dollars a month is the cost of finding out.
+              Seventy dollars a month is the cost of finding out.
             </p>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function ProPage() {
           </h2>
           <div className="mt-8 max-w-3xl space-y-5 text-lg text-parchment/85">
             <p>
-              The $50 difference between Wolfpack and Pro is less than the
+              The $70 difference between Wolfpack and Pro is less than the
               average trader loses on a single mistake they didn’t see coming.
               Edge Lab shows you the patterns you’re not aware of. Wolf AI asks
               you the questions that change behavior. Wolf Scanner finds the
@@ -152,7 +152,7 @@ export default function ProPage() {
               <TierCard
                 tier="wolfpack"
                 name="Wolfpack"
-                price="$97"
+                price="$127"
                 cadence="month"
                 features={[
                   "Daily live sessions",
@@ -177,7 +177,7 @@ export default function ProPage() {
               <TierCard
                 tier="pro"
                 name="Wolfpack Pro"
-                price="$147"
+                price="$197"
                 cadence="month"
                 featured
                 features={[
@@ -214,7 +214,7 @@ export default function ProPage() {
           </p>
           <div className="mt-10 flex justify-center">
             <CTAButton href="https://join.wolftrades.com/pro" variant="primary">
-              Upgrade to Pro — $147/mo
+              Upgrade to Pro — $197/mo
             </CTAButton>
           </div>
         </div>

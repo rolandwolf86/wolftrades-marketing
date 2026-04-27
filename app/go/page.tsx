@@ -29,7 +29,7 @@ const LINKS: ReadonlyArray<LinkBlock> = [
     external: true,
   },
   {
-    label: "Join Wolfpack — $97/mo",
+    label: "Join Wolfpack — $127/mo",
     sublabel: "Daily live sessions · Real watchlists",
     href: "https://join.wolftrades.com",
     external: true,

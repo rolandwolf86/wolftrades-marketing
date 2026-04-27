@@ -177,7 +177,7 @@ export default function HomePage() {
               <TierCard
                 tier="wolfpack"
                 name="Wolfpack"
-                price="$97"
+                price="$127"
                 cadence="month"
                 description="The foundation. Daily live sessions, watchlists, journal, community, and every tool a working trader needs."
                 features={[
@@ -201,7 +201,7 @@ export default function HomePage() {
                 }
               />
               <p className="mt-3 text-sm text-gray">
-                or $879/yr — save $285
+                or $997/yr — save $527
               </p>
               <p className="mt-1 text-sm text-gold">
                 Annual members: you’ll hear from us about APEX.
@@ -216,7 +216,7 @@ export default function HomePage() {
               <TierCard
                 tier="pro"
                 name="Wolfpack Pro"
-                price="$147"
+                price="$197"
                 cadence="month"
                 description="Everything in Wolfpack plus the full edge layer. Scanner, AI, advanced analytics, and backtesting."
                 features={[
