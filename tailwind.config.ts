@@ -42,6 +42,14 @@ const config: Config = {
             boxShadow: "0 0 0 8px rgba(22, 163, 74, 0)",
           },
         },
+        "pulse-gold": {
+          "0%, 100%": {
+            boxShadow: "0 0 0 0 rgba(201, 168, 76, 0.45)",
+          },
+          "50%": {
+            boxShadow: "0 0 0 12px rgba(201, 168, 76, 0)",
+          },
+        },
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
@@ -51,6 +59,7 @@ const config: Config = {
         ticker: "ticker 30s linear infinite",
         "gold-pulse": "gold-pulse 4s ease-in-out infinite",
         "pulse-bull": "pulse-bull 2s ease-in-out infinite",
+        "pulse-gold": "pulse-gold 2.4s ease-in-out infinite",
         shimmer: "shimmer 2s linear infinite",
       },
     },

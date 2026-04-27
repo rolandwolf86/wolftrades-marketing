@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
-import { Hero } from "@/components/Hero";
+import { HomeHero } from "@/components/HomeHero";
 import { ProofBar } from "@/components/ProofBar";
 import { Reveal } from "@/components/Reveal";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
+import { TickerTape } from "@/components/TickerTape";
 import { TierCard } from "@/components/TierCard";
 
 const SCREENSHOTS: ReadonlyArray<{
@@ -43,21 +44,12 @@ const SCREENSHOTS: ReadonlyArray<{
 export default function HomePage() {
   return (
     <>
-      <Hero
-        eyebrow="Built by a verified 7-figure trader"
-        headline="Operate like a professional trader."
-        subhead="The trading operating system serious traders use. Daily live sessions. Real watchlists. Real journal. Real community. Real proof."
-        primaryCta={
-          <CTAButton href="/start" variant="primary">
-            Start Free
-          </CTAButton>
-        }
-        secondaryCta={
-          <CTAButton href="/results" variant="secondary">
-            See the Proof
-          </CTAButton>
-        }
-      />
+      <HomeHero />
+
+      {/* Ticker strip — transition between hero and Grittani section */}
+      <section className="h-11 bg-black2 border-y border-parchment/[0.06]">
+        <TickerTape className="h-full" />
+      </section>
 
       {/* Grittani endorsement */}
       <section className="border-y border-white/5 bg-black2">
