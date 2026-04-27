@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
+import { Reveal } from "@/components/Reveal";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 
 export const metadata: Metadata = {
@@ -82,24 +83,23 @@ export default function WolfpackPage() {
           </p>
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-            {FEATURES.map((feature) => (
-              <article
-                key={feature.title}
-                className="border border-white/5 bg-black p-8"
-              >
-                <div
-                  aria-hidden
-                  className="mb-5 inline-flex h-10 w-10 items-center justify-center border border-gold/60"
-                >
-                  <span className="font-display text-base text-gold">★</span>
-                </div>
-                <h3 className="font-display text-2xl text-parchment">
-                  {feature.title}
-                </h3>
-                <p className="mt-3 text-base text-parchment/80">
-                  {feature.body}
-                </p>
-              </article>
+            {FEATURES.map((feature, index) => (
+              <Reveal key={feature.title} delayMs={index * 100}>
+                <article className="border border-white/5 bg-black p-8">
+                  <div
+                    aria-hidden
+                    className="mb-5 inline-flex h-10 w-10 items-center justify-center border border-gold/60"
+                  >
+                    <span className="font-display text-base text-gold">★</span>
+                  </div>
+                  <h3 className="font-display text-2xl text-parchment">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-3 text-base text-parchment/80">
+                    {feature.body}
+                  </p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>

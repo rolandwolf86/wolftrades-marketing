@@ -1,6 +1,7 @@
 import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
 import { ProofBar } from "@/components/ProofBar";
+import { Reveal } from "@/components/Reveal";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { TierCard } from "@/components/TierCard";
 
@@ -84,7 +85,9 @@ export default function HomePage() {
           <p className="mt-3 text-sm text-gray">— Tim Grittani</p>
 
           {/* TODO: swap for Mux player when asset ready */}
-          <div className="mt-12 flex aspect-video w-full items-center justify-center border-2 border-gold bg-black text-center">
+          <div
+            className="mt-12 flex aspect-video w-full items-center justify-center border-2 border-gold bg-[linear-gradient(90deg,#111111_25%,#1a1a1a_50%,#111111_75%)] bg-[length:200%_100%] text-center animate-shimmer motion-reduce:animate-none"
+          >
             <span className="px-6 font-display text-base uppercase tracking-wider text-gold md:text-xl">
               [ Tim Grittani — Trading Tickers 2 — Video Coming ]
             </span>
@@ -92,14 +95,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ProofBar
-        points={[
-          { value: "2,500+", label: "Traders Inside" },
-          { value: "2", label: "Eight-Figure Students" },
-          { value: "10+", label: "Seven-Figure Students" },
-          { value: "30+", label: "Six-Figure Students" },
-        ]}
-      />
+      <Reveal>
+        <ProofBar
+          points={[
+            { value: "2,500+", label: "Traders Inside" },
+            { value: "2", label: "Eight-Figure Students" },
+            { value: "10+", label: "Seven-Figure Students" },
+            { value: "30+", label: "Six-Figure Students" },
+          ]}
+        />
+      </Reveal>
 
       {/* What Wolf Trades Is */}
       <section className="bg-black">
@@ -168,7 +173,7 @@ export default function HomePage() {
           </h2>
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
             {/* Wolfpack */}
-            <div className="flex flex-col">
+            <Reveal className="flex flex-col" delayMs={0}>
               <TierCard
                 tier="wolfpack"
                 name="Wolfpack"
@@ -201,10 +206,10 @@ export default function HomePage() {
               <p className="mt-1 text-sm text-gold">
                 Annual members: you’ll hear from us about APEX.
               </p>
-            </div>
+            </Reveal>
 
             {/* Wolfpack Pro — featured */}
-            <div className="relative flex flex-col">
+            <Reveal className="relative flex flex-col" delayMs={100}>
               <span className="absolute -top-3 left-6 z-10 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
                 Most Complete
               </span>
@@ -232,10 +237,10 @@ export default function HomePage() {
                   </CTAButton>
                 }
               />
-            </div>
+            </Reveal>
 
             {/* APEX */}
-            <div className="relative flex flex-col">
+            <Reveal className="relative flex flex-col" delayMs={200}>
               <span className="absolute -top-3 left-6 z-10 bg-bear px-3 py-1 font-display text-xs uppercase tracking-wider text-parchment">
                 2 Spots Left
               </span>
@@ -259,7 +264,7 @@ export default function HomePage() {
                   </CTAButton>
                 }
               />
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -275,37 +280,41 @@ export default function HomePage() {
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            <TestimonialQuote
-              quote="He was finding different points in the chart patterns to take his longs, and he was actually having good performance without a herd of sheep on his back."
-              attribution="Tim Grittani"
-              role="$15M+ verified trader · Trading Tickers 2"
-            />
-            <TestimonialQuote
-              quote="Roland's really taught me on how to limit my exposure to the downside while making exponential gains to the upside."
-              attribution="Michael Huddie"
-              role="Clover Trading"
-            />
+            <Reveal delayMs={0}>
+              <TestimonialQuote
+                quote="He was finding different points in the chart patterns to take his longs, and he was actually having good performance without a herd of sheep on his back."
+                attribution="Tim Grittani"
+                role="$15M+ verified trader · Trading Tickers 2"
+              />
+            </Reveal>
+            <Reveal delayMs={100}>
+              <TestimonialQuote
+                quote="Roland's really taught me on how to limit my exposure to the downside while making exponential gains to the upside."
+                attribution="Michael Huddie"
+                role="Clover Trading"
+              />
+            </Reveal>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div>
+            <Reveal delayMs={0}>
               <div className="font-display text-4xl text-gold">$13M+</div>
               <div className="mt-1 text-sm uppercase tracking-wider text-parchment/80">
                 Jack Kellogg — career profits
               </div>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delayMs={100}>
               <div className="font-display text-4xl text-gold">$10M</div>
               <div className="mt-1 text-sm uppercase tracking-wider text-parchment/80">
                 Brian @wareagletrader — 2024
               </div>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delayMs={200}>
               <div className="font-display text-4xl text-gold">~$1M</div>
               <div className="mt-1 text-sm uppercase tracking-wider text-parchment/80">
                 Brandon Hanna — approaching
               </div>
-            </div>
+            </Reveal>
           </div>
 
           <div className="mt-12">

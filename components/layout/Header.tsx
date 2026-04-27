@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { MobileMenu } from "./MobileMenu";
 
 const NAV_LINKS: ReadonlyArray<{ href: string; label: string }> = [
@@ -10,11 +13,34 @@ const NAV_LINKS: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/about", label: "About" },
 ];
 
+const SCROLL_THRESHOLD = 80;
+
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur supports-[backdrop-filter]:bg-black/60">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ease-out ${
+        scrolled
+          ? "border-b border-parchment/[0.06] bg-[rgba(10,10,10,0.95)] backdrop-blur-[20px]"
+          : "border-b border-white/5 bg-black/80 backdrop-blur"
+      }`}
+    >
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-3" aria-label="Wolf Trades home">
+        <Link
+          href="/"
+          className="flex items-center gap-3"
+          aria-label="Wolf Trades home"
+        >
           <span
             aria-hidden
             className="inline-flex h-8 w-8 items-center justify-center rounded-sm border border-gold/40 bg-black2 font-display text-sm text-gold"
@@ -43,7 +69,7 @@ export function Header() {
 
         <Link
           href="/start"
-          className="hidden md:inline-flex font-display text-sm uppercase tracking-wider text-black bg-gold px-4 py-2 transition-opacity hover:opacity-90"
+          className="hidden md:inline-flex bg-gold px-4 py-2 font-display text-sm uppercase tracking-wider text-black transition-all duration-150 ease-out hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100"
         >
           Start
         </Link>

@@ -25,6 +25,34 @@ const config: Config = {
           "sans-serif",
         ],
       },
+      keyframes: {
+        ticker: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "gold-pulse": {
+          "0%, 100%": { opacity: "0.04" },
+          "50%": { opacity: "0.08" },
+        },
+        "pulse-bull": {
+          "0%, 100%": {
+            boxShadow: "0 0 0 0 rgba(22, 163, 74, 0.4)",
+          },
+          "50%": {
+            boxShadow: "0 0 0 8px rgba(22, 163, 74, 0)",
+          },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+      },
+      animation: {
+        ticker: "ticker 30s linear infinite",
+        "gold-pulse": "gold-pulse 4s ease-in-out infinite",
+        "pulse-bull": "pulse-bull 2s ease-in-out infinite",
+        shimmer: "shimmer 2s linear infinite",
+      },
     },
   },
   plugins: [],

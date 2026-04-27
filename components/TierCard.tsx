@@ -31,9 +31,9 @@ export function TierCard({
 }: TierCardProps) {
   return (
     <article
-      className={`flex flex-col border bg-black2 p-8 ${tierAccent[tier]} ${
-        featured ? "shadow-[0_0_0_1px_rgba(201,168,76,0.4)]" : ""
-      }`}
+      className={`flex flex-col border bg-black2 p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_20px_rgba(201,168,76,0.06)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
+        tierAccent[tier]
+      } ${featured ? "shadow-[0_0_0_1px_rgba(201,168,76,0.4)]" : ""}`}
     >
       <header>
         <h3 className="font-display text-2xl text-parchment">{name}</h3>

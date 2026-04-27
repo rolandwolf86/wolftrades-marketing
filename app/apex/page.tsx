@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
+import { Reveal } from "@/components/Reveal";
 import { ApplicationForm } from "./ApplicationForm";
 
 export const metadata: Metadata = {
@@ -101,18 +102,17 @@ export default function ApexPage() {
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {FEATURES.map((feature) => (
-              <article
-                key={feature.title}
-                className="border border-white/5 bg-black2 p-8"
-              >
-                <h3 className="font-display text-2xl text-parchment">
-                  {feature.title}
-                </h3>
-                <p className="mt-3 text-base text-parchment/80">
-                  {feature.body}
-                </p>
-              </article>
+            {FEATURES.map((feature, index) => (
+              <Reveal key={feature.title} delayMs={index * 100}>
+                <article className="border border-white/5 bg-black2 p-8">
+                  <h3 className="font-display text-2xl text-parchment">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-3 text-base text-parchment/80">
+                    {feature.body}
+                  </p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>

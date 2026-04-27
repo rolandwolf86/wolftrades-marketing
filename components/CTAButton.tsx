@@ -4,14 +4,15 @@ import type { ReactNode } from "react";
 type Variant = "primary" | "secondary" | "ghost";
 
 const variantClasses: Record<Variant, string> = {
-  primary: "bg-gold text-black hover:opacity-90",
+  primary:
+    "bg-gold text-black hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100",
   secondary:
-    "bg-transparent text-parchment border border-parchment/40 hover:border-gold hover:text-gold",
+    "bg-transparent text-parchment border border-parchment/40 hover:border-gold hover:text-gold active:scale-[0.98] motion-reduce:active:scale-100",
   ghost: "bg-transparent text-parchment hover:text-gold",
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center font-display text-sm uppercase tracking-wider px-6 py-3 transition-colors";
+  "inline-flex items-center justify-center font-display text-sm uppercase tracking-wider px-6 py-3 transition-all duration-150 ease-out motion-reduce:transition-colors";
 
 export interface CTAButtonProps {
   href?: string;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
+import { Reveal } from "@/components/Reveal";
 import { TierCard } from "@/components/TierCard";
 
 export const metadata: Metadata = {
@@ -91,19 +92,27 @@ export default function ProPage() {
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {FEATURES.map((feature) => (
-              <article
-                key={feature.title}
-                className="border border-white/5 bg-black2 p-8"
-              >
-                <h3 className="font-display text-2xl text-parchment">
-                  {feature.title}
-                </h3>
-                <p className="mt-3 text-base text-parchment/80">
-                  {feature.body}
-                </p>
-              </article>
-            ))}
+            {FEATURES.map((feature, index) => {
+              const isLive = feature.title === "Wolf Scanner";
+              return (
+                <Reveal key={feature.title} delayMs={index * 100}>
+                  <article className="border border-white/5 bg-black2 p-8">
+                    <h3 className="flex items-center gap-3 font-display text-2xl text-parchment">
+                      {isLive ? (
+                        <span
+                          aria-label="Live"
+                          className="inline-block h-2.5 w-2.5 rounded-full bg-bull animate-pulse-bull motion-reduce:animate-none"
+                        />
+                      ) : null}
+                      {feature.title}
+                    </h3>
+                    <p className="mt-3 text-base text-parchment/80">
+                      {feature.body}
+                    </p>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -139,27 +148,29 @@ export default function ProPage() {
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            <TierCard
-              tier="wolfpack"
-              name="Wolfpack"
-              price="$97"
-              cadence="month"
-              features={[
-                "Daily live sessions",
-                "Watchlists",
-                "Journal",
-                "Risk Calculator",
-                "Playbook Builder",
-                "Community",
-              ]}
-              cta={
-                <CTAButton href="/wolfpack" variant="secondary">
-                  Start Here
-                </CTAButton>
-              }
-            />
+            <Reveal delayMs={0}>
+              <TierCard
+                tier="wolfpack"
+                name="Wolfpack"
+                price="$97"
+                cadence="month"
+                features={[
+                  "Daily live sessions",
+                  "Watchlists",
+                  "Journal",
+                  "Risk Calculator",
+                  "Playbook Builder",
+                  "Community",
+                ]}
+                cta={
+                  <CTAButton href="/wolfpack" variant="secondary">
+                    Start Here
+                  </CTAButton>
+                }
+              />
+            </Reveal>
 
-            <div className="relative">
+            <Reveal className="relative" delayMs={100}>
               <span className="absolute -top-3 left-6 z-10 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
                 The Edge Layer
               </span>
@@ -186,7 +197,7 @@ export default function ProPage() {
                   </CTAButton>
                 }
               />
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
