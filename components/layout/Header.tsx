@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MobileMenu } from "./MobileMenu";
@@ -38,18 +39,17 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="flex items-center"
           aria-label="Wolf Trades home"
         >
-          <span
-            aria-hidden
-            className="inline-flex h-8 w-8 items-center justify-center rounded-sm border border-gold/40 bg-black2 font-display text-sm text-gold"
-          >
-            WT
-          </span>
-          <span className="font-display text-lg tracking-wide text-parchment">
-            Wolf Trades
-          </span>
+          <Image
+            src="/wolf-trades-logo-horizontal-dark.png"
+            alt="Wolf Trades"
+            width={140}
+            height={32}
+            priority
+            className="object-contain object-left"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">

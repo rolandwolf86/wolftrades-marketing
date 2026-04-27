@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
 import { ProofBar } from "@/components/ProofBar";
@@ -5,36 +6,36 @@ import { Reveal } from "@/components/Reveal";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { TierCard } from "@/components/TierCard";
 
-const SCREENSHOT_PLACEHOLDERS: ReadonlyArray<{
-  key: string;
-  label: string;
+const SCREENSHOTS: ReadonlyArray<{
+  src: string;
+  alt: string;
   caption: string;
 }> = [
   {
-    key: "chat",
-    label: "[ Chat Room Screenshot ]",
+    src: "/screenshots/chat.png",
+    alt: "Wolf Trades chat rooms — general channel with role badges and member list",
     caption:
       "Wolf Trades community chat — live role badges, 8-figure traders visible",
   },
   {
-    key: "wolfai",
-    label: "[ Wolf AI Screenshot ]",
+    src: "/screenshots/wolf-ai.png",
+    alt: "Wolf AI Coach — radar visualization, five modes, market pulse panel",
     caption:
       "Wolf AI Coach — 5 modes, radar visualization, market pulse panel",
   },
   {
-    key: "scanner",
-    label: "[ Wolf Scanner Screenshot ]",
+    src: "/screenshots/scanner.png",
+    alt: "Wolf Scanner — real-time table of momentum tickers with price and volume columns",
     caption: "Wolf Scanner — 10,968 stocks, real-time momentum data",
   },
   {
-    key: "edgelab",
-    label: "[ Edge Lab Screenshot ]",
+    src: "/screenshots/edge-lab.png",
+    alt: "Edge Lab — equity curve, win rate, recent trades and P&L breakdown",
     caption: "Edge Lab — 1,025 trades analyzed, equity curve, win rate",
   },
   {
-    key: "feed",
-    label: "[ Community Feed Screenshot ]",
+    src: "/screenshots/community.png",
+    alt: "Community feed — trader posts, embedded videos, live discussion",
     caption: "Community feed — real trade posts, WIN badges, live discussion",
   },
 ];
@@ -138,8 +139,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Screenshot placeholders — swap to <ScreenshotCarousel /> with real
-          /screenshots/*.png paths once images land in /public/screenshots/ */}
+      {/* Inside the platform — real screenshots */}
       <section className="bg-black2 border-t border-white/5">
         <div className="mx-auto w-full max-w-7xl px-6 py-20">
           <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
@@ -149,12 +149,16 @@ export default function HomePage() {
             See what a trading operating system looks like.
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {SCREENSHOT_PLACEHOLDERS.map((shot) => (
-              <figure key={shot.key} className="flex flex-col">
-                <div className="flex aspect-video w-full items-center justify-center border border-gold/40 bg-black">
-                  <span className="px-4 text-center font-display text-sm uppercase tracking-wider text-gold">
-                    {shot.label}
-                  </span>
+            {SCREENSHOTS.map((shot) => (
+              <figure key={shot.src} className="flex flex-col">
+                <div className="relative aspect-video w-full overflow-hidden border border-gold/40 bg-black">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-contain"
+                  />
                 </div>
                 <figcaption className="mt-3 text-xs uppercase tracking-wider text-gray">
                   {shot.caption}
