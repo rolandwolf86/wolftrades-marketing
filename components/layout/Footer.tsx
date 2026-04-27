@@ -20,7 +20,7 @@ export function Footer() {
               Wolf Trades
             </div>
             <p className="mt-2 max-w-xs text-sm text-gray">
-              {/* TODO: footer tagline copy */}
+              The trading operating system for serious traders.
             </p>
           </div>
 

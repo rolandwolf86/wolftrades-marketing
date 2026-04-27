@@ -37,8 +37,7 @@ const LINKS: ReadonlyArray<LinkBlock> = [
   {
     label: "Apply for APEX — 2 Spots Left",
     sublabel: "Cohort 1 · Starts May 1",
-    href: "https://wolftrades-marketing.vercel.app/apex",
-    external: true,
+    href: "/apex",
     badge: { kind: "live", text: "2 Spots" },
   },
   {
@@ -51,8 +50,7 @@ const LINKS: ReadonlyArray<LinkBlock> = [
   {
     label: "Wolf Trades Results",
     sublabel: "See what traders are building",
-    href: "https://wolftrades-marketing.vercel.app/results",
-    external: true,
+    href: "/results",
   },
   {
     label: "Instagram",
