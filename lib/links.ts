@@ -1,4 +1,7 @@
-export const START_FREE_URL = "https://app.wolftrades.com/register";
+// All public marketing CTAs route through the /start gateway page.
+// /register on the app is reachable ONLY by the /start form submission.
+export const START_FREE_URL = "/start";
+export const APP_REGISTER_URL = "https://app.wolftrades.com/register";
 export const LOGIN_URL = "https://app.wolftrades.com/login";
 
 export const WOLFPACK_MONTHLY_URL = "/wolfpack";

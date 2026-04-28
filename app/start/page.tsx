@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
-import { START_FREE_URL } from "@/lib/links";
+import { APP_REGISTER_URL } from "@/lib/links";
 import styles from "./page.module.css";
 
 const freeIncludes = [
@@ -41,7 +41,7 @@ export default function StartPage() {
         throw new Error("Lead request failed");
       }
 
-      window.location.href = `${START_FREE_URL}?email=${encodeURIComponent(
+      window.location.href = `${APP_REGISTER_URL}?email=${encodeURIComponent(
         email,
       )}`;
     } catch {
