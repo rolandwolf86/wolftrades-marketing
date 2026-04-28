@@ -75,8 +75,9 @@ export default function WolfpackPage() {
               <span className="ml-2 text-base font-normal text-gray">/mo</span>
             </div>
             <p className="mt-4 text-base leading-7 text-parchment/76">
-              Cancel anytime. Public primary price; account-specific coupons
-              are handled inside the platform pricing page.
+              The complete trading environment. Daily live sessions, watchlist,
+              Trader Therapy, replays, playbook, tools, and community. Cancel
+              anytime.
             </p>
             <div className="mt-8">
               <CTAButton href={WOLFPACK_CHECKOUT_URL} variant="primary">
@@ -105,6 +106,10 @@ export default function WolfpackPage() {
                 Join Annually
               </CTAButton>
             </div>
+            <p className="mt-4 text-sm text-parchment/60 leading-relaxed">
+              If you&apos;re serious, commit. Annual members get priority
+              consideration when APEX spots open.
+            </p>
           </article>
         </div>
       </section>

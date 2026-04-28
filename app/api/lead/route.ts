@@ -17,6 +17,11 @@ const leadSchema = z.object({
   source: z.string().trim().max(80).optional(),
   intent: z.enum(["wolfpack", "pro", "apex", "platform", "general"]).optional(),
   notes: z.string().trim().max(2000).optional(),
+  // APEX application extensions:
+  accountSize: z.string().trim().max(80).optional(),
+  experience: z.string().trim().max(80).optional(),
+  challenge: z.string().trim().max(2000).optional(),
+  whyApex: z.string().trim().max(2000).optional(),
 });
 
 type Lead = z.infer<typeof leadSchema>;
@@ -102,7 +107,11 @@ async function notifyLead(
     lead.phone ? `Phone: ${lead.phone}` : null,
     lead.intent ? `Intent: ${lead.intent}` : null,
     lead.source ? `Source: ${lead.source}` : null,
-    lead.notes ? `Notes: ${lead.notes}` : null,
+    lead.accountSize ? `Account size: ${lead.accountSize}` : null,
+    lead.experience ? `Experience: ${lead.experience}` : null,
+    lead.challenge ? `\nBiggest challenge:\n${lead.challenge}` : null,
+    lead.whyApex ? `\nWhy APEX:\n${lead.whyApex}` : null,
+    lead.notes ? `\nNotes:\n${lead.notes}` : null,
   ].filter(Boolean) as string[];
 
   const result = await resend.emails.send({
