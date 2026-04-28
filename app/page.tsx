@@ -1,17 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import {
-  COMMUNITY_URL,
   PRO_MONTHLY_URL,
   START_FREE_URL,
   WOLFPACK_MONTHLY_URL,
 } from "@/lib/links";
 
 const PROOF_POINTS = [
-  "Jack Kellogg: $13M+",
-  "Brian: $10M in 2024",
-  "10+ seven-figure students",
   "2,500+ traders inside",
+  "10+ seven-figure traders trained",
+  "2 eight-figure students",
+  "$13M+ Jack Kellogg career profits",
+  "Since 2018 · Teaching traders",
 ] as const;
 
 const RHYTHM = [
@@ -43,14 +44,15 @@ const RHYTHM = [
 ] as const;
 
 const PLATFORM_TOOLS = [
-  "Live room",
-  "Morning watchlists",
-  "Trade journal",
-  "Risk calculator",
-  "Playbook Builder",
-  "Scanner",
-  "Wolf AI Coach",
-  "Edge Lab",
+  "Live trading every market day",
+  "Roland's daily watchlist — real research, not generic lists",
+  "Trader Therapy — real feedback, live",
+  "Full replay library",
+  "Roland's complete playbook",
+  "Journal + analytics",
+  "Scanner + news alerts",
+  "Backtest Lab",
+  "Community of 2,500+ traders",
 ] as const;
 
 const OFFERS = [
@@ -93,28 +95,33 @@ export default function HomePage() {
         <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 pb-16 pt-12 md:grid-cols-[minmax(0,0.92fr)_minmax(420px,1.08fr)] md:pb-24 md:pt-20">
           <div className="flex min-h-[520px] flex-col justify-center md:min-h-[640px]">
             <SectionLabel>
-              VERIFIED 7-FIGURE NASDAQ TRADER{" "}
-              <span aria-hidden="true">{"\u00B7"}</span> TEACHING SINCE 2018
+              LIVE TRADING <span aria-hidden="true">{"\u00B7"}</span> DAILY
+              WATCHLIST <span aria-hidden="true">{"\u00B7"}</span> REAL PROCESS
             </SectionLabel>
             <h1 className="mt-5 max-w-4xl font-display text-[4rem] font-black uppercase leading-[0.88] text-parchment sm:text-[5.3rem] md:text-[6.4rem]">
-              OPERATE LIKE A PROFESSIONAL TRADER.
+              Stop trading alone. Step inside the process.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment/82 md:text-xl">
-              Wolf Trades gives serious traders Roland&apos;s live workflow: daily
-              sessions, morning watchlists, Sunday prep, Friday Trader Therapy,
-              journaling, Playbook Builder, and the tools to build a repeatable
-              edge.
+              Live trading every market day. Roland&apos;s daily watchlist.
+              Trader Therapy. Full replays. The complete playbook, journal,
+              scanner, and tools serious traders use to stop guessing.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <CTAButton href={START_FREE_URL} variant="primary">
-                Start Free
-              </CTAButton>
-              <CTAButton href={WOLFPACK_MONTHLY_URL} variant="secondary">
+              <CTAButton href={WOLFPACK_MONTHLY_URL} variant="primary">
                 Join Wolfpack
+              </CTAButton>
+              <CTAButton href="/apex" variant="secondary">
+                Apply for APEX 1-on-1
               </CTAButton>
             </div>
             <p className="mt-6 max-w-2xl text-sm uppercase tracking-[0.14em] text-parchment/60">
-              Free tier: no card, no payment.
+              Not ready yet?{" "}
+              <Link
+                href={START_FREE_URL}
+                className="text-gold transition-colors hover:underline"
+              >
+                Get Roland&apos;s Free Watchlist.
+              </Link>
             </p>
           </div>
 
@@ -194,21 +201,21 @@ export default function HomePage() {
       <section className="border-y border-white/10 bg-black2">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-20 md:grid-cols-[0.9fr_1.1fr] md:py-28">
           <div>
-            <SectionLabel>Platform System</SectionLabel>
+            <SectionLabel>The Real Problem</SectionLabel>
             <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
-              Not a course. A workflow.
+              Most traders don&apos;t need more information.
             </h2>
           </div>
           <div className="space-y-6 text-lg leading-8 text-parchment/78">
+            <p>They need structure.</p>
             <p>
-              Wolf Trades is built around the way a working trader actually
-              operates: prepare the market, execute with defined risk, review
-              the decision, document the setup, and improve the process.
+              Most traders jump between Discords, watchlists, indicators, and
+              YouTube videos — but when the market opens, they&apos;re still
+              guessing.
             </p>
-            <p>
-              The education is live, the tools are practical, and the standard
-              is proof-first. You are not buying motivation. You are stepping
-              into a repeatable operating rhythm.
+            <p className="text-parchment">
+              Wolf Trades is built around a real trader&apos;s process. You
+              don&apos;t just watch. You operate inside it.
             </p>
           </div>
         </div>
@@ -217,9 +224,9 @@ export default function HomePage() {
       <section className="bg-black">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1fr_0.82fr] md:py-28">
           <div>
-            <SectionLabel>Platform Preview</SectionLabel>
+            <SectionLabel>What You Get</SectionLabel>
             <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
-              The desk for your trading day.
+              The room. The research. The process.
             </h2>
             <div className="mt-8 grid grid-cols-2 gap-px bg-white/10 sm:grid-cols-4">
               {PLATFORM_TOOLS.map((tool) => (
@@ -230,9 +237,12 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <p className="mt-8 font-display text-xl uppercase tracking-[0.06em] text-parchment md:text-2xl">
+              This isn&apos;t pieces. This is the full system.
+            </p>
             <div className="mt-8">
-              <CTAButton href="/platform" variant="secondary">
-                Explore Platform
+              <CTAButton href={WOLFPACK_MONTHLY_URL} variant="primary">
+                Join Wolfpack
               </CTAButton>
             </div>
           </div>
@@ -252,23 +262,36 @@ export default function HomePage() {
       <section className="border-y border-white/10 bg-black2">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-20 md:grid-cols-[0.8fr_1.2fr] md:py-28">
           <div>
-            <SectionLabel>Playbook Builder</SectionLabel>
+            <SectionLabel>Platform</SectionLabel>
             <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
-              TURN YOUR SETUPS INTO A REPEATABLE PROCESS.
+              The platform makes this a no-brainer.
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-[1fr_260px]">
-            <p className="text-lg leading-8 text-parchment/78">
-              Document your setups, screenshots, rules, conditions, and review
-              notes so you stop relying on memory when the market is moving.
-            </p>
+            <div className="space-y-5 text-lg leading-8 text-parchment/78">
+              <p>
+                The tools are not the main offer — they make the offer unfair.
+              </p>
+              <p>
+                Journal. Scanner. Backtesting. Playbook Builder. Alerts.
+                Replays. Wolf AI.
+              </p>
+              <p className="text-parchment">
+                Everything you actually need — without juggling five
+                subscriptions.
+              </p>
+            </div>
             <div className="border border-gold/50 bg-black p-5">
               <p className="font-display text-sm uppercase tracking-[0.2em] text-gold">
-                Build the rule
+                Explore the Platform
               </p>
               <p className="mt-4 text-sm leading-6 text-parchment/70">
-                Entry criteria, invalidation, risk plan, screenshot evidence,
-                and post-trade review in one documented setup.
+                <Link
+                  href="/platform"
+                  className="font-display uppercase tracking-[0.16em] text-gold hover:underline"
+                >
+                  Tour the workflow →
+                </Link>
               </p>
             </div>
           </div>
@@ -338,17 +361,17 @@ export default function HomePage() {
       <section className="bg-black">
         <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-14 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <SectionLabel>APEX</SectionLabel>
+            <SectionLabel>APEX 1-on-1</SectionLabel>
             <h2 className="mt-3 font-display text-3xl leading-none text-parchment md:text-5xl">
-              Application-only mentorship for traders ready for direct review.
+              Want me personally in your corner?
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-7 text-parchment/72">
-              APEX is separate from the public pricing ladder. No public price,
-              no checkout button, and no automatic enrollment.
+              APEX 1-on-1 is direct mentorship with Roland. Application only.
+              Limited seats.
             </p>
           </div>
           <CTAButton href="/apex" variant="secondary">
-            Apply for APEX
+            Apply for APEX 1-on-1
           </CTAButton>
         </div>
       </section>
@@ -356,22 +379,37 @@ export default function HomePage() {
       <section className="border-t border-white/10 bg-black2">
         <div className="mx-auto w-full max-w-5xl px-6 py-20 text-center md:py-28">
           <h2 className="font-display text-5xl leading-none text-parchment md:text-7xl">
-            See the workflow before you commit.
+            Stop guessing. Start operating.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-parchment/78">
-            Start free, walk through the platform, and use the same front door
-            whether you are here for the live room, the tools, or the community.
+            Join the room. Study the process. Use the tools. Build your edge.
           </p>
-          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <CTAButton href={START_FREE_URL} variant="primary">
-              Start Free
+          <div className="mx-auto mt-10 mb-8 max-w-2xl space-y-1">
+            <p className="font-display text-xl leading-tight text-parchment md:text-2xl">
+              Free gives you the map.
+            </p>
+            <p className="font-display text-xl leading-tight text-parchment md:text-2xl">
+              Wolfpack gives you the room.
+            </p>
+            <p className="font-display text-xl leading-tight text-parchment md:text-2xl">
+              APEX gives you me personally in your corner.
+            </p>
+          </div>
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+            <CTAButton href={WOLFPACK_MONTHLY_URL} variant="primary">
+              Join Wolfpack
             </CTAButton>
-            <CTAButton href={COMMUNITY_URL} variant="secondary">
-              Members Area
+            <CTAButton href="/apex" variant="secondary">
+              Apply for APEX 1-on-1
             </CTAButton>
           </div>
           <p className="mt-6 text-sm uppercase tracking-[0.14em] text-parchment/52">
-            Free tier: no card, no payment.
+            <Link
+              href={START_FREE_URL}
+              className="text-gold transition-colors hover:underline"
+            >
+              Get Roland&apos;s Free Watchlist
+            </Link>
           </p>
         </div>
       </section>
