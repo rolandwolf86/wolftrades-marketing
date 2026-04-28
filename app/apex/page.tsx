@@ -59,7 +59,7 @@ export default function ApexPage() {
         headline="Give me 4 months. I’ll rebuild you as a trader."
         subhead="APEX is 1-on-1 mentorship with Roland Wolf. Maximum 10 traders. Application only. If you’re the right fit, we’ll talk."
         primaryCta={
-          <CTAButton href="#apply" variant="primary">
+          <CTAButton href="/apex#apply" variant="primary">
             Apply for Cohort 1
           </CTAButton>
         }

@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BrandLogo } from "@/components/BrandLogo";
+import { START_FREE_URL } from "@/lib/links";
 import { MobileMenu } from "./MobileMenu";
 
 const NAV_LINKS: ReadonlyArray<{ href: string; label: string }> = [
@@ -42,14 +43,7 @@ export function Header() {
           className="flex items-center"
           aria-label="Wolf Trades home"
         >
-          <Image
-            src="/wolf-trades-logo-horizontal-dark.png"
-            alt="Wolf Trades"
-            width={140}
-            height={32}
-            priority
-            className="object-contain object-left"
-          />
+          <BrandLogo size="md" />
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
@@ -68,7 +62,7 @@ export function Header() {
         </nav>
 
         <Link
-          href="/start"
+          href={START_FREE_URL}
           className="hidden md:inline-flex bg-gold px-4 py-2 font-display text-sm uppercase tracking-wider text-black transition-all duration-150 ease-out hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100"
         >
           Start

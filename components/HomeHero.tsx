@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { WOLFPACK_MONTHLY_URL } from "@/lib/links";
 import { HomeHeroShowcase } from "./HomeHeroShowcase";
 
 const NOISE_BG =
@@ -60,7 +61,7 @@ export function HomeHero() {
 
           <div className="mt-10">
             <Link
-              href="https://join.wolftrades.com"
+              href={WOLFPACK_MONTHLY_URL}
               className="inline-flex items-center gap-2 bg-gold font-bold uppercase text-black transition-colors duration-150 ease-out hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100 animate-pulse-gold motion-reduce:animate-none"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
