@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
-const STANDALONE_PATHS = new Set<string>(["/go"]);
+const STANDALONE_PATHS = new Set<string>(["/go", "/start"]);
 
 export function SiteChrome({
   header,

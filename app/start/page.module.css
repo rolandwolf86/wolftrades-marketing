@@ -1,0 +1,244 @@
+.page {
+  min-height: 100dvh;
+  background: #0a0a0a;
+  color: var(--parchment);
+  overflow-x: hidden;
+}
+
+.shell {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 28px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 140px;
+  height: 32px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--parchment);
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.subhead {
+  margin: 18px 0 0;
+  color: var(--gray);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.microcopy {
+  margin: 12px 0 0;
+  color: rgba(247, 244, 238, 0.48);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.includes {
+  padding-top: 2px;
+}
+
+.eyebrow {
+  margin: 0 0 13px;
+  color: var(--gold);
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.includeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.includeList li {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: 9px;
+  color: rgba(247, 244, 238, 0.84);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.includeList span {
+  color: var(--gold);
+  line-height: 1.35;
+}
+
+.includeList p {
+  margin: 0;
+}
+
+.lockedNote {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(247, 244, 238, 0.1);
+  text-align: center;
+}
+
+.lockedNote p {
+  margin: 0;
+  color: rgba(247, 244, 238, 0.56);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.lockedNote a,
+.upgrade a {
+  display: inline-flex;
+  margin-top: 10px;
+  color: var(--gold);
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field span {
+  color: rgba(247, 244, 238, 0.52);
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.field input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid rgba(247, 244, 238, 0.2);
+  background: #111111;
+  color: var(--parchment);
+  padding: 0 14px;
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 1rem;
+  outline: none;
+}
+
+.field input::placeholder {
+  color: rgba(247, 244, 238, 0.38);
+}
+
+.field input:focus {
+  border-color: rgba(201, 168, 76, 0.8);
+}
+
+.submit {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #c9a84c;
+  background: #c9a84c;
+  color: #050505;
+  cursor: pointer;
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.error {
+  margin: 0;
+  color: var(--bear);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.formNote {
+  margin: 2px 0 0;
+  color: rgba(247, 244, 238, 0.48);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.upgrade {
+  padding-top: 24px;
+  border-top: 1px solid rgba(247, 244, 238, 0.1);
+  text-align: center;
+}
+
+.upgrade p {
+  margin: 0;
+  color: rgba(247, 244, 238, 0.6);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.footer {
+  color: rgba(247, 244, 238, 0.4);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-width: 374px) {
+  .shell {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero h1 {
+    font-size: 3.08rem;
+  }
+}

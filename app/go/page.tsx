@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   INSTAGRAM_URL,
   PRICING_URL,
-  START_FREE_URL,
   TIKTOK_URL,
   YOUTUBE_URL,
 } from "@/lib/links";
@@ -85,9 +84,7 @@ export default function GoPage() {
               Join the Wolfpack — $127/mo →
             </a>
             <a
-              href={START_FREE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/start"
               className={styles.secondaryCta}
             >
               Start Free — No Card Required →
