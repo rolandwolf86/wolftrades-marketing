@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { START_FREE_URL } from "@/lib/links";
 
 interface NavLink {
   href: string;
@@ -106,7 +107,7 @@ export function MobileMenu({ links }: { links: ReadonlyArray<NavLink> }) {
 
           <div className="mt-4 border-t border-white/5 pt-4">
             <Link
-              href="/start"
+              href={START_FREE_URL}
               className="flex min-h-[48px] w-full items-center justify-center bg-gold px-6 py-3 font-display text-sm uppercase tracking-wider text-black transition-opacity hover:opacity-90"
             >
               Start

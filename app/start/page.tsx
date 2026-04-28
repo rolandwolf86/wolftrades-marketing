@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
+import { START_FREE_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "Start Free",
@@ -12,9 +13,6 @@ const VALUE_BULLETS: ReadonlyArray<string> = [
   "See the daily watchlist, community, and journal",
   "Upgrade to Wolfpack when you’re ready",
 ];
-
-// TODO: swap to GHL / platform signup URL when Roland provides it.
-const FREE_SIGNUP_URL = "https://app.wolftrades.com/login";
 
 export default function StartPage() {
   return (
@@ -39,7 +37,7 @@ export default function StartPage() {
         </ul>
 
         <a
-          href={FREE_SIGNUP_URL}
+          href={START_FREE_URL}
           className="mt-10 inline-flex w-full items-center justify-center bg-gold px-8 py-5 font-display text-base uppercase tracking-wider text-black transition-opacity hover:opacity-90 md:w-auto md:text-lg"
         >
           Start Free Now

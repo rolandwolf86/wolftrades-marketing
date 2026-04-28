@@ -18,7 +18,7 @@ export function Hero({
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-black">
-      {/* Gold pulse — sits behind everything, faint, slow */}
+      {/* Gold pulse â€” sits behind everything, faint, slow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-[60%] z-0 h-[400px] w-[800px] max-w-none -translate-x-1/2 -translate-y-1/2 animate-gold-pulse motion-reduce:animate-none"
@@ -48,10 +48,10 @@ export function Hero({
         )}
       </div>
 
-      {/* Ticker tape — bottom strip, behind content, infinite scroll */}
+      {/* Desktop credibility strip; hidden on mobile to avoid clipped marquee text. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1] h-8"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1] hidden h-8 md:block"
         style={{ background: "rgba(0,0,0,0.5)" }}
       >
         <TickerTape className="h-full" />
@@ -59,3 +59,4 @@ export function Hero({
     </section>
   );
 }
+

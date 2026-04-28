@@ -1,219 +1,122 @@
 import type { Metadata } from "next";
 import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
-import { Reveal } from "@/components/Reveal";
+import {
+  PRO_ANNUAL_URL,
+  PRO_MONTHLY_URL,
+  START_FREE_URL,
+} from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "Wolfpack Pro",
   description:
-    "Wolfpack Pro is the data, AI, and analytics layer for serious traders. $197/mo. Wolf Scanner, Wolf AI Coach, Edge Lab, Backtest Lab.",
+    "Wolfpack Pro is the data, AI, and analytics layer for serious traders. $197/mo. Scanner, AI Coach, Edge Lab, and Backtest Lab.",
 };
 
-const FEATURES: ReadonlyArray<{ title: string; body: string }> = [
+const FEATURES = [
   {
     title: "Wolf Scanner",
-    body: "Real-time momentum scanner across 10,968 stocks. NASDAQ, NYSE, AMEX. Filter by volume, price action, news catalyst, gap percentage, and more. Updated live. The same scan logic Roland uses to find setups during the open.",
+    body: "A focused scanner layer for momentum, liquidity, and names that deserve review.",
   },
   {
-    title: "Wolf AI Coach — 5 modes",
-    body: "Powered by Anthropic. Your AI trading coach reviews your journal, your trades, your patterns. Asks you the questions a real coach would ask. Five modes: Coach, Strategy, Review, Risk, Mindset. Gets sharper the more you use it.",
+    title: "Wolf AI Coach",
+    body: "Review prompts for trade behavior, risk, journal patterns, and repeatable setups.",
   },
   {
     title: "Edge Lab",
-    body: "Advanced analytics on your real broker data. Win rate by setup type. P&L by time of day. Average winner vs average loser. Hold time breakdown. This is where you find out where your edge actually lives — and where it’s quietly leaking.",
+    body: "Analytics that help you inspect setups, timing, hold behavior, and review patterns.",
   },
   {
     title: "Backtest Lab",
-    body: "Test setups before you size in. Build a hypothesis. Run it against historical data. Know if your idea has an actual edge before you bet capital on it.",
+    body: "A place to test trade ideas before they become larger habits.",
   },
-];
+] as const;
 
 export default function ProPage() {
   return (
     <>
       <Hero
-        eyebrow="Wolfpack Pro — $197/month"
-        headline="Wolfpack gets you inside. Pro gets you sharp."
-        subhead="Wolfpack is the foundation. Pro is the data, AI, and analytics layer that turns trading from gut feel into a measurable system."
+        eyebrow="Wolfpack Pro - $197/month"
+        headline="The edge layer for serious review."
+        subhead="Wolfpack is the foundation. Pro adds scanner, AI coach, analytics, and backtesting to help traders review with more structure."
         primaryCta={
-          <CTAButton href="https://join.wolftrades.com/pro" variant="primary">
-            Upgrade to Pro — $197/mo
+          <CTAButton href={PRO_MONTHLY_URL} variant="primary">
+            Join Pro - $197/mo
           </CTAButton>
         }
         secondaryCta={
-          <CTAButton href="/wolfpack" variant="secondary">
-            Start with Wolfpack first
+          <CTAButton href={START_FREE_URL} variant="secondary">
+            Start Free
           </CTAButton>
         }
       />
 
-      {/* The honest problem */}
       <section className="border-t border-white/5 bg-black2">
-        <div className="mx-auto w-full max-w-5xl px-6 py-24">
+        <div className="mx-auto w-full max-w-7xl px-6 py-20 md:py-24">
           <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
-            The Real Problem
+            Pro Tools
           </p>
-          <h2 className="mt-4 font-display text-4xl text-parchment md:text-5xl">
-            Most traders don’t know why they’re losing.
+          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none text-parchment md:text-6xl">
+            More visibility after every session.
           </h2>
-          <div className="mt-8 max-w-3xl space-y-5 text-lg text-parchment/85">
-            <p>
-              They feel it. They know something is off. They have a vague sense
-              their morning trades are weak or their afternoon revenge trades
-              are killing them. But they don’t actually know. They don’t have
-              data. They have feelings.
-            </p>
-            <p className="font-display text-2xl uppercase text-gold">
-              Pro fixes that.
-            </p>
-            <p>
-              Wolf Scanner shows you momentum setups in real time across 10,968
-              stocks. Wolf AI Coach reviews your trading patterns and surfaces
-              your blind spots. Edge Lab tells you exactly which setups, times,
-              and tickers actually make you money — and which ones bleed you.
-              Backtest Lab lets you test ideas before you risk real capital.
-            </p>
-            <p className="text-parchment">
-              Seventy dollars a month is the cost of finding out.
-            </p>
+          <div className="mt-10 grid gap-px bg-white/10 md:grid-cols-2">
+            {FEATURES.map((feature) => (
+              <article key={feature.title} className="bg-black p-8">
+                <h3 className="font-display text-3xl text-parchment">
+                  {feature.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-parchment/76">
+                  {feature.body}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* The Edge Layer */}
       <section className="bg-black">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24">
-          <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
-            The Edge Layer
-          </p>
-          <h2 className="mt-4 font-display text-4xl text-parchment md:text-5xl">
-            Everything in Wolfpack. Plus this.
-          </h2>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {FEATURES.map((feature, index) => {
-              const isLive = feature.title === "Wolf Scanner";
-              return (
-                <Reveal key={feature.title} delayMs={index * 100}>
-                  <article className="border border-white/5 bg-black2 p-8">
-                    <h3 className="flex items-center gap-3 font-display text-2xl text-parchment">
-                      {isLive ? (
-                        <span
-                          aria-label="Live"
-                          className="inline-block h-2.5 w-2.5 rounded-full bg-bull animate-pulse-bull motion-reduce:animate-none"
-                        />
-                      ) : null}
-                      {feature.title}
-                    </h3>
-                    <p className="mt-3 text-base text-parchment/80">
-                      {feature.body}
-                    </p>
-                  </article>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* The math */}
-      <section className="bg-black2 border-y border-white/5">
-        <div className="mx-auto w-full max-w-5xl px-6 py-24">
-          <h2 className="font-display text-4xl text-parchment md:text-5xl">
-            One bad trade per month pays for Pro. Forever.
-          </h2>
-          <div className="mt-8 max-w-3xl space-y-5 text-lg text-parchment/85">
-            <p>
-              The $70 difference between Wolfpack and Pro is less than the
-              average trader loses on a single mistake they didn’t see coming.
-              Edge Lab shows you the patterns you’re not aware of. Wolf AI asks
-              you the questions that change behavior. Wolf Scanner finds the
-              setups before they’re crowded.
+        <div className="mx-auto grid w-full max-w-5xl gap-6 px-6 py-20 md:grid-cols-2 md:py-24">
+          {/* Monthly */}
+          <article className="border border-white/10 bg-black2 p-8">
+            <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+              Monthly
             </p>
-            <p>
-              If Pro saves you one bad trade per month, it pays for itself. If
-              it sharpens your A+ setups by five percent, it pays for itself
-              many times over.
+            <div className="mt-4 font-display text-5xl text-parchment">
+              $197
+              <span className="ml-2 text-base font-normal text-gray">/mo</span>
+            </div>
+            <p className="mt-4 text-base leading-7 text-parchment/76">
+              Cancel anytime. Public primary price for the Pro layer; checkout
+              options live on the platform pricing page.
             </p>
-          </div>
-        </div>
-      </section>
+            <div className="mt-8">
+              <CTAButton href={PRO_MONTHLY_URL} variant="primary">
+                Join Pro
+              </CTAButton>
+            </div>
+          </article>
 
-      {/* Pricing — Pro monthly vs annual */}
-      <section className="bg-black">
-        <div className="mx-auto w-full max-w-5xl px-6 py-24">
-          <h2 className="font-display text-4xl text-parchment md:text-5xl">
-            The math is simple.
-          </h2>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {/* Monthly */}
-            <article className="flex flex-col border border-white/10 bg-black2 p-8">
-              <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
-                Monthly
-              </p>
-              <div className="mt-4 font-display text-5xl text-parchment">
-                $197
-                <span className="ml-2 text-base font-normal text-gray">
-                  /mo
-                </span>
-              </div>
-              <p className="mt-2 text-sm text-gray">Cancel anytime.</p>
-              <div className="mt-8">
-                <CTAButton
-                  href="https://join.wolftrades.com/pro"
-                  variant="primary"
-                >
-                  Upgrade to Pro
-                </CTAButton>
-              </div>
-            </article>
-
-            {/* Annual — featured */}
-            <article className="relative flex flex-col border border-gold bg-black2 p-8 shadow-[0_0_0_1px_rgba(201,168,76,0.4)]">
-              <span className="absolute -top-3 left-6 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
-                Best Value
-              </span>
-              <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
-                Annual
-              </p>
-              <div className="mt-4 font-display text-5xl text-parchment">
-                $1,597
-                <span className="ml-2 text-base font-normal text-gray">
-                  /yr
-                </span>
-              </div>
-              <p className="mt-2 text-sm text-gray">
-                $133.08/mo · Save $767
-              </p>
-              <div className="mt-8">
-                <CTAButton
-                  href="https://join.wolftrades.com/pro/annual"
-                  variant="primary"
-                >
-                  Upgrade Annually
-                </CTAButton>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="bg-black2 border-t border-white/5">
-        <div className="mx-auto w-full max-w-5xl px-6 py-24 text-center">
-          <h2 className="font-display text-5xl text-parchment md:text-7xl">
-            You can guess. Or you can know.
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-parchment/85">
-            Wolfpack gives you the foundation. Pro gives you the answers. Most
-            serious traders eventually realize they want both.
-          </p>
-          <div className="mt-10 flex justify-center">
-            <CTAButton href="https://join.wolftrades.com/pro" variant="primary">
-              Upgrade to Pro — $197/mo
-            </CTAButton>
-          </div>
+          {/* Annual — featured */}
+          <article className="relative border border-gold/60 bg-black2 p-8">
+            <span className="absolute -top-3 left-6 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
+              Best Value
+            </span>
+            <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+              Annual
+            </p>
+            <div className="mt-4 font-display text-5xl text-parchment">
+              $1,597
+              <span className="ml-2 text-base font-normal text-gray">/yr</span>
+            </div>
+            <p className="mt-2 text-base leading-7 text-parchment/76">
+              $133.08/mo &middot; Save $767
+            </p>
+            <div className="mt-8">
+              <CTAButton href={PRO_ANNUAL_URL} variant="primary">
+                Upgrade Annually
+              </CTAButton>
+            </div>
+          </article>
         </div>
       </section>
     </>

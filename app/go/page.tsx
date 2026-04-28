@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  INSTAGRAM_URL,
+  MARKET_MASTERS_URL,
+  START_FREE_URL,
+  TIKTOK_URL,
+  WOLFPACK_MONTHLY_URL,
+  YOUTUBE_URL,
+} from "@/lib/links";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Wolf Trades — Links",
+  title: "Wolf Trades - Links",
   description:
-    "Wolf Trades. Endorsed by Tim Grittani. 2,500+ traders inside.",
-  // Linktree-style page — no robots.noindex; Roland may want it discoverable.
+    "Wolf Trades. Start free, join Wolfpack, review results, or apply for APEX.",
 };
 
 type LinkBlock = {
@@ -14,38 +21,16 @@ type LinkBlock = {
   sublabel?: string;
   href: string;
   external?: boolean;
-  badge?:
-    | { kind: "live"; text: string }
-    | { kind: "soon"; text: string };
+  badge?: { kind: "live" | "soon"; text: string };
   muted?: boolean;
 };
 
-// Roland: replace [PLACEHOLDER] hrefs as URLs become available.
 const LINKS: ReadonlyArray<LinkBlock> = [
   {
-    label: "▶  Latest Video",
-    sublabel: "Watch on YouTube",
-    href: "https://youtube.com/@wolftrades", // [PLACEHOLDER — pin to actual latest video URL]
+    label: "Join Wolfpack - $127/mo",
+    sublabel: "Daily live sessions and real watchlists",
+    href: WOLFPACK_MONTHLY_URL,
     external: true,
-  },
-  {
-    label: "Join Wolfpack — $127/mo",
-    sublabel: "Daily live sessions · Real watchlists",
-    href: "https://join.wolftrades.com",
-    external: true,
-  },
-  {
-    label: "Apply for APEX — 2 Spots Left",
-    sublabel: "Cohort 1 · Starts May 1",
-    href: "/apex",
-    badge: { kind: "live", text: "2 Spots" },
-  },
-  {
-    label: "Market Masters Podcast",
-    sublabel: "Coming soon — Episode 1 with Tim Grittani",
-    href: "#", // [PLACEHOLDER — podcast URL]
-    muted: true,
-    badge: { kind: "soon", text: "Coming Soon" },
   },
   {
     label: "Wolf Trades Results",
@@ -53,23 +38,39 @@ const LINKS: ReadonlyArray<LinkBlock> = [
     href: "/results",
   },
   {
+    label: "Apply for APEX",
+    sublabel: "Application-only mentorship",
+    href: "/apex",
+    badge: { kind: "live", text: "Apply" },
+  },
+  {
+    label: "Latest Video",
+    sublabel: "Watch on YouTube",
+    href: YOUTUBE_URL,
+    external: true,
+  },
+  {
+    label: "Market Masters Podcast",
+    sublabel: "Episodes and clips on the Wolf Trades YouTube channel",
+    href: MARKET_MASTERS_URL,
+    external: true,
+  },
+  {
     label: "Instagram",
-    href: "https://instagram.com/", // [PLACEHOLDER]
+    href: INSTAGRAM_URL,
     external: true,
   },
   {
     label: "TikTok",
-    href: "https://tiktok.com/", // [PLACEHOLDER]
+    href: TIKTOK_URL,
     external: true,
   },
   {
     label: "YouTube",
-    href: "https://youtube.com/@wolftrades", // [PLACEHOLDER]
+    href: YOUTUBE_URL,
     external: true,
   },
 ];
-
-const FREE_SIGNUP_URL = "https://app.wolftrades.com/register";
 
 export default function GoPage() {
   return (
@@ -83,35 +84,33 @@ export default function GoPage() {
           <h1 className={styles.wordmark}>
             <span className={styles.wolfWord}>Wolf</span>
             <span className={styles.wordmarkDivider} aria-hidden="true">
-              {" "}
+              {" "}
             </span>
             <span className={styles.tradesWord}>Trades</span>
           </h1>
           <p className={styles.proof}>
-            Endorsed by Tim Grittani
+            Verified 7-figure Nasdaq trader
             <span className={styles.proofDot} aria-hidden="true">
-              ·
+              /
             </span>
             2,500+ traders inside
           </p>
         </header>
 
         <a
-          href={FREE_SIGNUP_URL}
+          href={START_FREE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.primary}
         >
           <span className={styles.primaryLabel}>Start Trading Free</span>
           <span className={styles.primarySublabel}>
-            No card required · Join 2,500+ traders
+            No card required / Join 2,500+ traders
           </span>
         </a>
 
         <ul className={styles.links}>
           {LINKS.map((link, index) => {
-            // Stagger entrance: kicks off after primary CTA settles (~250ms),
-            // then 75ms between each block.
             const delay = `${250 + index * 75}ms`;
             const linkClass = `${styles.link} ${
               link.muted ? styles.linkMuted : ""
@@ -134,16 +133,13 @@ export default function GoPage() {
                     }`}
                   >
                     {link.badge.kind === "live" ? (
-                      <span
-                        className={styles.badgeDot}
-                        aria-hidden="true"
-                      />
+                      <span className={styles.badgeDot} aria-hidden="true" />
                     ) : null}
                     {link.badge.text}
                   </span>
                 ) : (
                   <span className={styles.linkArrow} aria-hidden="true">
-                    →
+                    {">"}
                   </span>
                 )}
               </>
@@ -175,10 +171,10 @@ export default function GoPage() {
         </ul>
 
         <footer className={styles.quote}>
-          <p className={styles.quoteText}>“He has my respect.”</p>
-          <p className={styles.quoteAttr}>
-            — Tim Grittani, $15M+ verified trader
+          <p className={styles.quoteText}>
+            Direct trading workflow. Real platform. Start free.
           </p>
+          <p className={styles.quoteAttr}>Wolfpack starts at $127/mo.</p>
         </footer>
       </main>
     </div>
