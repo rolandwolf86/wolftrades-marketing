@@ -51,10 +51,10 @@ export default function GoPage() {
         <header className={styles.identity}>
           <div className={styles.logoFrame}>
             <Image
-              src="/wolf-trades-logo-primary-dark.png"
+              src="/wolf-trades-logo-horizontal-dark.png"
               alt="Wolf Trades"
-              width={572}
-              height={369}
+              width={140}
+              height={32}
               priority
               className={styles.logo}
             />

@@ -3,7 +3,8 @@ import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
 import {
   START_FREE_URL,
-  WOLFPACK_ANNUAL_URL,
+  WOLFPACK_ANNUAL_CHECKOUT_URL,
+  WOLFPACK_CHECKOUT_URL,
   WOLFPACK_MONTHLY_URL,
 } from "@/lib/links";
 
@@ -77,7 +78,7 @@ export default function WolfpackPage() {
               are handled inside the platform pricing page.
             </p>
             <div className="mt-8">
-              <CTAButton href={WOLFPACK_MONTHLY_URL} variant="primary">
+              <CTAButton href={WOLFPACK_CHECKOUT_URL} variant="primary">
                 Join Wolfpack
               </CTAButton>
             </div>
@@ -99,7 +100,7 @@ export default function WolfpackPage() {
               $83.08/mo &middot; Save $527
             </p>
             <div className="mt-8">
-              <CTAButton href={WOLFPACK_ANNUAL_URL} variant="primary">
+              <CTAButton href={WOLFPACK_ANNUAL_CHECKOUT_URL} variant="primary">
                 Join Annually
               </CTAButton>
             </div>
