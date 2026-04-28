@@ -15,7 +15,9 @@ export function SiteChrome({
   children: ReactNode;
 }) {
   const pathname = usePathname();
-  const standalone = STANDALONE_PATHS.has(pathname);
+  const normalizedPathname =
+    pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
+  const standalone = STANDALONE_PATHS.has(normalizedPathname);
 
   if (standalone) {
     return <>{children}</>;
