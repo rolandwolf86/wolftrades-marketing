@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BrandLogo } from "@/components/BrandLogo";
 import { START_FREE_URL } from "@/lib/links";
 import { MobileMenu } from "./MobileMenu";
 
@@ -43,7 +43,14 @@ export function Header() {
           className="flex items-center"
           aria-label="Wolf Trades home"
         >
-          <BrandLogo size="md" />
+          <Image
+            src="/wolf-trades-logo-horizontal-dark.png"
+            alt="Wolf Trades"
+            width={140}
+            height={32}
+            priority
+            className="object-contain object-left"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">

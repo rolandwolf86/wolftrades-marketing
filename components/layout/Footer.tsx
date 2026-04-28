@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { BrandLogo } from "@/components/BrandLogo";
 
 const FOOTER_LINKS: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/wolfpack", label: "Wolfpack" },
@@ -17,7 +17,13 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <BrandLogo size="md" />
+            <Image
+              src="/wolf-trades-logo-horizontal-dark.png"
+              alt="Wolf Trades"
+              width={140}
+              height={32}
+              className="object-contain object-left"
+            />
             <p className="mt-2 max-w-xs text-sm text-gray">
               The trading operating system for serious traders.
             </p>
