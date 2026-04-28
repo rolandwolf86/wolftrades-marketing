@@ -5,34 +5,35 @@ import {
   START_FREE_URL,
   WOLFPACK_ANNUAL_CHECKOUT_URL,
   WOLFPACK_CHECKOUT_URL,
-  WOLFPACK_MONTHLY_URL,
 } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "Wolfpack",
   description:
-    "Wolfpack is where serious traders work. $127/mo. Daily live sessions, watchlists, journal, and community.",
+    "Wolfpack is the room. Live trading every market day, Roland's daily watchlist, Trader Therapy, full replays, the complete playbook, and the tools.",
 };
 
 const FEATURES = [
-  "Daily live sessions with Roland",
-  "Sunday Weekly Watchlist",
-  "Daily in-depth morning watchlist",
-  "Friday Trader Therapy",
-  "Journal, risk, and Playbook Builder",
-  "2,500+ trader community",
+  "Live Trading — Every Market Day",
+  "Roland's Daily Watchlist",
+  "Trader Therapy",
+  "Full Replay Library",
+  "Roland's Complete Playbook",
+  "Journal + Analytics",
+  "Scanner + News + Alerts",
+  "Backtest Lab + Playbook Builder",
 ] as const;
 
 export default function WolfpackPage() {
   return (
     <>
       <Hero
-        eyebrow="Wolfpack - $127/month"
-        headline="This is where serious traders work."
-        subhead="Daily sessions, watchlists, journal, community, and the operating rhythm of a professional trader."
+        eyebrow="Wolfpack — $127/mo · $997/yr"
+        headline="This is the room."
+        subhead="Live trading every market day. Roland's daily watchlist. Trader Therapy. Full replays. The complete playbook. The tools. The process. Built around a real trader's daily workflow — not theory, not delayed content."
         primaryCta={
-          <CTAButton href={WOLFPACK_MONTHLY_URL} variant="primary">
-            Join Wolfpack - $127/mo
+          <CTAButton href={WOLFPACK_CHECKOUT_URL} variant="primary">
+            Join Wolfpack
           </CTAButton>
         }
         secondaryCta={
@@ -48,7 +49,7 @@ export default function WolfpackPage() {
             What is inside
           </p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none text-parchment md:text-6xl">
-            The weekly structure serious traders need.
+            Everything you need — in one place.
           </h2>
           <div className="mt-10 grid gap-px bg-white/10 md:grid-cols-3">
             {FEATURES.map((feature) => (
