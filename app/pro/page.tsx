@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { CTAButton } from "@/components/CTAButton";
 import { Hero } from "@/components/Hero";
 import {
-  PRO_ANNUAL_URL,
+  PRO_ANNUAL_CHECKOUT_URL,
+  PRO_CHECKOUT_URL,
   PRO_MONTHLY_URL,
   START_FREE_URL,
 } from "@/lib/links";
@@ -90,7 +91,7 @@ export default function ProPage() {
               options live on the platform pricing page.
             </p>
             <div className="mt-8">
-              <CTAButton href={PRO_MONTHLY_URL} variant="primary">
+              <CTAButton href={PRO_CHECKOUT_URL} variant="primary">
                 Join Pro
               </CTAButton>
             </div>
@@ -112,7 +113,7 @@ export default function ProPage() {
               $133.08/mo &middot; Save $767
             </p>
             <div className="mt-8">
-              <CTAButton href={PRO_ANNUAL_URL} variant="primary">
+              <CTAButton href={PRO_ANNUAL_CHECKOUT_URL} variant="primary">
                 Upgrade Annually
               </CTAButton>
             </div>
