@@ -71,9 +71,6 @@ export default function GoPage() {
             Join 2,500+ traders getting Roland&apos;s daily watchlist, live
             sessions, and the full trading operating system.
           </h1>
-          <p className={styles.priceLine}>
-            $127/mo — or start free, no card required
-          </p>
           <div className={styles.ctaStack}>
             <a
               href={PRICING_URL}
@@ -81,12 +78,12 @@ export default function GoPage() {
               rel="noopener noreferrer"
               className={styles.primaryCta}
             >
-              Join the Wolfpack — $127/mo →
+              Join the Wolfpack →
             </a>
-            <a
-              href="/start"
-              className={styles.secondaryCta}
-            >
+            <p className={styles.priceLine}>
+              $127/mo · or start free, no card required
+            </p>
+            <a href="/start" className={styles.secondaryCta}>
               Start Free — No Card Required →
             </a>
           </div>
@@ -122,7 +119,9 @@ export default function GoPage() {
         </section>
 
         <section className={styles.apex} aria-labelledby="apex-offer">
-          <span className={styles.apexBadge}>2 Spots Left · May 1</span>
+          <span className={styles.apexBadge}>
+            Cohort 1 · Starts May 1 · 2 Spots Left
+          </span>
           <h2 id="apex-offer" className={styles.apexTitle}>
             APEX 1-on-1 Mentorship
           </h2>

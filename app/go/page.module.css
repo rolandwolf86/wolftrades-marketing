@@ -84,12 +84,13 @@
 }
 
 .priceLine {
-  margin: 14px 0 0;
+  margin: 12px 0 0;
   color: var(--gold);
-  font-size: 1.05rem;
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-align: center;
 }
 
 .ctaStack {
@@ -102,7 +103,7 @@
 .secondaryCta,
 .apexCta,
 .pill {
-  min-height: 48px;
+  min-height: 52px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
