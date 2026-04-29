@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { NotifyForm } from "./NotifyForm";
 
 export const metadata: Metadata = {
-  title: "Wolf Trades Live",
+  title: "Live Trading",
   description:
     "In-person trading events with Roland and the Pack. Dates and locations announced to the community first.",
 };

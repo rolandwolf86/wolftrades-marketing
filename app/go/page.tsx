@@ -10,7 +10,7 @@ import {
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Wolf Trades - Roland Wolf",
+  title: "Links",
   description:
     "Join Wolfpack, start free, review results, or apply for APEX with Wolf Trades.",
 };
