@@ -46,9 +46,9 @@ export function HomeHero() {
               letterSpacing: "-0.02em",
             }}
           >
-            <span className="block">Built by a trader.</span>
-            <span className="block">Used by traders.</span>
-            <span className="block">Built for one thing.</span>
+            <span className="block">I trade Nasdaq live.</span>
+            <span className="block">Every single day.</span>
+            <span className="block">This is where I do it.</span>
           </h1>
 
           <p
