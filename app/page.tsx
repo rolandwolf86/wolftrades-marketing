@@ -11,7 +11,7 @@ const PROOF_POINTS = [
   "2,500+ traders inside",
   "10+ seven-figure traders trained",
   "2 eight-figure students",
-  "$13M+ Jack Kellogg career profits",
+  "$20M+ Jack Kellogg career profits",
   "Since 2018 · Teaching traders",
 ] as const;
 

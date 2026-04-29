@@ -23,12 +23,22 @@ const HALL_OF_FAME: ReadonlyArray<HallOfFameCard> = [
   {
     initials: "JK",
     label: "Breakout Trader",
-    stat: "$13M+",
+    stat: "$20M+",
     substat: "career profits",
     name: "Jack Kellogg",
     story:
       "Jack represents what happens when a trader stops chasing and builds real conviction around a process. He studied the environment, refined his edge, and scaled it.",
     era: "OG Pack",
+  },
+  {
+    initials: "SU",
+    label: "First Millionaire Student",
+    stat: "$1M+",
+    substat: "documented",
+    name: "Suragh",
+    story:
+      "Suragh became Roland's first documented millionaire student — proof that the process, applied consistently, produces life-changing results.",
+    era: "Pack Alumni",
   },
   {
     initials: "BW",
