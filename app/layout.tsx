@@ -4,7 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SiteChrome } from "@/components/layout/SiteChrome";
-import { barlow, barlowCondensed } from "@/lib/fonts";
+import { barlowCondensed, inter } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${barlow.variable} ${barlowCondensed.variable}`}
+      className={`${inter.variable} ${barlowCondensed.variable}`}
     >
       <body className="min-h-screen bg-black text-parchment antialiased flex flex-col">
         <SiteChrome header={<Header />} footer={<Footer />}>

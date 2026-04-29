@@ -249,7 +249,7 @@
 .apexSubline {
   margin: 10px 0 0;
   color: rgba(247, 244, 238, 0.72);
-  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.96rem;
   line-height: 1.35;
 }
@@ -288,7 +288,7 @@
 .footer {
   padding: 8px 4px 0;
   color: rgba(247, 244, 238, 0.4);
-  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 11px;
   line-height: 1.35;
   text-align: center;

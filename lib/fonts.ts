@@ -1,9 +1,9 @@
-import { Barlow, Barlow_Condensed } from "next/font/google";
+import { Barlow_Condensed, Inter } from "next/font/google";
 
-export const barlow = Barlow({
+export const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-barlow",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
 

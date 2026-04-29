@@ -18,7 +18,7 @@ const config: Config = {
         "apex-green": "var(--apex-green)",
       },
       fontFamily: {
-        sans: ["var(--font-barlow)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: [
           "var(--font-barlow-condensed)",
           "system-ui",
