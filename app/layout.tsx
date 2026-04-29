@@ -10,7 +10,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: {
     default: "Wolf Trades",
-    template: "%s · Wolf Trades",
+    template: "%s | Wolf Trades",
   },
   description: "Wolf Trades — disciplined edge for serious traders.",
   metadataBase: new URL(

@@ -4,7 +4,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
-  title: "Student Results & Wolf Hall of Fame | Wolf Trades",
+  title: "Wolf Hall of Fame",
   description:
     "Real traders. Real results. See how traders built their edge with process and structure inside Wolf Trades.",
 };

@@ -4,7 +4,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
-  title: "About Roland Wolf | Wolf Trades",
+  title: "About Roland Wolf",
   description:
     "Why Wolf Trades exists. Roland's story — from professional soccer to a decade of Nasdaq momentum — and the anti-guru philosophy behind the platform.",
 };
