@@ -8,10 +8,10 @@ import { PhotoCarousel } from "@/components/PhotoCarousel";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
 
 const STATS = [
-  { value: "2,500", suffix: "+", label: "Traders Inside" },
+  { value: "2500", suffix: "+", label: "Traders Inside" },
   { value: "10", suffix: "+", label: "Seven-Figure Students" },
   { value: "2", suffix: "", label: "Eight-Figure Students" },
-  { value: "$20M", suffix: "+", label: "Jack Kellogg Career" },
+  { value: "20", prefix: "$", suffix: "M+", label: "Jack Kellogg Career" },
   { value: "7", suffix: "", label: "Years Teaching" },
 ] as const;
 

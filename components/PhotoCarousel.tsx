@@ -28,7 +28,11 @@ export function PhotoCarousel({
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({
+    const el = scrollRef.current;
+    const max = el.scrollWidth - el.clientWidth;
+    if (dir === "right" && el.scrollLeft >= max - 10) return;
+    if (dir === "left" && el.scrollLeft <= 10) return;
+    el.scrollBy({
       left: dir === "left" ? -340 : 340,
       behavior: "smooth",
     });
@@ -74,11 +78,6 @@ export function PhotoCarousel({
               style={{ scrollSnapAlign: "start" }}
             >
               <div className="relative aspect-[4/3] overflow-hidden border border-parchment/10 transition-colors hover:border-gold/40">
-                {photo.year && (
-                  <div className="absolute left-3 top-3 z-10 bg-gold px-2 py-1 font-display text-xs uppercase tracking-wider text-black">
-                    {photo.year}
-                  </div>
-                )}
                 <Image
                   src={photo.src}
                   alt={photo.alt}

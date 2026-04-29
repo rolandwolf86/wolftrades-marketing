@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 interface Stat {
   value: string;
+  prefix?: string;
   suffix?: string;
   label: string;
 }
@@ -43,7 +44,9 @@ function parseStat(value: string): ParsedStat {
 }
 
 function format(parsed: ParsedStat, current: number): string {
-  const numStr = parsed.hasComma ? current.toLocaleString() : String(current);
+  // Auto-add thousands separators for values >= 1000 even if input was bare digits.
+  const useCommas = parsed.hasComma || parsed.target >= 1000;
+  const numStr = useCommas ? current.toLocaleString() : String(current);
   return `${parsed.prefix}${numStr}${parsed.trailing}`;
 }
 
@@ -131,6 +134,7 @@ function StatCell({
   return (
     <div className="px-2 text-center md:px-4">
       <p className="font-display text-4xl font-black text-gold tabular-nums md:text-5xl">
+        {stat.prefix ?? ""}
         {display}
         {stat.suffix ?? ""}
       </p>
