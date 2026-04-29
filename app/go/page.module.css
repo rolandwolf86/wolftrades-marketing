@@ -22,19 +22,9 @@
 }
 
 .logoFrame {
-  width: 140px;
-  height: 32px;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin: 0 auto 14px;
-  overflow: hidden;
-}
-
-.logo {
-  width: 140px;
-  height: 32px;
-  display: block;
-  object-fit: cover;
-  object-position: center;
 }
 
 .identityLine,
@@ -298,12 +288,6 @@
   .shell {
     padding-top: 34px;
     padding-bottom: 34px;
-  }
-
-  .logoFrame,
-  .logo {
-    width: 140px;
-    height: 32px;
   }
 }
 

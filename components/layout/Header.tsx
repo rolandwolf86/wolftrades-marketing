@@ -46,10 +46,10 @@ export function Header() {
           <Image
             src="/wolf-trades-logo-horizontal-dark.png"
             alt="Wolf Trades"
-            width={140}
-            height={32}
+            width={180}
+            height={102}
             priority
-            className="object-contain object-left"
+            className="h-10 w-auto object-contain object-left"
           />
         </Link>
 

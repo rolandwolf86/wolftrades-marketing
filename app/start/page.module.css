@@ -21,14 +21,6 @@
   justify-content: center;
 }
 
-.logo {
-  width: 140px;
-  height: 32px;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
 .hero {
   text-align: center;
 }

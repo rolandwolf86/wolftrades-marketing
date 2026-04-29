@@ -52,10 +52,10 @@ export default function GoPage() {
             <Image
               src="/wolf-trades-logo-horizontal-dark.png"
               alt="Wolf Trades"
-              width={140}
-              height={32}
+              width={180}
+              height={102}
               priority
-              className={styles.logo}
+              className="h-10 w-auto object-contain object-left"
             />
           </div>
           <p className={styles.identityLine}>
