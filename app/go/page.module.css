@@ -24,7 +24,14 @@
 .logoFrame {
   display: flex;
   justify-content: center;
+  width: auto;
+  max-height: 36px;
   margin: 0 auto 14px;
+}
+
+.logoFrame img {
+  height: 100%;
+  width: auto;
 }
 
 .identityLine,

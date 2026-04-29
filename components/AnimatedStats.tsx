@@ -78,7 +78,7 @@ export function AnimatedStats({ stats }: Props) {
   return (
     <div
       ref={containerRef}
-      className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-y-8 px-6 md:grid-cols-5 md:gap-y-0 md:divide-x md:divide-parchment/10"
+      className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-y-8 px-6 sm:grid-cols-3 md:grid-cols-5 md:gap-y-0 md:divide-x md:divide-parchment/10"
     >
       {stats.map((stat, idx) => (
         <StatCell key={stat.label} stat={stat} reveal={reveal} delayMs={idx * 120} />

@@ -4,7 +4,7 @@ export const START_FREE_URL = "/start";
 export const APP_REGISTER_URL = "https://app.wolftrades.com/register";
 export const LOGIN_URL = "https://app.wolftrades.com/login";
 
-export const WOLFPACK_MONTHLY_URL = "/wolfpack";
+export const WOLFPACK_MONTHLY_URL = "/wolfpack#pricing";
 export const WOLFPACK_ANNUAL_URL = "/wolfpack#annual";
 export const PRO_MONTHLY_URL = "/pro";
 export const PRO_ANNUAL_URL = "/pro#annual";

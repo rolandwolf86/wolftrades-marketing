@@ -32,16 +32,16 @@ export function HomeHero() {
           <Image
             src="/wolf-trades-logo-horizontal-dark.png"
             alt="Wolf Trades"
-            width={180}
-            height={102}
+            width={916}
+            height={518}
+            className="h-8 w-auto object-contain object-left"
             priority
-            className="h-10 w-auto object-contain object-left"
           />
 
           <h1
             className="mt-12 font-display font-black uppercase text-parchment md:mt-16"
             style={{
-              fontSize: "clamp(56px, 8vw, 112px)",
+              fontSize: "clamp(40px, 9vw, 112px)",
               lineHeight: 0.88,
               letterSpacing: "-0.02em",
             }}
@@ -62,12 +62,13 @@ export function HomeHero() {
           <div className="mt-10">
             <Link
               href={WOLFPACK_MONTHLY_URL}
-              className="inline-flex items-center gap-2 bg-gold font-bold uppercase text-black transition-colors duration-150 ease-out hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100 animate-pulse-gold motion-reduce:animate-none"
+              className="inline-flex w-full items-center gap-2 bg-gold font-bold uppercase text-black transition-colors duration-150 ease-out hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100 animate-pulse-gold motion-reduce:animate-none sm:w-auto"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
                 fontSize: "0.88rem",
                 letterSpacing: "0.2em",
                 padding: "18px 48px",
+                justifyContent: "center",
               }}
             >
               <span>Join the Wolfpack</span>

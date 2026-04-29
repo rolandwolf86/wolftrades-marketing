@@ -63,7 +63,7 @@ export default function WolfpackPage() {
         </div>
       </section>
 
-      <section className="bg-black">
+      <section id="pricing" className="scroll-mt-20 bg-black">
         <div className="mx-auto grid w-full max-w-5xl gap-6 px-6 py-20 md:grid-cols-2 md:py-24">
           {/* Monthly */}
           <article className="border border-white/10 bg-black2 p-8">

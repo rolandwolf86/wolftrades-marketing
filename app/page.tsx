@@ -142,14 +142,14 @@ export default function HomePage() {
       <HomeHero />
 
       {/* SECTION 2 — ANIMATED PROOF STRIP */}
-      <section className="border-y border-white/5 bg-black2 py-12">
+      <section className="border-y border-white/5 bg-black2 py-16">
         <AnimatedStats stats={STATS} />
       </section>
 
       {/* SECTION 3 — ROLAND IDENTITY */}
       <section className="bg-black md:min-h-[500px]">
         <div className="grid md:grid-cols-[55fr_45fr]">
-          <div className="relative h-[60vw] md:h-auto md:min-h-[500px]">
+          <div className="relative h-[55vw] md:h-auto md:min-h-[500px]">
             <Image
               src="/images/roland/roland-laptop.jpg"
               alt="Roland Wolf at laptop, daily morning prep"
@@ -326,7 +326,7 @@ export default function HomePage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {/* Free */}
-            <article className="flex flex-col border border-white/10 bg-black p-8">
+            <article className="flex flex-col border border-white/10 bg-black p-6 md:p-8">
               <span className="font-display text-xs uppercase tracking-[0.2em] text-gold">
                 Free
               </span>
@@ -353,7 +353,7 @@ export default function HomePage() {
             </article>
 
             {/* Wolfpack — featured */}
-            <article className="relative flex flex-col border border-gold bg-black p-8 shadow-[0_0_0_1px_rgba(201,168,76,0.4)]">
+            <article className="relative flex flex-col border border-gold bg-black p-6 shadow-[0_0_0_1px_rgba(201,168,76,0.4)] md:p-8">
               <span className="absolute -top-3 left-6 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
                 Most Popular
               </span>
@@ -390,7 +390,7 @@ export default function HomePage() {
             </article>
 
             {/* APEX */}
-            <article className="flex flex-col border border-white/10 bg-black p-8">
+            <article className="flex flex-col border border-white/10 bg-black p-6 md:p-8">
               <span className="font-display text-xs uppercase tracking-[0.2em] text-gold">
                 APEX 1-on-1
               </span>

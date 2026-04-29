@@ -33,9 +33,9 @@ export function Footer() {
             <Image
               src="/wolf-trades-logo-horizontal-dark.png"
               alt="Wolf Trades"
-              width={180}
-              height={102}
-              className="h-10 w-auto object-contain object-left"
+              width={916}
+              height={518}
+              className="h-8 w-auto object-contain object-left"
             />
             <p className="mt-2 max-w-xs text-sm text-gray">
               The trading operating system for serious traders.

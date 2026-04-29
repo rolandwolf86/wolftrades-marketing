@@ -122,7 +122,7 @@ export function FeatureTabs() {
               role="tab"
               aria-selected={isActive}
               onClick={() => setActive(i)}
-              className={`flex shrink-0 items-center gap-2 px-4 py-2 font-display text-xs uppercase tracking-wider transition-colors ${
+              className={`flex shrink-0 items-center gap-2 whitespace-nowrap px-4 py-2 font-display text-xs uppercase tracking-wider transition-colors ${
                 isActive
                   ? "bg-gold text-black"
                   : "border border-parchment/20 bg-transparent text-gray hover:border-gold/60 hover:text-parchment"

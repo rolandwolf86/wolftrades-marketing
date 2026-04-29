@@ -12,7 +12,7 @@ const variantClasses: Record<Variant, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center font-display text-sm uppercase tracking-wider px-6 py-3 transition-all duration-150 ease-out motion-reduce:transition-colors";
+  "inline-flex min-h-[52px] items-center justify-center font-display text-sm uppercase tracking-wider px-6 py-3 transition-all duration-150 ease-out motion-reduce:transition-colors";
 
 export interface CTAButtonProps {
   href?: string;
