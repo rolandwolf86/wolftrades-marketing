@@ -13,6 +13,7 @@ const FOOTER_LINKS: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/apex", label: "APEX" },
   { href: "/platform", label: "Platform" },
   { href: "/results", label: "Results" },
+  { href: "/events", label: "Events" },
   { href: "/about", label: "About" },
 ];
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
+import { PhotoCarousel } from "@/components/PhotoCarousel";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
@@ -118,6 +120,72 @@ const VIDEO_PLACEHOLDERS: ReadonlyArray<string> = [
   "Student Testimonial — Coming Soon",
 ];
 
+const PROOF_PHOTOS = [
+  {
+    src: "/images/proof/jack-over-20mil.jpg",
+    alt: "Jack Kellogg over $20M",
+    label: "Jack Kellogg — $20M+",
+  },
+  {
+    src: "/images/proof/suragh-first-millionaire.jpg",
+    alt: "Suragh first millionaire student",
+    label: "Suragh — First Millionaire Student",
+  },
+  {
+    src: "/images/proof/aaron-1-2-mil.jpg",
+    alt: "Aaron $1.2M+",
+    label: "Aaron — $1.2M+",
+  },
+  {
+    src: "/images/proof/huddie-7-figures.jpg",
+    alt: "Huddie seven figures",
+    label: "Huddie — Seven Figures",
+  },
+  {
+    src: "/images/proof/sebastien-500k.jpg",
+    alt: "Sebastien $500K+",
+    label: "Sebastien — $500K+",
+  },
+  {
+    src: "/images/proof/sandra-200k.jpg",
+    alt: "Sandra $200K+",
+    label: "Sandra — $200K+",
+  },
+  {
+    src: "/images/proof/brandon-approaching-1mil.jpg",
+    alt: "Brandon approaching $1M",
+    label: "Brandon — Approaching $1M",
+  },
+  {
+    src: "/images/proof/carlos-6-figures.jpg",
+    alt: "Carlos six figures",
+    label: "Carlos — Six Figures",
+  },
+  {
+    src: "/images/proof/stock-sniper-mike-6-figures.jpg",
+    alt: "Stock Sniper Mike six figures",
+    label: "Stock Sniper Mike — Six Figures",
+  },
+];
+
+const COMMUNITY_PHOTOS = [
+  {
+    src: "/images/roland/wolfpack-group-drone.jpg",
+    alt: "Wolfpack group Tahoe 2024",
+    caption: "Wolfpack — Tahoe Retreat 2024",
+  },
+  {
+    src: "/images/roland/wolfpack-group-arms.jpg",
+    alt: "Wolfpack community celebration",
+    caption: "The Pack — Tahoe 2024",
+  },
+  {
+    src: "/images/roland/roland-teaching-wide.jpg",
+    alt: "Roland teaching at bootcamp",
+    caption: "NYC Bootcamp 2024",
+  },
+];
+
 const SHIMMER_BG =
   "bg-[linear-gradient(90deg,#111111_25%,#1a1a1a_50%,#111111_75%)] bg-[length:200%_100%]";
 
@@ -226,9 +294,9 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* SECTION 4 — COMMUNITY WINS */}
-      <section className="border-y border-white/5 bg-black2 px-6 py-20">
-        <div className="mx-auto w-full max-w-5xl">
+      {/* SECTION 4 — PROOF WALL + COMMUNITY */}
+      <section className="overflow-hidden border-y border-white/5 bg-black2 py-20">
+        <div className="mx-auto mb-10 w-full max-w-5xl px-6">
           <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
             From the Pack
           </p>
@@ -241,19 +309,30 @@ export default function ResultsPage() {
             stronger discipline, smarter decisions. These are the moments
             where things start to click.
           </p>
+        </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div
-                key={index}
-                className="flex min-h-[160px] items-center justify-center border border-parchment/10 bg-black p-6"
-              >
-                <p className="text-center text-sm uppercase tracking-wider text-parchment/20">
-                  Community Win — Coming Soon
+        <PhotoCarousel photos={PROOF_PHOTOS} variant="proof" />
+
+        <div className="mx-auto mt-12 grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3">
+          {COMMUNITY_PHOTOS.map((photo) => (
+            <div
+              key={photo.src}
+              className="relative aspect-video overflow-hidden border border-parchment/10"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <p className="text-xs uppercase tracking-wider text-gray">
+                  {photo.caption}
                 </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 

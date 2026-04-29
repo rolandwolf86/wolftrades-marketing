@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
+import { PhotoCarousel } from "@/components/PhotoCarousel";
 import {
   PRO_MONTHLY_URL,
   START_FREE_URL,
@@ -14,6 +15,45 @@ const PROOF_POINTS = [
   "$20M+ Jack Kellogg career profits",
   "Since 2018 · Teaching traders",
 ] as const;
+
+const TIMELINE_PHOTOS = [
+  {
+    src: "/images/roland/roland-teaching-hero.jpg",
+    alt: "Roland teaching at NYC Bootcamp 2024",
+    year: "2024",
+    caption: "NYC Bootcamp — 30+ traders",
+  },
+  {
+    src: "/images/roland/wolfpack-group-drone.jpg",
+    alt: "Wolfpack at Tahoe retreat 2024",
+    year: "2024",
+    caption: "Wolfpack Tahoe Retreat",
+  },
+  {
+    src: "/images/roland/roland-room-scanner.jpg",
+    alt: "Roland teaching with live scanner",
+    year: "2024",
+    caption: "Live session — scanner on",
+  },
+  {
+    src: "/images/roland/roland-laptop.jpg",
+    alt: "Roland at laptop daily prep",
+    year: "2024",
+    caption: "Daily morning prep",
+  },
+  {
+    src: "/images/roland/roland-tahoe-sunset.jpg",
+    alt: "Roland at Tahoe sunset deck",
+    year: "2024",
+    caption: "Teaching above the clouds",
+  },
+  {
+    src: "/images/roland/wolfpack-group-arms.jpg",
+    alt: "Wolfpack community photo",
+    year: "2024",
+    caption: "The Pack — Tahoe 2024",
+  },
+];
 
 const RHYTHM = [
   {
@@ -167,6 +207,15 @@ export default function HomePage() {
             </span>
           ))}
         </div>
+      </section>
+
+      <section className="overflow-hidden border-y border-white/5 bg-black2 py-16">
+        <PhotoCarousel
+          photos={TIMELINE_PHOTOS}
+          variant="timeline"
+          eyebrow="10 Years of Wolf Trades"
+          headline="The Pack Has Been Here."
+        />
       </section>
 
       <section className="bg-black">
