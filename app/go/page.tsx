@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   INSTAGRAM_URL,
-  PRICING_URL,
+  WOLFPACK_CHECKOUT_URL,
   TIKTOK_URL,
   YOUTUBE_URL,
 } from "@/lib/links";
@@ -73,7 +73,7 @@ export default function GoPage() {
           </h1>
           <div className={styles.ctaStack}>
             <a
-              href={PRICING_URL}
+              href={WOLFPACK_CHECKOUT_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.primaryCta}
