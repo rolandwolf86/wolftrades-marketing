@@ -44,24 +44,14 @@ export function Header() {
           className="flex items-center"
           aria-label="Wolf Trades home"
         >
-          <div className="flex items-center gap-2">
-            <Image
-              src="/images/logos/wt-wolf-icon-v2.png"
-              alt="Wolf Trades"
-              width={40}
-              height={40}
-              className="w-8 h-8 md:w-9 md:h-9 object-contain flex-shrink-0"
-              priority
-            />
-            <Image
-              src="/images/logos/wt-wordmark-dark.png"
-              alt="Wolf Trades"
-              width={200}
-              height={63}
-              className="hidden sm:block h-7 w-auto object-contain object-left"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/logos/wt-wordmark-dark.png"
+            alt="Wolf Trades"
+            width={200}
+            height={63}
+            className="h-8 w-auto object-contain object-left"
+            priority
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
