@@ -49,7 +49,7 @@ export function Header() {
             alt="Wolf Trades"
             width={200}
             height={63}
-            className="h-8 w-auto object-contain object-left"
+            className="h-10 w-auto object-contain object-left"
             priority
           />
         </Link>
