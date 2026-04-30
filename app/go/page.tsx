@@ -61,14 +61,24 @@ export default function GoPage() {
       <div className={styles.shell}>
         {/* SECTION 1 — IDENTITY HEADER */}
         <header className={styles.identity}>
-          <Image
-            src="/wolf-trades-logo-horizontal-dark.png"
-            alt="Wolf Trades"
-            width={916}
-            height={518}
-            priority
-            className={styles.logo}
-          />
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Image
+              src="/images/logos/wt-wolf-icon-v2.png"
+              alt="Wolf Trades"
+              width={48}
+              height={48}
+              className="w-12 h-12 object-contain"
+              priority
+            />
+            <Image
+              src="/images/logos/wt-wordmark-dark.png"
+              alt="Wolf Trades"
+              width={200}
+              height={63}
+              className="h-8 w-auto object-contain"
+              priority
+            />
+          </div>
           <p className={styles.identityLine}>
             Verified 7-figure Nasdaq trader · Trading live since 2017 ·
             2,500+ traders

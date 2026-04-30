@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://wolftrades.com",
   ),
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

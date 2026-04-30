@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
@@ -12,6 +13,24 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      {/* SECTION 0 — BRAND HERO */}
+      <div className="flex flex-col items-center py-16 bg-black">
+        <Image
+          src="/images/logos/wt-wolf-icon-v2.png"
+          alt="Wolf Trades"
+          width={120}
+          height={120}
+          className="w-24 h-24 mb-4 opacity-95"
+          priority
+        />
+        <p className="font-display text-xs uppercase tracking-[.25em] text-bull">
+          Wolf Trades
+        </p>
+        <p className="text-sm text-gray mt-1">
+          Est. 2018 · 2,500+ Traders
+        </p>
+      </div>
+
       {/* SECTION 1 — HERO */}
       <section className="bg-black px-6 py-24">
         <div className="mx-auto w-full max-w-5xl">

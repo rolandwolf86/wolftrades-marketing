@@ -30,13 +30,22 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <Image
-              src="/wolf-trades-logo-horizontal-dark.png"
-              alt="Wolf Trades"
-              width={916}
-              height={518}
-              className="h-8 w-auto object-contain object-left"
-            />
+            <div className="flex items-center gap-2">
+              <Image
+                src="/images/logos/wt-wolf-icon-v2.png"
+                alt="Wolf Trades"
+                width={40}
+                height={40}
+                className="w-8 h-8 object-contain flex-shrink-0"
+              />
+              <Image
+                src="/images/logos/wt-wordmark-dark.png"
+                alt="Wolf Trades"
+                width={200}
+                height={63}
+                className="h-6 w-auto object-contain object-left"
+              />
+            </div>
             <p className="mt-2 max-w-xs text-sm text-gray">
               The trading operating system for serious traders.
             </p>
