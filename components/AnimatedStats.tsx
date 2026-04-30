@@ -133,7 +133,7 @@ function StatCell({
 
   return (
     <div className="px-2 text-center md:px-4">
-      <p className="font-display text-4xl font-black text-bull tabular-nums md:text-5xl">
+      <p className="font-display text-4xl font-black text-gold tabular-nums md:text-5xl">
         {stat.prefix ?? ""}
         {display}
         {stat.suffix ?? ""}

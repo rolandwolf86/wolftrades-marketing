@@ -232,7 +232,7 @@ export default function HomePage() {
             {HALL_OF_FAME.map((card) => (
               <div
                 key={card.name}
-                className="relative aspect-[3/4] overflow-hidden border border-gold/20"
+                className="relative aspect-[3/4] overflow-hidden border border-bull/20"
               >
                 <Image
                   src={card.src}

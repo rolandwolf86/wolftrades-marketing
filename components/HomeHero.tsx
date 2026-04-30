@@ -15,7 +15,7 @@ export function HomeHero() {
         className="pointer-events-none absolute inset-0 z-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 60% 40%, rgba(201,168,76,0.08) 0%, rgba(22,163,74,0.04) 30%, #0a0a0a 65%)",
+            "radial-gradient(ellipse 80% 60% at 60% 40%, rgba(22,163,74,0.1) 0%, rgba(22,163,74,0.04) 30%, #0a0a0a 65%)",
         }}
       />
 
