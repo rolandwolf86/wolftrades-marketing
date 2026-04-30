@@ -63,7 +63,7 @@ export default function GoPage() {
         <header className={styles.identity}>
           <div className="flex items-center justify-center gap-2 mb-2">
             <Image
-              src="/images/logos/wt-wolf-icon-v2.png"
+              src="/images/logos/wt-wolf-white-transparent.png"
               alt="Wolf Trades"
               width={48}
               height={48}

@@ -32,7 +32,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2">
               <Image
-                src="/images/logos/wt-wolf-icon-v2.png"
+                src="/images/logos/wt-wolf-white-transparent.png"
                 alt="Wolf Trades"
                 width={40}
                 height={40}
