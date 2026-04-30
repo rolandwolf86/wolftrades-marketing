@@ -45,10 +45,10 @@ export function Header() {
           aria-label="Wolf Trades home"
         >
           <Image
-            src="/images/logos/wt-wordmark-dark.png"
+            src="/images/logos/wt-lockup-white-transparent.png"
             alt="Wolf Trades"
-            width={200}
-            height={63}
+            width={600}
+            height={150}
             className="h-10 w-auto object-contain object-left"
             priority
           />
