@@ -30,10 +30,10 @@ export function HomeHero() {
         {/* Left column — copy */}
         <div className="flex flex-col justify-center px-6 py-10 md:px-20 md:py-16">
           <Image
-            src="/wolf-trades-logo-horizontal-dark.png"
+            src="/images/logos/wt-wordmark-dark.png"
             alt="Wolf Trades"
-            width={916}
-            height={518}
+            width={200}
+            height={63}
             className="h-8 w-auto object-contain object-left"
             priority
           />
