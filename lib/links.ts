@@ -9,8 +9,8 @@ export const WOLFPACK_ANNUAL_URL = "/wolfpack#annual";
 export const PRO_MONTHLY_URL = "/pro";
 export const PRO_ANNUAL_URL = "/pro#annual";
 
-// Confirmed live GHL order path for Wolfpack monthly checkout.
-export const WOLFPACK_CHECKOUT_URL = "https://join.wolftrades.com/order";
+// GHL order page is paused until pricing, copy, contrast, and proof are verified.
+export const WOLFPACK_CHECKOUT_URL = "/wolfpack#pricing";
 
 // TODO: Confirm dedicated annual and Pro GHL order paths before sending traffic.
 export const WOLFPACK_ANNUAL_CHECKOUT_URL = "/wolfpack#pricing";
