@@ -12,7 +12,7 @@ export function TestimonialQuote({
   role,
 }: TestimonialQuoteProps) {
   return (
-    <figure className="border-l-2 border-gold bg-black2 p-8">
+    <figure className="border-l-2 border-bull bg-black2 p-8">
       <blockquote className="font-display text-2xl leading-snug text-parchment">
         “{quote}”
       </blockquote>

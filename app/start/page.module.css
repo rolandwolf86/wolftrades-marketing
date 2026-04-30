@@ -59,7 +59,7 @@
 
 .eyebrow {
   margin: 0 0 13px;
-  color: var(--gold);
+  color: var(--bull);
   font-family: var(--font-barlow-condensed), system-ui, sans-serif;
   font-size: 0.84rem;
   font-weight: 800;
@@ -87,7 +87,7 @@
 }
 
 .includeList span {
-  color: var(--gold);
+  color: var(--bull);
   line-height: 1.35;
 }
 
@@ -115,7 +115,7 @@
 .upgrade a {
   display: inline-flex;
   margin-top: 10px;
-  color: var(--gold);
+  color: var(--bull);
   font-family: var(--font-barlow-condensed), system-ui, sans-serif;
   font-size: 13px;
   font-weight: 800;
@@ -162,14 +162,14 @@
 }
 
 .field input:focus {
-  border-color: rgba(201, 168, 76, 0.8);
+  border-color: rgba(22, 163, 74, 0.8);
 }
 
 .submit {
   width: 100%;
   height: 52px;
-  border: 1px solid #c9a84c;
-  background: #c9a84c;
+  border: 1px solid #16a34a;
+  background: #16a34a;
   color: #050505;
   cursor: pointer;
   font-family: var(--font-barlow-condensed), system-ui, sans-serif;

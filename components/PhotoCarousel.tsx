@@ -45,7 +45,7 @@ export function PhotoCarousel({
       {(eyebrow || headline) && (
         <div className="mb-8 px-6">
           {eyebrow && (
-            <p className="mb-3 font-display text-xs uppercase tracking-[0.25em] text-gold">
+            <p className="mb-3 font-display text-xs uppercase tracking-[0.25em] text-bull">
               {eyebrow}
             </p>
           )}
@@ -60,7 +60,7 @@ export function PhotoCarousel({
       <div className="relative">
         <button
           onClick={() => scroll("left")}
-          className="absolute left-2 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center border border-parchment/20 bg-black/80 transition-colors hover:border-gold/60 md:flex"
+          className="absolute left-2 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center border border-parchment/20 bg-black/80 transition-colors hover:border-bull/60 md:flex"
           aria-label="Scroll left"
         >
           <span className="text-lg text-parchment">←</span>
@@ -77,7 +77,7 @@ export function PhotoCarousel({
               className={`${cardW} flex-none`}
               style={{ scrollSnapAlign: "start" }}
             >
-              <div className="relative aspect-[4/3] overflow-hidden border border-parchment/10 transition-colors hover:border-gold/40">
+              <div className="relative aspect-[4/3] overflow-hidden border border-parchment/10 transition-colors hover:border-bull/40">
                 <Image
                   src={photo.src}
                   alt={photo.alt}
@@ -89,7 +89,7 @@ export function PhotoCarousel({
               {(photo.caption || photo.label) && (
                 <div className="mt-2 px-1">
                   {photo.label && (
-                    <p className="font-display text-xs uppercase tracking-wider text-gold">
+                    <p className="font-display text-xs uppercase tracking-wider text-bull">
                       {photo.label}
                     </p>
                   )}
@@ -106,7 +106,7 @@ export function PhotoCarousel({
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-2 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center border border-parchment/20 bg-black/80 transition-colors hover:border-gold/60 md:flex"
+          className="absolute right-2 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center border border-parchment/20 bg-black/80 transition-colors hover:border-bull/60 md:flex"
           aria-label="Scroll right"
         >
           <span className="text-lg text-parchment">→</span>

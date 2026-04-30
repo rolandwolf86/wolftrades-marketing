@@ -15,7 +15,7 @@ export default function AboutPage() {
       {/* SECTION 1 — HERO */}
       <section className="bg-black px-6 py-24">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             About Roland Wolf
           </p>
           <h1 className="mt-4 font-display text-5xl leading-none text-parchment md:text-7xl">
@@ -27,7 +27,7 @@ export default function AboutPage() {
       {/* SECTION 2 — ORIGIN */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-3xl">
-          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-gold">
+          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-bull">
             Before the markets, there was the pitch.
           </p>
           <div className="space-y-5 text-lg leading-8 text-parchment/80">
@@ -52,7 +52,7 @@ export default function AboutPage() {
       {/* SECTION 3 — THE DECADE */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-3xl">
-          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-gold">
+          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-bull">
             Ten years. One focus.
           </p>
           <div className="space-y-5 text-lg leading-8 text-parchment/80">
@@ -93,7 +93,7 @@ export default function AboutPage() {
       {/* SECTION 4 — THE FAMILY */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-3xl">
-          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-gold">
+          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-bull">
             The reason it matters.
           </p>
           <p className="text-lg leading-8 text-parchment/80">
@@ -126,7 +126,7 @@ export default function AboutPage() {
       {/* SECTION 5 — ANTI-GURU */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-3xl">
-          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-gold">
+          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-bull">
             What he refuses to be.
           </p>
           <div className="space-y-5 text-lg leading-8 text-parchment/80">
@@ -138,7 +138,7 @@ export default function AboutPage() {
             <p>Roland built the opposite.</p>
           </div>
 
-          <p className="my-8 border-l-4 border-gold pl-6 font-display text-2xl leading-tight text-parchment">
+          <p className="my-8 border-l-4 border-bull pl-6 font-display text-2xl leading-tight text-parchment">
             Wolf Trades is not designed to make traders rely on him. It&apos;s
             designed to build traders who don&apos;t need him anymore.
           </p>
@@ -153,7 +153,7 @@ export default function AboutPage() {
       {/* SECTION 6 — THE VISION */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-3xl">
-          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-gold">
+          <p className="mb-6 font-display text-sm uppercase tracking-[0.25em] text-bull">
             What Wolf Trades is becoming.
           </p>
           <div className="space-y-3 text-lg leading-8 text-parchment/80">
@@ -193,7 +193,7 @@ export default function AboutPage() {
           <p className="mt-4 text-sm">
             <Link
               href={START_FREE_URL}
-              className="text-gold transition-colors hover:underline"
+              className="text-bull transition-colors hover:underline"
             >
               Get Roland&apos;s Free Watchlist
             </Link>

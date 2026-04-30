@@ -167,7 +167,7 @@ export default function HomePage() {
             />
           </div>
           <div className="flex flex-col justify-center px-6 py-12 md:px-16 md:py-16">
-            <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+            <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
               Roland Wolf · Verified 7-Figure Trader
             </p>
             <h2 className="mt-4 font-display text-4xl leading-tight text-parchment md:text-5xl">
@@ -204,7 +204,7 @@ export default function HomePage() {
       {/* SECTION 4 — FEATURE TABS */}
       <section className="border-y border-white/5 bg-black2 py-20">
         <div className="mx-auto mb-12 w-full max-w-7xl px-6">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             The Complete Trading System
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -217,7 +217,7 @@ export default function HomePage() {
       {/* SECTION 5 — STUDENT PROOF WALL */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-7xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             The Wolf Hall of Fame
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -262,7 +262,7 @@ export default function HomePage() {
           <div className="mt-10">
             <Link
               href="/results"
-              className="font-display text-sm uppercase tracking-wider text-gold hover:underline"
+              className="font-display text-sm uppercase tracking-wider text-bull hover:underline"
             >
               See All Results →
             </Link>
@@ -310,7 +310,7 @@ export default function HomePage() {
       {/* SECTION 8 — THREE TIER PRICING */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-7xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Start Where You Are
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -331,7 +331,7 @@ export default function HomePage() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {/* Free */}
             <article className="flex flex-col border border-white/10 bg-black p-6 md:p-8">
-              <span className="font-display text-xs uppercase tracking-[0.2em] text-gold">
+              <span className="font-display text-xs uppercase tracking-[0.2em] text-bull">
                 Free
               </span>
               <p className="mt-4 font-display text-5xl text-parchment">$0</p>
@@ -342,7 +342,7 @@ export default function HomePage() {
               <ul className="mt-6 flex-1 space-y-2 text-sm text-parchment/80">
                 {FREE_FEATURES.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span aria-hidden className="text-gold">
+                    <span aria-hidden className="text-bull">
                       •
                     </span>
                     <span>{item}</span>
@@ -357,11 +357,11 @@ export default function HomePage() {
             </article>
 
             {/* Wolfpack — featured */}
-            <article className="relative flex flex-col border border-gold bg-black p-6 shadow-[0_0_0_1px_rgba(201,168,76,0.4)] md:p-8">
-              <span className="absolute -top-3 left-6 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
+            <article className="relative flex flex-col border border-bull bg-black p-6 shadow-[0_0_0_1px_rgba(22,163,74,0.4)] md:p-8">
+              <span className="absolute -top-3 left-6 bg-bull px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
                 Most Popular
               </span>
-              <span className="font-display text-xs uppercase tracking-[0.2em] text-gold">
+              <span className="font-display text-xs uppercase tracking-[0.2em] text-bull">
                 Wolfpack
               </span>
               <p className="mt-4 font-display text-5xl text-parchment">
@@ -370,7 +370,7 @@ export default function HomePage() {
                   /mo
                 </span>
               </p>
-              <p className="mt-2 text-sm text-gold">
+              <p className="mt-2 text-sm text-bull">
                 or $997/yr — save $527
               </p>
               <p className="mt-4 text-base leading-7 text-parchment/76">
@@ -379,7 +379,7 @@ export default function HomePage() {
               <ul className="mt-6 flex-1 space-y-2 text-sm text-parchment/80">
                 {WOLFPACK_FEATURES.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span aria-hidden className="text-gold">
+                    <span aria-hidden className="text-bull">
                       •
                     </span>
                     <span>{item}</span>
@@ -459,7 +459,7 @@ export default function HomePage() {
           <p className="mt-6 text-sm uppercase tracking-[0.14em] text-parchment/52">
             <Link
               href={START_FREE_URL}
-              className="text-gold transition-colors hover:underline"
+              className="text-bull transition-colors hover:underline"
             >
               Get Roland&rsquo;s Free Watchlist
             </Link>

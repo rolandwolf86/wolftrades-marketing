@@ -62,7 +62,7 @@ export function HomeHero() {
           <div className="mt-10">
             <Link
               href={WOLFPACK_MONTHLY_URL}
-              className="inline-flex w-full items-center gap-2 bg-gold font-bold uppercase text-black transition-colors duration-150 ease-out hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100 animate-pulse-gold motion-reduce:animate-none sm:w-auto"
+              className="inline-flex w-full items-center gap-2 bg-bull font-bold uppercase text-black transition-colors duration-150 ease-out hover:bg-[#1fc35a] active:scale-[0.98] motion-reduce:active:scale-100 animate-pulse-bull motion-reduce:animate-none sm:w-auto"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
                 fontSize: "0.88rem",

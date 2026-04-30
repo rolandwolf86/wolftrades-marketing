@@ -43,7 +43,7 @@ export function NotifyForm() {
 
   if (status === "success") {
     return (
-      <p className="font-display text-lg uppercase tracking-wider text-gold">
+      <p className="font-display text-lg uppercase tracking-wider text-bull">
         You’re on the list. We’ll be in touch.
       </p>
     );
@@ -60,12 +60,12 @@ export function NotifyForm() {
         type="email"
         required
         placeholder="your@email.com"
-        className="w-full border border-white/10 bg-black px-4 py-3 text-base text-parchment placeholder:text-gray focus:border-gold focus:outline-none sm:flex-1"
+        className="w-full border border-white/10 bg-black px-4 py-3 text-base text-parchment placeholder:text-gray focus:border-bull focus:outline-none sm:flex-1"
       />
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex items-center justify-center bg-gold px-6 py-3 font-display text-sm uppercase tracking-wider text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex items-center justify-center bg-bull px-6 py-3 font-display text-sm uppercase tracking-wider text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? "Sending…" : "Notify Me"}
       </button>

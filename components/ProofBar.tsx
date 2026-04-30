@@ -15,7 +15,7 @@ export function ProofBar({ points = [] }: ProofBarProps) {
       <div className="mx-auto grid w-full max-w-7xl grid-cols-2 gap-6 px-6 py-10 md:grid-cols-4">
         {points.map((point) => (
           <div key={point.label}>
-            <div className="font-display text-3xl text-gold">
+            <div className="font-display text-3xl text-bull">
               {point.value}
             </div>
             <div className="mt-1 text-xs uppercase tracking-wider text-gray">

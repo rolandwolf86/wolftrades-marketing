@@ -60,7 +60,7 @@ export function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-display text-sm uppercase tracking-wider text-parchment/80 transition-colors hover:text-gold"
+                  className="font-display text-sm uppercase tracking-wider text-parchment/80 transition-colors hover:text-bull"
                 >
                   {link.label}
                 </Link>
@@ -71,7 +71,7 @@ export function Header() {
 
         <Link
           href={START_FREE_URL}
-          className="hidden md:inline-flex bg-gold px-4 py-2 font-display text-sm uppercase tracking-wider text-black transition-all duration-150 ease-out hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100"
+          className="hidden md:inline-flex bg-bull px-4 py-2 font-display text-sm uppercase tracking-wider text-black transition-all duration-150 ease-out hover:bg-[#1fc35a] active:scale-[0.98] motion-reduce:active:scale-100"
         >
           Start
         </Link>

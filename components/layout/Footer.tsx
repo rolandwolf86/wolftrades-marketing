@@ -49,7 +49,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="font-display text-sm uppercase tracking-wider text-parchment/80 hover:text-gold"
+                      className="font-display text-sm uppercase tracking-wider text-parchment/80 hover:text-bull"
                     >
                       {link.label}
                     </Link>
@@ -69,7 +69,7 @@ export function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-parchment/70 transition-colors hover:text-gold"
+                      className="text-sm text-parchment/70 transition-colors hover:text-bull"
                     >
                       {social.label}
                     </a>
@@ -84,7 +84,7 @@ export function Footer() {
           <span>&copy; {year} Wolf Trades LLC</span>
           <Link
             href={START_FREE_URL}
-            className="text-xs text-gold transition-colors hover:underline"
+            className="text-xs text-bull transition-colors hover:underline"
           >
             Get Roland&apos;s weekly watchlist →
           </Link>

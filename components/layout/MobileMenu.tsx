@@ -97,7 +97,7 @@ export function MobileMenu({ links }: { links: ReadonlyArray<NavLink> }) {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="flex min-h-[48px] items-center font-display text-base uppercase tracking-wider text-parchment/80 transition-colors hover:text-gold"
+                  className="flex min-h-[48px] items-center font-display text-base uppercase tracking-wider text-parchment/80 transition-colors hover:text-bull"
                 >
                   {link.label}
                 </Link>
@@ -108,7 +108,7 @@ export function MobileMenu({ links }: { links: ReadonlyArray<NavLink> }) {
           <div className="mt-4 border-t border-white/5 pt-4">
             <Link
               href={START_FREE_URL}
-              className="flex min-h-[48px] w-full items-center justify-center bg-gold px-6 py-3 font-display text-sm uppercase tracking-wider text-black transition-opacity hover:opacity-90"
+              className="flex min-h-[48px] w-full items-center justify-center bg-bull px-6 py-3 font-display text-sm uppercase tracking-wider text-black transition-opacity hover:opacity-90"
             >
               Start
             </Link>

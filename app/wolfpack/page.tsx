@@ -151,7 +151,7 @@ export default function WolfpackPage() {
             Live trading every market day. Roland&apos;s daily watchlist.
             Trader Therapy. Full replays. Complete playbook. Tools. Community.
             Everything.
-            <span className="mt-4 block font-display text-xl uppercase tracking-wide text-gold md:text-2xl">
+            <span className="mt-4 block font-display text-xl uppercase tracking-wide text-bull md:text-2xl">
               Others charge $10,000+/year for less.
             </span>
           </>
@@ -169,7 +169,7 @@ export default function WolfpackPage() {
       />
 
       {/* SECTION 2 — VALUE SHOCK STRIP */}
-      <section className="bg-gold px-6 py-12 text-center">
+      <section className="bg-bull px-6 py-12 text-center">
         <p className="font-display text-5xl font-black uppercase leading-none text-black md:text-7xl">
           $127/month.
         </p>
@@ -190,7 +190,7 @@ export default function WolfpackPage() {
       {/* SECTION 3 — DAILY SCHEDULE */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             What Happens Every Day
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -200,7 +200,7 @@ export default function WolfpackPage() {
           <div className="mx-auto mt-12 max-w-3xl space-y-6">
             {SCHEDULE.map((row) => (
               <div key={row.time} className="flex items-start gap-6">
-                <span className="min-w-[120px] shrink-0 border border-gold/40 bg-black px-3 py-2 text-center font-display text-xs uppercase tracking-wider text-gold">
+                <span className="min-w-[120px] shrink-0 border border-bull/40 bg-black px-3 py-2 text-center font-display text-xs uppercase tracking-wider text-bull">
                   {row.time}
                 </span>
                 <div>
@@ -244,7 +244,7 @@ export default function WolfpackPage() {
         />
         <div className="relative flex min-h-[500px] flex-col justify-center px-8 py-16 md:min-h-[600px] md:px-16">
           <div className="max-w-xl">
-            <p className="mb-4 font-display text-xs uppercase tracking-[0.25em] text-gold">
+            <p className="mb-4 font-display text-xs uppercase tracking-[0.25em] text-bull">
               Verified 7-Figure Trader · Trading Live Since 2017
             </p>
             <h2 className="font-display text-4xl leading-tight text-parchment md:text-5xl">
@@ -267,7 +267,7 @@ export default function WolfpackPage() {
       {/* SECTION 5 — FEATURE GRID */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-7xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Everything Inside
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -290,7 +290,7 @@ export default function WolfpackPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <p className="font-display text-xs uppercase tracking-widest text-gold">
+                  <p className="font-display text-xs uppercase tracking-widest text-bull">
                     {block.label}
                   </p>
                   <h3 className="mt-2 font-display text-xl uppercase text-parchment">
@@ -309,7 +309,7 @@ export default function WolfpackPage() {
       {/* SECTION 6 — STUDENT PROOF WALL */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-7xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             What&rsquo;s Possible
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -353,7 +353,7 @@ export default function WolfpackPage() {
           <div className="mt-10">
             <Link
               href="/results"
-              className="font-display text-sm uppercase tracking-wider text-gold hover:underline"
+              className="font-display text-sm uppercase tracking-wider text-bull hover:underline"
             >
               See All Results →
             </Link>
@@ -405,7 +405,7 @@ export default function WolfpackPage() {
           <p className="font-display text-4xl uppercase leading-none text-parchment md:text-6xl">
             The Wolfpack.
           </p>
-          <p className="mt-2 font-display text-xl uppercase text-gold">
+          <p className="mt-2 font-display text-xl uppercase text-bull">
             Tahoe 2024 · 30+ Traders
           </p>
         </div>
@@ -425,7 +425,7 @@ export default function WolfpackPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {/* Monthly */}
             <article className="border border-white/10 bg-black p-6 md:p-8">
-              <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+              <p className="font-display text-sm uppercase tracking-[0.25em] text-bull">
                 Monthly
               </p>
               <div className="mt-4 font-display text-5xl text-parchment">
@@ -447,11 +447,11 @@ export default function WolfpackPage() {
             </article>
 
             {/* Annual — featured */}
-            <article className="relative border border-gold/60 bg-black p-6 md:p-8">
-              <span className="absolute -top-3 left-6 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
+            <article className="relative border border-bull/60 bg-black p-6 md:p-8">
+              <span className="absolute -top-3 left-6 bg-bull px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
                 Best Value
               </span>
-              <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+              <p className="font-display text-sm uppercase tracking-[0.25em] text-bull">
                 Annual
               </p>
               <div className="mt-4 font-display text-5xl text-parchment">
@@ -480,7 +480,7 @@ export default function WolfpackPage() {
       {/* SECTION 10 — FAQ */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Common Questions
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -493,7 +493,7 @@ export default function WolfpackPage() {
                 key={item.q}
                 className="border-b border-parchment/10 pb-8"
               >
-                <p className="font-display text-lg uppercase tracking-wider text-gold">
+                <p className="font-display text-lg uppercase tracking-wider text-bull">
                   {item.q}
                 </p>
                 <p className="mt-3 text-base leading-7 text-parchment/80">
@@ -533,7 +533,7 @@ export default function WolfpackPage() {
           <p className="mt-6 text-sm">
             <Link
               href={START_FREE_URL}
-              className="text-gold transition-colors hover:underline"
+              className="text-bull transition-colors hover:underline"
             >
               Get Roland&rsquo;s Free Watchlist
             </Link>

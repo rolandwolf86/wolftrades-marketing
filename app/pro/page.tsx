@@ -54,7 +54,7 @@ export default function ProPage() {
 
       <section className="border-t border-white/5 bg-black2">
         <div className="mx-auto w-full max-w-7xl px-6 py-20 md:py-24">
-          <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-sm uppercase tracking-[0.25em] text-bull">
             Pro Tools
           </p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -79,7 +79,7 @@ export default function ProPage() {
         <div className="mx-auto grid w-full max-w-5xl gap-6 px-6 py-20 md:grid-cols-2 md:py-24">
           {/* Monthly */}
           <article className="border border-white/10 bg-black2 p-8">
-            <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+            <p className="font-display text-sm uppercase tracking-[0.25em] text-bull">
               Monthly
             </p>
             <div className="mt-4 font-display text-5xl text-parchment">
@@ -98,11 +98,11 @@ export default function ProPage() {
           </article>
 
           {/* Annual — featured */}
-          <article className="relative border border-gold/60 bg-black2 p-8">
-            <span className="absolute -top-3 left-6 bg-gold px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
+          <article className="relative border border-bull/60 bg-black2 p-8">
+            <span className="absolute -top-3 left-6 bg-bull px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
               Best Value
             </span>
-            <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+            <p className="font-display text-sm uppercase tracking-[0.25em] text-bull">
               Annual
             </p>
             <div className="mt-4 font-display text-5xl text-parchment">

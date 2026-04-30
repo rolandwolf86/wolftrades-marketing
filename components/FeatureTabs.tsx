@@ -124,8 +124,8 @@ export function FeatureTabs() {
               onClick={() => setActive(i)}
               className={`flex shrink-0 items-center gap-2 whitespace-nowrap px-4 py-2 font-display text-xs uppercase tracking-wider transition-colors ${
                 isActive
-                  ? "bg-gold text-black"
-                  : "border border-parchment/20 bg-transparent text-gray hover:border-gold/60 hover:text-parchment"
+                  ? "bg-bull text-black"
+                  : "border border-parchment/20 bg-transparent text-gray hover:border-bull/60 hover:text-parchment"
               }`}
             >
               <span aria-hidden>{tab.icon}</span>
@@ -146,12 +146,12 @@ export function FeatureTabs() {
           </p>
           <Link
             href="/platform"
-            className="mt-6 inline-block font-display text-xs uppercase tracking-wider text-gold hover:underline"
+            className="mt-6 inline-block font-display text-xs uppercase tracking-wider text-bull hover:underline"
           >
             Learn more →
           </Link>
         </div>
-        <div className="relative aspect-video overflow-hidden border border-parchment/10 transition-shadow duration-300 hover:shadow-[0_0_40px_-12px_rgba(201,168,76,0.4)]">
+        <div className="relative aspect-video overflow-hidden border border-parchment/10 transition-shadow duration-300 hover:shadow-[0_0_40px_-12px_rgba(22,163,74,0.4)]">
           <Image
             src={current.image}
             alt={current.alt}
@@ -173,7 +173,7 @@ export function FeatureTabs() {
             aria-current={i === active ? "true" : undefined}
             className={`h-1.5 transition-all duration-300 ${
               i === active
-                ? "w-8 bg-gold"
+                ? "w-8 bg-bull"
                 : "w-4 bg-parchment/30 hover:bg-parchment/60"
             }`}
           />

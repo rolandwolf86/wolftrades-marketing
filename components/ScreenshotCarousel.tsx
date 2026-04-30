@@ -52,7 +52,7 @@ export function ScreenshotCarousel({
           <button
             type="button"
             onClick={() => go(-1)}
-            className="font-display text-xs uppercase tracking-wider text-parchment/70 hover:text-gold"
+            className="font-display text-xs uppercase tracking-wider text-parchment/70 hover:text-bull"
             aria-label="Previous screenshot"
           >
             ← Prev
@@ -63,7 +63,7 @@ export function ScreenshotCarousel({
           <button
             type="button"
             onClick={() => go(1)}
-            className="font-display text-xs uppercase tracking-wider text-parchment/70 hover:text-gold"
+            className="font-display text-xs uppercase tracking-wider text-parchment/70 hover:text-bull"
             aria-label="Next screenshot"
           >
             Next →

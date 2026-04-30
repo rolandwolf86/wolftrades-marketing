@@ -5,10 +5,10 @@ type Variant = "primary" | "secondary" | "ghost";
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-gold text-black hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100",
+    "bg-bull text-black hover:bg-[#1fc35a] active:scale-[0.98] motion-reduce:active:scale-100",
   secondary:
-    "bg-transparent text-parchment border border-parchment/40 hover:border-gold hover:text-gold active:scale-[0.98] motion-reduce:active:scale-100",
-  ghost: "bg-transparent text-parchment hover:text-gold",
+    "bg-transparent text-parchment border border-parchment/40 hover:border-bull hover:text-bull active:scale-[0.98] motion-reduce:active:scale-100",
+  ghost: "bg-transparent text-parchment hover:text-bull",
 };
 
 const baseClasses =

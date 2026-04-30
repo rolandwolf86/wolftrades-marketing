@@ -15,7 +15,7 @@ export default function EventsPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-black px-6 py-24">
         <div className="relative z-10 mx-auto max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Wolf Trades Live
           </p>
           <h1 className="mt-4 font-display text-5xl leading-none text-parchment md:text-7xl">
@@ -37,7 +37,7 @@ export default function EventsPage() {
       {/* PAST EVENTS */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-4 font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="mb-4 font-display text-xs uppercase tracking-[0.25em] text-bull">
             Past Events
           </p>
           <h2 className="mb-12 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -45,7 +45,7 @@ export default function EventsPage() {
           </h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="relative aspect-video overflow-hidden border border-gold/20">
+            <div className="relative aspect-video overflow-hidden border border-bull/20">
               <Image
                 src="/images/roland/roland-teaching-hero.jpg"
                 alt="Roland teaching at NYC Bootcamp"
@@ -54,7 +54,7 @@ export default function EventsPage() {
                 sizes="(min-width: 768px) 50vw, 100vw"
               />
             </div>
-            <div className="relative aspect-video overflow-hidden border border-gold/20">
+            <div className="relative aspect-video overflow-hidden border border-bull/20">
               <Image
                 src="/images/roland/wolfpack-group-drone.jpg"
                 alt="Wolfpack group at Tahoe"
@@ -96,7 +96,7 @@ export default function EventsPage() {
       {/* NEXT EVENT */}
       <section className="bg-black px-6 py-20 text-center">
         <div className="mx-auto max-w-3xl">
-          <p className="mb-4 font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="mb-4 font-display text-xs uppercase tracking-[0.25em] text-bull">
             Next Event
           </p>
           <h2 className="font-display text-4xl leading-none text-parchment md:text-6xl">

@@ -114,8 +114,8 @@ export function HomeHeroShowcase() {
       </div>
 
       {/* Member count badge — bottom-right */}
-      <div className="absolute bottom-6 right-6 z-[2] inline-flex items-center border border-gold/40 bg-black/80 px-3 py-1.5 backdrop-blur-sm">
-        <span className="font-display text-xs uppercase tracking-[0.15em] text-gold">
+      <div className="absolute bottom-6 right-6 z-[2] inline-flex items-center border border-bull/40 bg-black/80 px-3 py-1.5 backdrop-blur-sm">
+        <span className="font-display text-xs uppercase tracking-[0.15em] text-bull">
           2,500+ Traders Live
         </span>
       </div>
@@ -131,7 +131,7 @@ export function HomeHeroShowcase() {
             aria-current={index === current ? "true" : undefined}
             className={`h-1.5 transition-all duration-300 ease-out ${
               index === current
-                ? "w-8 bg-gold"
+                ? "w-8 bg-bull"
                 : "w-4 bg-parchment/30 hover:bg-parchment/50"
             }`}
           />

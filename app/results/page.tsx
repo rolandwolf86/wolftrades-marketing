@@ -195,7 +195,7 @@ export default function ResultsPage() {
       {/* SECTION 1 — HERO */}
       <section className="bg-black px-6 py-24">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Wolf Trades Results
           </p>
           <h1 className="mt-4 font-display text-5xl leading-none text-parchment md:text-7xl">
@@ -253,7 +253,7 @@ export default function ResultsPage() {
       {/* SECTION 3 — HALL OF FAME */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             The Wolf Hall of Fame
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -264,18 +264,18 @@ export default function ResultsPage() {
             {HALL_OF_FAME.map((card) => (
               <article
                 key={card.name}
-                className="border border-gold/40 bg-black2 p-8"
+                className="border border-bull/40 bg-black2 p-8"
               >
                 <div
                   aria-hidden
-                  className="mb-6 flex h-16 w-16 items-center justify-center border border-parchment/10 bg-black font-display text-xl text-gold"
+                  className="mb-6 flex h-16 w-16 items-center justify-center border border-parchment/10 bg-black font-display text-xl text-bull"
                 >
                   {card.initials}
                 </div>
-                <p className="mb-1 text-xs uppercase tracking-widest text-gold">
+                <p className="mb-1 text-xs uppercase tracking-widest text-bull">
                   {card.label}
                 </p>
-                <p className="mb-1 font-display text-4xl text-parchment">
+                <p className="mb-1 font-display text-4xl text-gold">
                   {card.stat}
                 </p>
                 <p className="mb-4 text-sm text-gray">{card.substat}</p>
@@ -297,7 +297,7 @@ export default function ResultsPage() {
       {/* SECTION 4 — PROOF WALL + COMMUNITY */}
       <section className="overflow-hidden border-y border-white/5 bg-black2 py-20">
         <div className="mx-auto mb-10 w-full max-w-5xl px-6">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             From the Pack
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -339,7 +339,7 @@ export default function ResultsPage() {
       {/* SECTION 5 — VIDEO TESTIMONIALS */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Watch the Stories
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -354,9 +354,9 @@ export default function ResultsPage() {
             {VIDEO_PLACEHOLDERS.map((label) => (
               <div
                 key={label}
-                className={`flex aspect-video items-center justify-center border border-gold/40 ${SHIMMER_BG} animate-shimmer motion-reduce:animate-none`}
+                className={`flex aspect-video items-center justify-center border border-bull/40 ${SHIMMER_BG} animate-shimmer motion-reduce:animate-none`}
               >
-                <p className="px-4 text-center font-display text-sm uppercase tracking-wider text-gold">
+                <p className="px-4 text-center font-display text-sm uppercase tracking-wider text-bull">
                   {label}
                 </p>
               </div>
@@ -428,7 +428,7 @@ export default function ResultsPage() {
             </p>
           </div>
 
-          <blockquote className="my-10 max-w-3xl border-l-4 border-gold py-2 pl-6 font-display text-2xl italic leading-tight text-parchment md:text-3xl">
+          <blockquote className="my-10 max-w-3xl border-l-4 border-bull py-2 pl-6 font-display text-2xl italic leading-tight text-parchment md:text-3xl">
             &ldquo;You can teach back your exact setup to someone else, and
             they don&apos;t have any questions.&rdquo;
           </blockquote>
@@ -467,7 +467,7 @@ export default function ResultsPage() {
           <p className="mt-4 text-sm">
             <Link
               href={START_FREE_URL}
-              className="text-gold transition-colors hover:underline"
+              className="text-bull transition-colors hover:underline"
             >
               Get Roland&apos;s Free Watchlist
             </Link>

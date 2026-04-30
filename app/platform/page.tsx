@@ -81,7 +81,7 @@ const LABS = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-display text-xs uppercase tracking-[0.24em] text-gold">
+    <p className="font-display text-xs uppercase tracking-[0.24em] text-bull">
       {children}
     </p>
   );
@@ -121,7 +121,7 @@ export default function PlatformPage() {
               className="scale-[1.04] object-cover object-left-top opacity-70 blur-[1.5px]"
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.15),rgba(10,10,10,0.72))]" />
-            <div className="absolute inset-0 border border-gold/20" />
+            <div className="absolute inset-0 border border-bull/20" />
             <div className="absolute bottom-0 left-0 right-0 grid grid-cols-3 border-t border-white/10 bg-black/82">
               {["Live room", "Watchlist", "Review"].map((item) => (
                 <div key={item} className="border-r border-white/10 px-4 py-4 last:border-r-0">
@@ -141,7 +141,7 @@ export default function PlatformPage() {
           <div className="mt-8 grid gap-px bg-white/10 md:grid-cols-5">
             {WORKFLOW.map((item, index) => (
               <article key={item.step} className="bg-black p-6">
-                <p className="font-display text-sm uppercase tracking-[0.18em] text-gold">
+                <p className="font-display text-sm uppercase tracking-[0.18em] text-bull">
                   0{index + 1}
                 </p>
                 <h2 className="mt-4 font-display text-3xl text-parchment">

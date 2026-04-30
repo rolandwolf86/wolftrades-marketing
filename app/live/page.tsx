@@ -11,7 +11,7 @@ export default function LivePage() {
   return (
     <section className="bg-black">
       <div className="mx-auto w-full max-w-3xl px-6 py-24 md:py-32">
-        <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">
+        <p className="font-display text-sm uppercase tracking-[0.25em] text-bull">
           In-Person Events
         </p>
         <h1 className="mt-4 font-display text-5xl leading-none text-parchment md:text-7xl">
