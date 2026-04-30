@@ -38,8 +38,8 @@ const SCHEDULE = [
   },
   {
     time: "Ongoing",
-    title: "Community + Wolf AI",
-    body: "2,500+ traders. Questions answered. Wins shared. Wolf AI for research, setup analysis, and trade review. The process continues all day.",
+    title: "Community + Review",
+    body: "2,500+ traders. Questions answered. Wins shared. Journal notes, replay review, and playbook work keep the process going all day.",
   },
 ] as const;
 
@@ -52,25 +52,25 @@ const FEATURE_BLOCKS = [
     body: "Watch Roland trade every market day. Real entries. Real exits. Real decisions. Chat with 2,500+ traders.",
   },
   {
-    image: "/screenshots/scanner.png",
-    alt: "Wolf Scanner",
+    image: "/screenshots/community.png",
+    alt: "Wolf Trades watchlist and prep workflow",
     label: "Tools",
-    title: "Wolf Scanner",
-    body: "Real-time momentum scanner. See what's moving, what's setting up, and what Roland is watching.",
+    title: "Daily Watchlist",
+    body: "Know the names Roland is watching, the levels that matter, and the context behind the plan.",
   },
   {
-    image: "/screenshots/wolf-ai.png",
-    alt: "Wolf AI Coach",
-    label: "AI",
-    title: "Wolf AI Coach",
-    body: "Your personal AI trading assistant. Research setups, review trades, build your playbook.",
+    image: "/screenshots/chat.png",
+    alt: "Wolf Trades replay workflow",
+    label: "Replays",
+    title: "Full Replay Library",
+    body: "Every session recorded. Every trade breakdown archived. Study the room at your pace.",
   },
   {
-    image: "/screenshots/edge-lab.png",
-    alt: "Edge Lab analytics",
-    label: "Analytics",
-    title: "Edge Lab",
-    body: "Track your performance. Win rate by setup. P&L by time of day. Know exactly what's working.",
+    image: "/screenshots/community.png",
+    alt: "Wolf Trades playbook workflow",
+    label: "Playbook",
+    title: "Playbook Builder",
+    body: "Document setups, screenshots, rules, and review notes so your process becomes repeatable.",
   },
   {
     image: "/screenshots/community.png",
@@ -175,12 +175,12 @@ export default function WolfpackPage() {
         </p>
         <p className="mx-auto mt-4 max-w-3xl text-xl leading-8 text-black/80">
           Live trading sessions. Daily watchlist. Trader Therapy. Full replay
-          library. Roland&apos;s playbook. Scanner. Journal. Wolf AI.
+          library. Roland&apos;s playbook. Journal. Playbook Builder.
           Community of 2,500+ traders.
         </p>
         <p className="mx-auto mt-6 max-w-2xl text-sm uppercase tracking-wider text-black/60">
-          Compare: trading rooms $299/mo · scanners $200/mo · journals
-          $50/mo · courses $3,000+ · discord $97/mo
+          Compare: trading rooms $299/mo · journals $50/mo · courses
+          $3,000+ · coaching programs $10,000+/yr
         </p>
         <p className="mt-6 font-display text-2xl font-black uppercase text-black md:text-3xl">
           Wolf Trades: $127. Everything. Done.
@@ -220,8 +220,8 @@ export default function WolfpackPage() {
       {/* SECTION 4 — ROLAND PHOTO */}
       <section className="relative min-h-[500px] overflow-hidden bg-black md:min-h-[600px]">
         <Image
-          src="/images/roland/roland-room-scanner.jpg"
-          alt="Roland teaching with live scanner"
+          src="/images/roland/roland-teaching-wide.jpg"
+          alt="Roland teaching during a live session"
           fill
           sizes="100vw"
           className="object-cover object-top"
@@ -345,6 +345,11 @@ export default function WolfpackPage() {
             ))}
           </div>
 
+          <p className="mt-6 max-w-3xl text-xs leading-5 text-parchment/52">
+            Results are not typical and are shown for educational context only.
+            Trading involves risk and no outcome is guaranteed.
+          </p>
+
           <div className="mt-10">
             <Link
               href="/results"
@@ -413,8 +418,8 @@ export default function WolfpackPage() {
       >
         <div className="mx-auto w-full max-w-5xl">
           <p className="mx-auto max-w-2xl text-center font-display text-2xl uppercase leading-tight text-parchment md:text-3xl">
-            &ldquo;No contracts. Cancel anytime. Most traders pay for this in
-            one good trade.&rdquo;
+            &ldquo;No contracts. Cancel anytime. Use the room when the process
+            fits your trading.&rdquo;
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -431,7 +436,7 @@ export default function WolfpackPage() {
               </div>
               <p className="mt-4 text-base leading-7 text-parchment/76">
                 The complete trading environment. Daily live sessions,
-                watchlist, Trader Therapy, replays, playbook, tools, and
+                watchlist, Trader Therapy, replays, playbook, journal, and
                 community. Cancel anytime.
               </p>
               <div className="mt-8">

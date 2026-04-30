@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 interface Stat {
   value: string;
@@ -99,7 +99,7 @@ function StatCell({
   reveal: boolean;
   delayMs: number;
 }) {
-  const parsed = parseStat(stat.value);
+  const parsed = useMemo(() => parseStat(stat.value), [stat.value]);
   const [display, setDisplay] = useState<string>(
     parsed.target === 0 ? format(parsed, 0) : format(parsed, 0),
   );

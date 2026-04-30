@@ -91,7 +91,7 @@ export default function StartPage() {
           <div className={styles.lockedNote}>
             <p>
               Wolfpack unlocks the live room, Trader Therapy, full replays,
-              Scanner, Wolf AI, and everything else.
+              deeper playbook access, and everything else in the core room.
             </p>
             <Link href="/wolfpack">See everything inside Wolfpack →</Link>
           </div>

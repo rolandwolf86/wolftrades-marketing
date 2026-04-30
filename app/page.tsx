@@ -84,10 +84,10 @@ const TIMELINE_PHOTOS = [
     caption: "Wolfpack Tahoe Retreat",
   },
   {
-    src: "/images/roland/roland-room-scanner.jpg",
-    alt: "Roland teaching with live scanner",
+    src: "/images/roland/roland-teaching-wide.jpg",
+    alt: "Roland teaching during a live session",
     year: "2024",
-    caption: "Live session — scanner on",
+    caption: "Live session",
   },
   {
     src: "/images/roland/roland-laptop.jpg",
@@ -123,7 +123,6 @@ const WOLFPACK_FEATURES = [
   "Trader Therapy",
   "Roland’s playbook",
   "Journal + analytics",
-  "Scanner",
   "Community",
 ];
 
@@ -254,6 +253,11 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
+          <p className="mt-6 max-w-3xl text-xs leading-5 text-parchment/52">
+            Results are not typical and are shown for educational context only.
+            Trading involves risk and no outcome is guaranteed.
+          </p>
 
           <div className="mt-10">
             <Link

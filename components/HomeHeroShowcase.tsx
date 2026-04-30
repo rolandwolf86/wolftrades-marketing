@@ -16,14 +16,14 @@ const SLIDES: ReadonlyArray<Slide> = [
     label: "Chat Rooms",
   },
   {
-    src: "/screenshots/wolf-ai.png",
-    alt: "Wolf AI Coach — radar visualization, five modes, market pulse panel",
-    label: "Wolf AI",
+    src: "/screenshots/trading-terminal.png",
+    alt: "Wolf Trades platform workspace",
+    label: "Platform",
   },
   {
-    src: "/screenshots/scanner.png",
-    alt: "Wolf Scanner — real-time table of momentum tickers",
-    label: "Wolf Scanner",
+    src: "/screenshots/chat.png",
+    alt: "Wolf Trades live room workspace",
+    label: "Live Room",
   },
   {
     src: "/screenshots/community.png",
@@ -31,9 +31,9 @@ const SLIDES: ReadonlyArray<Slide> = [
     label: "Community",
   },
   {
-    src: "/screenshots/edge-lab.png",
-    alt: "Edge Lab — equity curve, win rate, recent trades and P&L breakdown",
-    label: "Edge Lab",
+    src: "/screenshots/community.png",
+    alt: "Wolf Trades review workflow",
+    label: "Review",
   },
 ];
 
