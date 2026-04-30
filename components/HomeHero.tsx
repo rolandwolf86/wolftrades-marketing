@@ -80,8 +80,7 @@ export function HomeHero() {
             className="mt-4 max-w-[420px] text-gray"
             style={{ fontSize: "11px", letterSpacing: "0.1em" }}
           >
-            Tim Grittani · Jack Kellogg · Brian @wareagletrader · 2,500+ traders
-            inside
+            Jack Kellogg $20M+ · Brian $10M+ · 10+ seven-figure students
           </p>
         </div>
 

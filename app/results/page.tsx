@@ -44,9 +44,9 @@ const HALL_OF_FAME: ReadonlyArray<HallOfFameCard> = [
   },
   {
     initials: "BW",
-    label: "$10M Year",
-    stat: "$10M",
-    substat: "in 2024",
+    label: "$10M+ Career",
+    stat: "$10M+",
+    substat: "career profits",
     name: "Brian @wareagletrader",
     story:
       "Brian's results reflect discipline and structure at scale. He built a process he could trust, then executed consistently when the opportunity was there.",
@@ -116,7 +116,7 @@ const HALL_OF_FAME: ReadonlyArray<HallOfFameCard> = [
 
 const VIDEO_PLACEHOLDERS: ReadonlyArray<string> = [
   "Jack Kellogg — Coming Soon",
-  "Brian @wareagletrader — Coming Soon",
+  "Brian @wareagletrader — $10M+ Career Profits",
   "Student Testimonial — Coming Soon",
 ];
 
