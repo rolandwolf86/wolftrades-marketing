@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   INSTAGRAM_URL,
-  WOLFPACK_CHECKOUT_URL,
   TIKTOK_URL,
+  WOLFPACK_MONTHLY_URL,
   YOUTUBE_URL,
 } from "@/lib/links";
 import styles from "./page.module.css";
@@ -12,34 +12,46 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Links",
   description:
-    "Join Wolfpack, start free, review results, or apply for APEX with Wolf Trades.",
+    "Wolf Trades. Start with the free watchlist or join 2,500+ traders inside Wolfpack.",
 };
 
-type ContentLink = {
+type ActionLink = {
   label: string;
+  description?: string;
   href: string;
   external?: boolean;
+  variant?: "default" | "primary" | "apex" | "social";
 };
 
-const contentLinks: ReadonlyArray<ContentLink> = [
+const actionLinks: ActionLink[] = [
   {
-    label: "📺 Watch Roland Trade Live",
+    label: "📈 Student Results",
+    href: "/results",
+    variant: "default",
+  },
+  {
+    label: "📺 Watch Roland Trade",
     href: YOUTUBE_URL,
     external: true,
+    variant: "social",
   },
   {
-    label: "📈 See Student Results",
-    href: "/results",
-  },
-  {
-    label: "🐺 Follow on Instagram",
+    label: "🐺 Instagram",
     href: INSTAGRAM_URL,
     external: true,
+    variant: "social",
   },
   {
-    label: "📱 Follow on TikTok",
+    label: "📱 TikTok",
     href: TIKTOK_URL,
     external: true,
+    variant: "social",
+  },
+  {
+    label: "🎙️ Market Masters Podcast",
+    href: YOUTUBE_URL,
+    external: true,
+    variant: "default",
   },
 ];
 
@@ -47,115 +59,168 @@ export default function GoPage() {
   return (
     <main className={styles.page}>
       <div className={styles.shell}>
+        {/* SECTION 1 — IDENTITY HEADER */}
         <header className={styles.identity}>
-          <div className={styles.logoFrame}>
-            <Image
-              src="/wolf-trades-logo-horizontal-dark.png"
-              alt="Wolf Trades"
-              width={180}
-              height={102}
-              priority
-              className="h-10 w-auto object-contain object-left"
-            />
-          </div>
+          <Image
+            src="/wolf-trades-logo-horizontal-dark.png"
+            alt="Wolf Trades"
+            width={916}
+            height={518}
+            priority
+            className={styles.logo}
+          />
           <p className={styles.identityLine}>
-            Roland Wolf · Verified 7-Figure Nasdaq Trader · Teaching Since 2018
+            Verified 7-figure Nasdaq trader · Trading live since 2017 ·
+            2,500+ traders
           </p>
         </header>
 
-        <section className={styles.offer} aria-labelledby="wolfpack-offer">
-          <p className={styles.eyebrow}>
-            The Wolfpack — Where Serious Traders Work
-          </p>
-          <h1 id="wolfpack-offer" className={styles.headline}>
-            Join 2,500+ traders getting Roland&apos;s daily watchlist, live
-            sessions, and the full trading operating system.
-          </h1>
-          <div className={styles.ctaStack}>
-            <a
-              href={WOLFPACK_CHECKOUT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.primaryCta}
-            >
-              Join the Wolfpack →
-            </a>
-            <p className={styles.priceLine}>
-              $127/mo · or start free, no card required
+        {/* SECTION 2 — VSL PLACEHOLDER */}
+        <div
+          className={styles.vslPlaceholder}
+          role="img"
+          aria-label="Watch this first"
+        >
+          <div className={styles.vslInner}>
+            <span className={styles.vslIcon} aria-hidden>
+              ▶
+            </span>
+            <p className={styles.vslLabel}>
+              Watch this first — how Wolf Trades works
             </p>
-            <a href="/start" className={styles.secondaryCta}>
-              Start Free — No Card Required →
-            </a>
           </div>
+        </div>
+
+        {/* SECTION 3 — FREE TOOLS (PRIMARY) */}
+        <p className={styles.sectionLabel}>
+          Start here — free, no card required
+        </p>
+        <section className={styles.freeTools} aria-label="Free tools">
+          <Link
+            href="/start?intent=watchlist"
+            className={`${styles.toolCard} ${styles.primaryTool}`}
+          >
+            <span>
+              {"Get the Free Watchlist "}
+              <span aria-hidden>→</span>
+            </span>
+            <small>
+              Roland&apos;s daily market prep — names, levels, catalysts.
+              Every morning before the bell.
+            </small>
+          </Link>
+          <Link href="/start?intent=risk" className={styles.toolCard}>
+            <span>Free Risk Calculator</span>
+            <small>
+              Position sizing and risk/reward built for how momentum traders
+              actually trade.
+            </small>
+          </Link>
+          <Link href="/start?intent=journal" className={styles.toolCard}>
+            <span>Free Trading Journal</span>
+            <small>
+              Track your trades, measure your edge. No card, no commitment.
+            </small>
+          </Link>
         </section>
 
+        {/* SECTION 4 — PAID PATH */}
+        <section className={styles.paidPath} aria-label="Wolfpack">
+          <p className={styles.routeLabel}>Wolfpack</p>
+          <h2>Join 2,500+ traders</h2>
+          <p>
+            Live trading every day. Daily watchlist. Trader Therapy. Full
+            replay library. Roland&apos;s playbook. Scanner. Wolf AI.{" "}
+            {"$127/month"}.
+          </p>
+          <Link href={WOLFPACK_MONTHLY_URL} className={styles.pathCta}>
+            Join Wolfpack →
+          </Link>
+        </section>
+
+        {/* SECTION 5 — PROOF STRIP */}
         <section className={styles.proofStrip} aria-label="Wolf Trades proof">
-          <div>
-            <strong>2,500+</strong>
-            <span>Traders</span>
+          <div className={styles.proofItem}>
+            <p className={styles.proofStat}>{"$20M+"}</p>
+            <p className={styles.proofLabel}>Jack Kellogg</p>
           </div>
-          <div>
-            <strong>2</strong>
-            <span>Eight-Figure Students</span>
+          <div className={styles.proofDivider} aria-hidden />
+          <div className={styles.proofItem}>
+            <p className={styles.proofStat}>{"$10M+"}</p>
+            <p className={styles.proofLabel}>Brian — career profits</p>
           </div>
-          <div>
-            <strong>Since</strong>
-            <span>2018</span>
+          <div className={styles.proofDivider} aria-hidden />
+          <div className={styles.proofItem}>
+            <p className={styles.proofStat}>10+</p>
+            <p className={styles.proofLabel}>Seven-figure students</p>
           </div>
         </section>
 
-        <section className={styles.grittani} aria-label="Tim Grittani quote">
-          <p className={styles.eyebrow}>
-            Endorsed by Tim Grittani · $15M+ Verified Trader
-          </p>
-          <blockquote className={styles.quote}>
-            “If I were looking to jump into a new service and see what I could
-            pick up and maybe get a couple new ideas, this is probably where I
-            would start.”
-          </blockquote>
-          <p className={styles.attribution}>
-            — Tim Grittani · Trading Tickers 2 · Unsolicited · Unpaid
-          </p>
-        </section>
-
-        <section className={styles.apex} aria-labelledby="apex-offer">
+        {/* SECTION 6 — APEX CARD */}
+        <section className={styles.apexCard} aria-label="APEX application">
           <span className={styles.apexBadge}>
             Cohort 1 · Starts May 1 · 2 Spots Left
           </span>
-          <h2 id="apex-offer" className={styles.apexTitle}>
-            APEX 1-on-1 Mentorship
-          </h2>
-          <p className={styles.apexSubline}>
-            4 months. Direct access to Roland. Maximum 10 traders per cohort.
-          </p>
-          <p className={styles.apexNote}>Application only. No public price.</p>
+          <p className={styles.apexLabel}>APEX 1-on-1</p>
+          <h2>Direct mentorship with Roland</h2>
+          <p>Application only. No public price.</p>
           <Link href="/apex" className={styles.apexCta}>
             Apply for APEX →
           </Link>
         </section>
 
-        <nav className={styles.contentLinks} aria-label="Wolf Trades links">
-          {contentLinks.map((item) =>
+        {/* SECTION 7 — GRITTANI */}
+        <section
+          className={styles.grittani}
+          aria-label="Tim Grittani endorsement"
+        >
+          <p className={styles.grittaniLabel}>
+            Endorsed · Unsolicited · Unpaid
+          </p>
+          <blockquote className={styles.grittaniQuote}>
+            &ldquo;He has my respect.&rdquo;
+          </blockquote>
+          <p className={styles.grittaniAttribution}>
+            — Tim Grittani · {"$15M+"} verified trader · Trading Tickers 2
+          </p>
+        </section>
+
+        {/* SECTION 8 — ACTION LINKS */}
+        <nav
+          className={styles.actionGrid}
+          aria-label="More Wolf Trades links"
+        >
+          {actionLinks.map((item) =>
             item.external ? (
               <a
                 key={item.label}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.pill}
+                className={styles.actionLink}
               >
                 {item.label}
               </a>
             ) : (
-              <Link key={item.label} href={item.href} className={styles.pill}>
+              <Link
+                key={item.label}
+                href={item.href}
+                className={styles.actionLink}
+              >
                 {item.label}
               </Link>
             ),
           )}
         </nav>
 
+        {/* SECTION 9 — FINAL LINE */}
+        <p className={styles.finalLine}>
+          Start with the free watchlist. Build the system from there.
+        </p>
+
         <footer className={styles.footer}>
-          © 2026 Wolf Trades · No financial advice implied · Results not typical
+          © 2026 Wolf Trades · No financial advice implied · Results not
+          typical
         </footer>
       </div>
     </main>

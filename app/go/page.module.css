@@ -1,8 +1,8 @@
 .page {
   min-height: 100dvh;
-  background: #0a0a0a;
-  color: var(--parchment);
   overflow-x: hidden;
+  background: #0a0a0a;
+  color: #f7f4ee;
 }
 
 .shell {
@@ -10,292 +10,475 @@
   max-width: 480px;
   min-height: 100dvh;
   margin: 0 auto;
-  padding: 24px;
+  padding: 24px 24px 64px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 28px;
 }
 
+/* ── 1. Identity ───────────────────────────────────────── */
+
 .identity {
-  padding: 6px 0 2px;
   text-align: center;
 }
 
-.logoFrame {
-  display: flex;
-  justify-content: center;
+.logo {
+  display: block;
   width: auto;
-  max-height: 36px;
+  max-height: 32px;
   margin: 0 auto 14px;
-}
-
-.logoFrame img {
-  height: 100%;
-  width: auto;
+  object-fit: contain;
 }
 
 .identityLine,
-.eyebrow,
-.priceLine,
-.primaryCta,
-.secondaryCta,
-.proofStrip,
-.attribution,
+.sectionLabel,
+.routeLabel,
+.apexLabel,
 .apexBadge,
-.apexTitle,
-.apexNote,
+.grittaniLabel,
+.proofStat,
+.proofLabel,
+.primaryTool,
+.toolCard,
+.pathCta,
 .apexCta,
-.pill {
+.actionLink {
   font-family: var(--font-barlow-condensed), system-ui, sans-serif;
   text-transform: uppercase;
 }
 
 .identityLine {
-  margin: 0;
-  color: var(--gold);
-  font-size: 0.76rem;
-  font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: 0.07em;
-}
-
-.offer,
-.grittani,
-.apex {
-  padding: 18px;
-}
-
-.offer {
-  background: #111111;
-  border: 1px solid rgba(201, 168, 76, 0.3);
-}
-
-.eyebrow {
-  margin: 0 0 10px;
-  color: var(--gold);
-  font-size: 0.78rem;
+  margin: 0 auto;
+  max-width: 360px;
+  color: rgba(247, 244, 238, 0.78);
+  font-size: 0.74rem;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.35;
   letter-spacing: 0.1em;
 }
 
-.headline {
-  margin: 0;
-  color: var(--parchment);
-  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: 0.98;
-  letter-spacing: 0;
-  text-transform: uppercase;
+/* ── 2. VSL placeholder ────────────────────────────────── */
+
+.vslPlaceholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111111;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.priceLine {
-  margin: 12px 0 0;
-  color: var(--gold);
-  font-size: 0.78rem;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0.08em;
+.vslPlaceholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(22, 163, 74, 0.14), transparent 44%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(247, 244, 238, 0.035) 0,
+      rgba(247, 244, 238, 0.035) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+}
+
+.vslInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
   text-align: center;
+  padding: 16px;
 }
 
-.ctaStack {
-  margin-top: 16px;
-  display: grid;
+.vslIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid #16a34a;
+  color: #16a34a;
+  font-size: 1.4rem;
+  padding-left: 4px;
+  line-height: 1;
+}
+
+.vslLabel {
+  margin: 0;
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  text-transform: uppercase;
+  color: #f7f4ee;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  max-width: 280px;
+}
+
+/* ── 3. Free tools section ─────────────────────────────── */
+
+.sectionLabel {
+  margin: -8px 0 -4px;
+  text-align: center;
+  color: #16a34a;
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.16em;
+}
+
+.freeTools {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
-.primaryCta,
-.secondaryCta,
-.apexCta,
-.pill {
+.toolCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 96px;
+  padding: 18px 22px;
+  background: #111111;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  color: #f7f4ee;
+  text-decoration: none;
+}
+
+.toolCard span {
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+}
+
+.toolCard small {
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-transform: none;
+  color: rgba(247, 244, 238, 0.62);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Primary watchlist card — bull green takeover */
+.primaryTool {
+  background: #16a34a;
+  border-color: #16a34a;
+  border-left: 3px solid #050505;
+  color: #050505;
+  min-height: 110px;
+  padding: 20px 24px;
+}
+
+.primaryTool span {
+  color: #050505;
+  font-size: 1.08rem;
+  letter-spacing: 0.05em;
+}
+
+.primaryTool small {
+  color: rgba(5, 5, 5, 0.78);
+}
+
+.primaryTool:hover,
+.primaryTool:focus-visible {
+  background: #1fc35a;
+  border-color: #1fc35a;
+  outline: none;
+}
+
+.toolCard:hover,
+.toolCard:focus-visible {
+  border-color: rgba(22, 163, 74, 0.6);
+  outline: none;
+}
+
+/* ── 4. Paid path (Wolfpack) ───────────────────────────── */
+
+.paidPath {
+  background: #111111;
+  border: 1px solid rgba(247, 244, 238, 0.1);
+  border-left: 3px solid #16a34a;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.routeLabel {
+  margin: 0 0 8px;
+  color: #16a34a;
+  font-size: 0.74rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.13em;
+}
+
+.paidPath h2 {
+  margin: 0;
+  color: #f7f4ee;
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-size: 1.85rem;
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.paidPath p {
+  margin: 10px 0 0;
+  color: rgba(247, 244, 238, 0.7);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.pathCta {
+  width: 100%;
+  margin-top: 16px;
   min-height: 52px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 14px;
-  text-align: center;
   text-decoration: none;
-  font-size: 0.98rem;
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: 0.04em;
-  transition:
-    border-color 160ms ease,
-    background-color 160ms ease,
-    color 160ms ease;
-}
-
-.primaryCta {
-  background: var(--gold);
-  border: 1px solid var(--gold);
+  background: #16a34a;
+  border: 1px solid #16a34a;
   color: #050505;
+  font-size: 0.96rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
 }
 
-.secondaryCta {
-  background: transparent;
-  border: 1px solid rgba(201, 168, 76, 0.75);
-  color: var(--gold);
-}
-
-.primaryCta:hover,
-.primaryCta:focus-visible {
-  background: #e1c365;
-  border-color: #e1c365;
+.pathCta:hover,
+.pathCta:focus-visible {
+  background: #1fc35a;
+  border-color: #1fc35a;
   outline: none;
 }
 
-.secondaryCta:hover,
-.secondaryCta:focus-visible,
-.apexCta:hover,
-.apexCta:focus-visible,
-.pill:hover,
-.pill:focus-visible {
-  background: rgba(247, 244, 238, 0.06);
-  outline: none;
-}
+/* ── 5. Proof strip ────────────────────────────────────── */
 
 .proofStrip {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  padding: 14px 0;
-  background: #0a0a0a;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(247, 244, 238, 0.07);
+  border-bottom: 1px solid rgba(247, 244, 238, 0.07);
 }
 
-.proofStrip div {
-  min-width: 0;
+.proofItem {
+  flex: 0 0 auto;
   text-align: center;
+  min-width: 0;
 }
 
-.proofStrip strong,
-.proofStrip span {
-  display: block;
-}
-
-.proofStrip strong {
-  color: var(--gold);
+.proofStat {
+  margin: 0;
+  color: #c9a84c;
   font-size: 1.15rem;
   font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: 0.02em;
+  line-height: 1;
+  letter-spacing: 0.04em;
 }
 
-.proofStrip span {
-  margin-top: 5px;
-  color: rgba(247, 244, 238, 0.56);
-  font-size: 0.68rem;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: 0.06em;
+.proofLabel {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 0.66rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
 }
 
-.grittani {
+.proofDivider {
+  width: 1px;
+  height: 32px;
+  background: rgba(247, 244, 238, 0.12);
+  flex: 0 0 auto;
+}
+
+/* ── 6. APEX card ──────────────────────────────────────── */
+
+.apexCard {
   background: #111111;
-}
-
-.quote {
-  margin: 0;
-  color: var(--parchment);
-  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
-  font-size: 1.38rem;
-  font-style: italic;
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: 0;
-}
-
-.attribution {
-  margin: 12px 0 0;
-  color: rgba(247, 244, 238, 0.58);
-  font-size: 0.76rem;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: 0.06em;
-}
-
-.apex {
-  background: #0a0a0a;
-  border: 1px solid rgba(22, 163, 74, 0.4);
+  border: 1px solid #c9a84c;
+  padding: 20px 22px;
 }
 
 .apexBadge {
-  display: inline-flex;
-  align-items: center;
-  min-height: 26px;
-  padding: 5px 8px;
-  background: var(--bear);
-  color: var(--parchment);
-  font-size: 0.72rem;
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 10px;
+  background: #c1121f;
+  color: #f7f4ee;
+  font-size: 0.66rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+}
+
+.apexLabel {
+  margin: 0 0 8px;
+  color: #c9a84c;
+  font-size: 0.74rem;
   font-weight: 900;
   line-height: 1;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.13em;
 }
 
-.apexTitle {
-  margin: 12px 0 0;
-  color: var(--parchment);
-  font-size: 1.72rem;
+.apexCard h2 {
+  margin: 0;
+  color: #f7f4ee;
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-size: 1.7rem;
   font-weight: 900;
-  line-height: 0.96;
-  letter-spacing: 0;
+  line-height: 0.95;
+  text-transform: uppercase;
 }
 
-.apexSubline {
-  margin: 10px 0 0;
-  color: rgba(247, 244, 238, 0.72);
-  font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 0.96rem;
-  line-height: 1.35;
-}
-
-.apexNote {
-  margin: 10px 0 0;
-  color: rgba(201, 168, 76, 0.9);
-  font-size: 0.84rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
+.apexCard p {
+  margin: 9px 0 0;
+  color: rgba(247, 244, 238, 0.7);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.4;
 }
 
 .apexCta {
   width: 100%;
-  margin-top: 14px;
-  border: 1px solid rgba(22, 163, 74, 0.78);
-  color: var(--parchment);
+  margin-top: 16px;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.85);
+  color: #f7f4ee;
+  font-size: 0.96rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-decoration: none;
 }
 
-.contentLinks {
+.apexCta:hover,
+.apexCta:focus-visible {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: #c9a84c;
+  outline: none;
+}
+
+/* ── 7. Grittani ───────────────────────────────────────── */
+
+.grittani {
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.grittaniLabel {
+  margin: 0 0 10px;
+  color: #c9a84c;
+  font-size: 0.7rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.14em;
+}
+
+.grittaniQuote {
+  margin: 0;
+  color: #f7f4ee;
+  font-family: var(--font-barlow-condensed), system-ui, sans-serif;
+  font-size: 1.55rem;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.grittaniAttribution {
+  margin: 10px 0 0;
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  color: rgba(247, 244, 238, 0.5);
+}
+
+/* ── 8. Action links ───────────────────────────────────── */
+
+.actionGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
 
-.pill {
-  width: 100%;
-  border: 1px solid rgba(247, 244, 238, 0.28);
+.actionLink {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 12px;
   background: #111111;
-  color: var(--parchment);
-  font-size: 0.9rem;
-  letter-spacing: 0.03em;
+  border: 1px solid rgba(247, 244, 238, 0.12);
+  color: #f7f4ee;
+  font-size: 0.84rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-align: center;
 }
+
+.actionLink:hover,
+.actionLink:focus-visible {
+  border-color: rgba(247, 244, 238, 0.3);
+  background: #181818;
+  outline: none;
+}
+
+/* ── 9. Final line ─────────────────────────────────────── */
+
+.finalLine {
+  margin: 8px auto 0;
+  max-width: 320px;
+  text-align: center;
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-style: italic;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: rgba(247, 244, 238, 0.5);
+}
+
+/* ── Footer ────────────────────────────────────────────── */
 
 .footer {
-  padding: 8px 4px 0;
-  color: rgba(247, 244, 238, 0.4);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  margin-top: auto;
+  padding: 12px 4px 0;
+  color: rgba(247, 244, 238, 0.38);
+  font-family: var(--font-barlow), system-ui, sans-serif;
   font-size: 11px;
-  line-height: 1.35;
+  line-height: 1.4;
   text-align: center;
 }
 
 @media (min-width: 481px) {
   .shell {
-    padding-top: 34px;
-    padding-bottom: 34px;
+    padding-top: 36px;
+    padding-bottom: 72px;
   }
 }
 
@@ -305,20 +488,34 @@
     padding-right: 18px;
   }
 
-  .headline {
-    font-size: 1.8rem;
+  .paidPath h2,
+  .apexCard h2 {
+    font-size: 1.55rem;
   }
 
-  .contentLinks {
-    grid-template-columns: 1fr;
+  .grittaniQuote {
+    font-size: 1.35rem;
+  }
+
+  .proofStrip {
+    gap: 10px;
+  }
+
+  .proofStat {
+    font-size: 1rem;
+  }
+
+  .proofLabel {
+    font-size: 0.6rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .primaryCta,
-  .secondaryCta,
+  .primaryTool,
+  .toolCard,
+  .pathCta,
   .apexCta,
-  .pill {
+  .actionLink {
     transition: none;
   }
 }
