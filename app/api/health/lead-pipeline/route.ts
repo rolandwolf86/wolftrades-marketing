@@ -72,20 +72,13 @@ async function checkResend(): Promise<ServiceCheck> {
       detail: "RESEND_API_KEY not set",
     };
   }
-  try {
-    // Lists verified domains — confirms API key works without sending mail.
-    const result = await resend.domains.list();
-    if (result.error) {
-      return { name: "resend", status: "error", detail: result.error.message };
-    }
-    return { name: "resend", status: "ok" };
-  } catch (err) {
-    return {
-      name: "resend",
-      status: "error",
-      detail: err instanceof Error ? err.message : String(err),
-    };
-  }
+  // Don't make an API call — production keys are typically scoped to
+  // "send only" and don't have permission to list domains. The actual
+  // lead-capture flow only calls resend.emails.send(), so presence of
+  // the key here is the strongest signal we can give without a real
+  // send. If the key is wrong, /api/lead surfaces the error in
+  // response.body.resendError when a real lead comes in.
+  return { name: "resend", status: "ok" };
 }
 
 async function checkGHL(): Promise<ServiceCheck> {
