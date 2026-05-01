@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { WOLFPACK_MONTHLY_URL } from "@/lib/links";
@@ -485,9 +486,24 @@ export default function ApexClient() {
         </div>
       </section>
 
-      {/* SECTION 11 — FINAL CLOSE */}
-      <section className="border-t border-white/5 bg-black px-6 py-20 text-center">
-        <div className="mx-auto w-full max-w-5xl">
+      {/* SECTION 11 — FINAL CLOSE (mountain peak as summit imagery) */}
+      <section className="relative overflow-hidden border-t border-white/5 bg-black py-20 text-center">
+        <Image
+          src="/images/roland/apex graphic hero.png"
+          alt="APEX — moonlit mountain peak"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.95) 100%)",
+          }}
+        />
+        <div className="relative mx-auto w-full max-w-5xl px-6">
           <h2 className="font-display text-4xl leading-tight text-parchment md:text-5xl">
             If you want me personally in your corner, apply.
           </h2>
