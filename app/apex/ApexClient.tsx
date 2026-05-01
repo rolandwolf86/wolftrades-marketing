@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { WOLFPACK_MONTHLY_URL } from "@/lib/links";
@@ -136,33 +137,51 @@ export default function ApexClient() {
 
   return (
     <>
-      {/* SECTION 1 — HERO */}
-      <section className="bg-black px-6 py-20 md:py-28">
-        <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
-            APEX 1-on-1 · Private Mentorship with Roland Wolf
-          </p>
-          <span className="mt-4 inline-flex bg-bear px-3 py-1 font-display text-xs uppercase tracking-wider text-parchment">
-            Cohort 1 starts May 1 · 2 spots left
-          </span>
-          <h1 className="mt-6 font-display text-5xl leading-none text-parchment md:text-7xl">
-            If you want me personally in your corner, this is APEX.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment/80">
-            A 4-month private mentorship for serious traders who want direct
-            access to Roland, real-time execution context, personal trade
-            review, and a structured sprint to build a trading process they
-            can actually trust.
-          </p>
-          <a
-            href="#apex-form"
-            className="mt-10 inline-flex items-center bg-gold px-8 py-4 font-display text-sm uppercase tracking-wider text-black transition-colors duration-150 hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100"
-          >
-            Apply for APEX 1-on-1
-          </a>
-          <p className="mt-3 text-sm text-gray">
-            Application only. Limited seats. No public checkout.
-          </p>
+      {/* SECTION 1 — HERO (full-bleed mountain peak graphic) */}
+      <section className="relative overflow-hidden bg-black min-h-[70vh] md:min-h-[80vh]">
+        <Image
+          src="/images/roland/apex graphic hero.png"
+          alt="APEX — moonlit mountain peak above the clouds"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.5) 40%, rgba(10,10,10,0.85) 100%)",
+          }}
+        />
+        <div className="relative flex min-h-[70vh] flex-col justify-center px-6 py-20 md:min-h-[80vh] md:py-28">
+          <div className="mx-auto w-full max-w-5xl">
+            <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+              APEX 1-on-1 · Private Mentorship with Roland Wolf
+            </p>
+            <span className="mt-4 inline-flex bg-bear px-3 py-1 font-display text-xs uppercase tracking-wider text-parchment">
+              Cohort 1 starts May 1 · 2 spots left
+            </span>
+            <h1 className="mt-6 font-display text-5xl leading-none text-parchment md:text-7xl">
+              If you want me personally in your corner, this is APEX.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment/85">
+              A 4-month private mentorship for serious traders who want direct
+              access to Roland, real-time execution context, personal trade
+              review, and a structured sprint to build a trading process they
+              can actually trust.
+            </p>
+            <a
+              href="#apex-form"
+              className="mt-10 inline-flex items-center bg-gold px-8 py-4 font-display text-sm uppercase tracking-wider text-black transition-colors duration-150 hover:bg-[#d4a832] active:scale-[0.98] motion-reduce:active:scale-100"
+            >
+              Apply for APEX 1-on-1
+            </a>
+            <p className="mt-3 text-sm text-parchment/60">
+              Application only. Limited seats. No public checkout.
+            </p>
+          </div>
         </div>
       </section>
 
