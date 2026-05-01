@@ -1,6 +1,6 @@
 # Wolf Trades — Master Tracker
 
-**Last updated:** 2026-04-30 (commit `d16dcc8`)
+**Last updated:** 2026-05-01 (commit `9990f58`)
 **Maintainer:** Roland + Claude (via chat)
 **Format:** Anyone can edit. Bump the `Last updated` line when you do.
 
@@ -129,11 +129,11 @@ Tracked from prior site audits. Each is one isolated commit. Priority **E**-pref
 | E-2 | `/about` §4 FAMILY — currently single shot, could rotate to other family photos as added | Future asset adds | P3 |
 | E-3 | `/events` Next Event section bg | Cropped `stage.JPG` once URL issue resolved (R-5) | P2 |
 | E-4 | Atmospheric chart-overlay backgrounds — use `hf_20260429_165852_7a5b62e0.png` instead of/in addition to existing radial pulse | Optional polish | P3 |
-| E-5 | Mobile menu drawer — add `Log In` button (currently desktop-only) | Code change | P2 |
-| E-6 | `/results` §4 PROOF + COMMUNITY — expand `COMMUNITY_PHOTOS` from 3 → 6 entries | Already approved in audit, partially done in homepage timeline. Could mirror to /results | P2 |
+| ~~E-5~~ | ~~Mobile menu drawer — add `Log In` button~~ | **SHIPPED** `53dd25c` | ✅ |
+| ~~E-6~~ | ~~`/results` §4 community photos 3 → 6~~ | **SHIPPED** `ffea336` | ✅ |
 | E-7 | Homepage hero — swap static `roland-standing.jpg` for `lonewolfshothero.mp4` autoplay loop | Pending Roland's call (R-7) | P1 (high impact) |
 | E-8 | `/platform` Workflow Map cell 01 (Prep) — add `roland-laptop.jpg` darkened bg | Skipped in last sprint (minor) | P3 |
-| E-9 | Wolfpack feature grid — finish swapping remaining screenshots to Roland-presence shots (4 of 6 still screenshots) | Code change | P2 |
+| ~~E-9~~ | ~~Wolfpack feature grid — Daily Watchlist + Trader Community swaps~~ | **SHIPPED** `9990f58` (4 of 6 now Roland-presence; Playbook Builder + Replay Library kept as screenshots since they're tool screens) | ✅ |
 | E-10 | `/start` page — separate redesign session per Roland's earlier note ("That redesign is a separate session") | Roland-led | P2 |
 
 ## §8 Recently shipped — context for incoming devs
@@ -142,6 +142,10 @@ Last 10 commits, most recent first:
 
 | Hash | Commit |
 |---|---|
+| `9990f58` | feat: /wolfpack feature grid — Daily Watchlist + Trader Community Roland-presence shots (E-9) |
+| `ffea336` | feat: /results — community photos expanded 3→6 (E-6) |
+| `53dd25c` | feat: mobile menu — add LOGIN ghost button (E-5) |
+| `f892ff1` | docs: add master TRACKER for bugs, action items, enhancement queue |
 | `d16dcc8` | feat: GHL inbound webhook + /api/health/lead-pipeline diagnostic |
 | `8b35516` | feat: homepage feature tabs + timeline carousel — Roland-presence imagery |
 | `b821375` | feat: /wolfpack — Roland-presence in feature grid + subtle Grittani bg |
