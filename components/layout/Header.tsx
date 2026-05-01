@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { START_FREE_URL } from "@/lib/links";
+import { LOGIN_URL, START_FREE_URL } from "@/lib/links";
 import { MobileMenu } from "./MobileMenu";
 
 const NAV_LINKS: ReadonlyArray<{ href: string; label: string }> = [
@@ -89,12 +89,20 @@ export function Header() {
           </ul>
         </nav>
 
-        <Link
-          href={START_FREE_URL}
-          className="hidden md:inline-flex bg-bull px-4 py-2 font-display text-sm uppercase tracking-wider text-black transition-all duration-150 ease-out hover:bg-[#1fc35a] active:scale-[0.98] motion-reduce:active:scale-100"
-        >
-          Start
-        </Link>
+        <div className="hidden md:flex items-center gap-3">
+          <Link
+            href={LOGIN_URL}
+            className="inline-flex border border-parchment/20 bg-transparent px-4 py-2 text-sm uppercase tracking-wider text-parchment transition-colors hover:bg-parchment/5"
+          >
+            Log In
+          </Link>
+          <Link
+            href={START_FREE_URL}
+            className="inline-flex bg-bull px-4 py-2 font-display text-sm uppercase tracking-wider text-black transition-all duration-150 ease-out hover:bg-[#1fc35a] active:scale-[0.98] motion-reduce:active:scale-100"
+          >
+            Start
+          </Link>
+        </div>
 
         <MobileMenu links={NAV_LINKS} />
       </div>
