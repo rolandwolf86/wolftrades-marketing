@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   INSTAGRAM_URL,
@@ -30,21 +29,34 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <div className="flex items-center gap-2">
-              <Image
-                src="/images/logos/wt-wolf-white-transparent.png"
-                alt="Wolf Trades"
-                width={40}
-                height={40}
-                className="w-8 h-8 object-contain flex-shrink-0"
-              />
-              <Image
-                src="/images/logos/wt-wordmark-dark.png"
-                alt="Wolf Trades"
-                width={200}
-                height={63}
-                className="h-6 w-auto object-contain object-left"
-              />
+            <div className="flex items-center gap-[4px]">
+              <span className="font-display text-[16px] uppercase tracking-[.06em] text-parchment leading-none">
+                Wolf
+              </span>
+              <div
+                className="flex flex-col items-center gap-[2px]"
+                style={{ height: "13px", justifyContent: "center" }}
+              >
+                <span
+                  style={{
+                    display: "block",
+                    width: "2px",
+                    height: "8px",
+                    background: "#16A34A",
+                  }}
+                />
+                <span
+                  style={{
+                    display: "block",
+                    width: "2px",
+                    height: "5px",
+                    background: "#C1121F",
+                  }}
+                />
+              </div>
+              <span className="font-display text-[16px] uppercase tracking-[.06em] text-parchment leading-none">
+                Trades
+              </span>
             </div>
             <p className="mt-2 max-w-xs text-sm text-gray">
               The trading operating system for serious traders.
