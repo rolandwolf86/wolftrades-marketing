@@ -72,7 +72,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href={LOGIN_URL}
-            className="inline-flex border border-parchment/20 bg-transparent px-4 py-2 text-sm uppercase tracking-wider text-parchment transition-colors hover:bg-parchment/5"
+            className="inline-flex border border-parchment/20 bg-transparent px-4 py-2 font-display text-sm uppercase tracking-wider text-parchment transition-colors hover:bg-parchment/5"
           >
             Log In
           </Link>
