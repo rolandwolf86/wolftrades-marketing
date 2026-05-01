@@ -12,8 +12,33 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO (atmospheric chart bg) */}
       <section className="relative overflow-hidden bg-black px-6 py-24">
+        <Image
+          src="/images/roland/hf_20260429_165852_7a5b62e0-a8f6-40c0-ac4f-ac16bf3c8ed0.png"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="object-cover object-center opacity-40"
+          priority
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.5) 100%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 65%, rgba(10,10,10,1) 100%)",
+          }}
+        />
         <div className="relative z-10 mx-auto max-w-5xl">
           <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Wolf Trades Live
@@ -21,7 +46,7 @@ export default function EventsPage() {
           <h1 className="mt-4 font-display text-5xl leading-none text-parchment md:text-7xl">
             Learn from Roland in person.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment/80">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment/85">
             Wolf Trades hosts live trading events and bootcamps for serious
             traders who want immersive, in-person learning directly from
             Roland.
