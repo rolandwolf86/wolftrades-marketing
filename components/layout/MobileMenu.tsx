@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { START_FREE_URL } from "@/lib/links";
+import { LOGIN_URL, START_FREE_URL } from "@/lib/links";
 
 interface NavLink {
   href: string;
@@ -105,7 +105,13 @@ export function MobileMenu({ links }: { links: ReadonlyArray<NavLink> }) {
             ))}
           </ul>
 
-          <div className="mt-4 border-t border-white/5 pt-4">
+          <div className="mt-4 flex flex-col gap-2 border-t border-white/5 pt-4">
+            <Link
+              href={LOGIN_URL}
+              className="flex min-h-[48px] w-full items-center justify-center border border-parchment/20 bg-transparent px-6 py-3 font-display text-sm uppercase tracking-wider text-parchment transition-colors hover:bg-parchment/5"
+            >
+              Log In
+            </Link>
             <Link
               href={START_FREE_URL}
               className="flex min-h-[48px] w-full items-center justify-center bg-bull px-6 py-3 font-display text-sm uppercase tracking-wider text-black transition-opacity hover:opacity-90"
