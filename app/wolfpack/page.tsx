@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
+import { HallOfFameCarousel } from "@/components/HallOfFameCarousel";
 import { Hero } from "@/components/Hero";
 import {
   START_FREE_URL,
@@ -85,34 +86,6 @@ const FEATURE_BLOCKS = [
     label: "Education",
     title: "Full Replay Library",
     body: "Every session recorded. Every trade breakdown archived. Study at your pace, on your schedule.",
-  },
-] as const;
-
-const PROOF = [
-  {
-    src: "/images/proof/jack-over-20mil.jpg",
-    name: "Jack Kellogg",
-    achievement: "$20M+ Career",
-  },
-  {
-    src: "/images/proof/suragh-first-millionaire.jpg",
-    name: "Suragh",
-    achievement: "First Millionaire Student",
-  },
-  {
-    src: "/images/proof/aaron-1-2-mil.jpg",
-    name: "Aaron",
-    achievement: "$1.2M+",
-  },
-  {
-    src: "/images/proof/huddie-7-figures.jpg",
-    name: "Huddie",
-    achievement: "Seven Figures",
-  },
-  {
-    src: "/images/proof/sebastien-500k.jpg",
-    name: "Sebastien",
-    achievement: "$500K+",
   },
 ] as const;
 
@@ -306,50 +279,20 @@ export default function WolfpackPage() {
         </div>
       </section>
 
-      {/* SECTION 6 — STUDENT PROOF WALL */}
+      {/* SECTION 6 — HALL OF FAME CAROUSEL */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-7xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
-            What&rsquo;s Possible
-          </p>
-          <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
-            The Pack delivers.
-          </h2>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-parchment/80">
+          <HallOfFameCarousel
+            eyebrow="What's Possible"
+            headline="The Pack delivers."
+          />
+          <p className="mt-8 max-w-3xl text-lg leading-8 text-parchment/80">
             Real traders. Real results. No actors. No fabricated screenshots.
           </p>
-
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-5">
-            {PROOF.map((card) => (
-              <div
-                key={card.name}
-                className="relative aspect-[3/4] overflow-hidden border border-bull/20"
-              >
-                <Image
-                  src={card.src}
-                  alt={`${card.name} — ${card.achievement}`}
-                  fill
-                  sizes="(min-width: 768px) 20vw, 50vw"
-                  className="object-cover"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <p className="font-display text-sm uppercase leading-tight text-parchment">
-                    {card.name}
-                  </p>
-                  <p className="mt-1 text-xs uppercase tracking-wider text-gold">
-                    {card.achievement}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-6 max-w-3xl text-xs leading-5 text-parchment/52">
+          <p className="mt-4 max-w-3xl text-xs leading-5 text-parchment/52">
             Results are not typical and are shown for educational context only.
             Trading involves risk and no outcome is guaranteed.
           </p>
-
           <div className="mt-10">
             <Link
               href="/results"

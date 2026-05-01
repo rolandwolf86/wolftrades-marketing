@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AnimatedStats } from "@/components/AnimatedStats";
 import { CTAButton } from "@/components/CTAButton";
 import { FeatureTabs } from "@/components/FeatureTabs";
+import { HallOfFameCarousel } from "@/components/HallOfFameCarousel";
 import { HomeHero } from "@/components/HomeHero";
 import { PhotoCarousel } from "@/components/PhotoCarousel";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
@@ -20,54 +21,6 @@ const ROLAND_PROOF: ReadonlyArray<string> = [
   "10+ seven-figure students trained",
   "2 eight-figure students",
   "Tim Grittani: “He has my respect.”",
-];
-
-const HALL_OF_FAME = [
-  {
-    src: "/images/proof/jack-over-20mil.jpg",
-    name: "Jack Kellogg",
-    achievement: "$20M+ Career",
-  },
-  {
-    src: "/images/proof/suragh-first-millionaire.jpg",
-    name: "Suragh",
-    achievement: "First Millionaire Student",
-  },
-  {
-    src: "/images/proof/aaron-1-2-mil.jpg",
-    name: "Aaron",
-    achievement: "$1.2M+",
-  },
-  {
-    src: "/images/proof/huddie-7-figures.jpg",
-    name: "Huddie",
-    achievement: "Seven Figures",
-  },
-  {
-    src: "/images/proof/sebastien-500k.jpg",
-    name: "Sebastien",
-    achievement: "$500K+",
-  },
-  {
-    src: "/images/proof/sandra-200k.jpg",
-    name: "Sandra",
-    achievement: "$200K+ First Female",
-  },
-  {
-    src: "/images/proof/brandon-approaching-1mil.jpg",
-    name: "Brandon Hanna",
-    achievement: "Approaching $1M",
-  },
-  {
-    src: "/images/proof/carlos-6-figures.jpg",
-    name: "Carlos",
-    achievement: "Six Figures",
-  },
-  {
-    src: "/images/proof/stock-sniper-mike-6-figures.jpg",
-    name: "Stock Sniper Mike",
-    achievement: "Six Figures",
-  },
 ];
 
 const TIMELINE_PHOTOS = [
@@ -238,45 +191,13 @@ export default function HomePage() {
         <FeatureTabs />
       </section>
 
-      {/* SECTION 5 — STUDENT PROOF WALL */}
+      {/* SECTION 5 — HALL OF FAME CAROUSEL */}
       <section className="bg-black px-6 py-20">
         <div className="mx-auto w-full max-w-7xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
-            The Wolf Hall of Fame
-          </p>
-          <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
-            The results speak.
-          </h2>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-parchment/80">
-            These are real traders who studied the process, built their own
-            edge, and went on to do serious things.
-          </p>
-
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {HALL_OF_FAME.map((card) => (
-              <div
-                key={card.name}
-                className="relative aspect-[3/4] overflow-hidden border border-bull/20"
-              >
-                <Image
-                  src={card.src}
-                  alt={`${card.name} — ${card.achievement}`}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
-                  className="object-cover"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="font-display text-base uppercase leading-tight text-parchment">
-                    {card.name}
-                  </p>
-                  <p className="mt-1 text-xs uppercase tracking-wider text-gold">
-                    {card.achievement}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <HallOfFameCarousel
+            eyebrow="The Wolf Hall of Fame"
+            headline="The results speak."
+          />
 
           <p className="mt-6 max-w-3xl text-xs leading-5 text-parchment/52">
             Results are not typical and are shown for educational context only.

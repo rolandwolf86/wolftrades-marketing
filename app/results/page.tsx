@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
-import { PhotoCarousel } from "@/components/PhotoCarousel";
+import { HallOfFameCarousel } from "@/components/HallOfFameCarousel";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
@@ -11,161 +11,10 @@ export const metadata: Metadata = {
     "Real traders. Real results. See how traders built their edge with process and structure inside Wolf Trades.",
 };
 
-interface HallOfFameCard {
-  initials: string;
-  label: string;
-  stat: string;
-  substat: string;
-  name: string;
-  story: string;
-  era: string;
-}
-
-const HALL_OF_FAME: ReadonlyArray<HallOfFameCard> = [
-  {
-    initials: "JK",
-    label: "Breakout Trader",
-    stat: "$20M+",
-    substat: "career profits",
-    name: "Jack Kellogg",
-    story:
-      "Jack represents what happens when a trader stops chasing and builds real conviction around a process. He studied the environment, refined his edge, and scaled it.",
-    era: "OG Pack",
-  },
-  {
-    initials: "SU",
-    label: "First Millionaire Student",
-    stat: "$1M+",
-    substat: "documented",
-    name: "Suragh",
-    story:
-      "Suragh became Roland's first documented millionaire student — proof that the process, applied consistently, produces life-changing results.",
-    era: "Pack Alumni",
-  },
-  {
-    initials: "BW",
-    label: "$10M+ Career",
-    stat: "$10M+",
-    substat: "career profits",
-    name: "Brian @wareagletrader",
-    story:
-      "Brian's results reflect discipline and structure at scale. He built a process he could trust, then executed consistently when the opportunity was there.",
-    era: "Wolfpack Era",
-  },
-  {
-    initials: "AA",
-    label: "Seven-Figure Track",
-    stat: "$1.2M+",
-    substat: "and growing",
-    name: "Aaron",
-    story:
-      "Aaron's growth came from tightening execution and focusing on what actually works. He moved from inconsistency to a defined process.",
-    era: "Pack Alumni",
-  },
-  {
-    initials: "SE",
-    label: "Consistent Builder",
-    stat: "$500K+",
-    substat: "documented",
-    name: "Sebastien",
-    story:
-      "Sebastien represents steady progression — not chasing, not forcing, but building something repeatable over time.",
-    era: "Pack Alumni",
-  },
-  {
-    initials: "SA",
-    label: "First Female Six-Figure",
-    stat: "$200K+",
-    substat: "and climbing",
-    name: "Sandra",
-    story:
-      "Sandra's milestone wasn't just the number — it was building confidence and structure in a space where most traders never get there.",
-    era: "Pack Alumni",
-  },
-  {
-    initials: "CA",
-    label: "Six-Figure Trader",
-    stat: "$200K+",
-    substat: "documented",
-    name: "Carlos",
-    story:
-      "Carlos built his edge by focusing on process over noise. His progress came from consistency, not chasing big days.",
-    era: "Pack Alumni",
-  },
-  {
-    initials: "BH",
-    label: "Approaching Seven Figures",
-    stat: "~$1M",
-    substat: "and rising",
-    name: "Brandon Hanna",
-    story:
-      "Brandon's trajectory reflects what happens when a trader locks into a process and stays there long enough for it to compound.",
-    era: "Wolfpack Era",
-  },
-  {
-    initials: "TO",
-    label: "Six-Figure Trader",
-    stat: "Six figures",
-    substat: "documented",
-    name: "Tony",
-    story:
-      "Tony's results came from simplifying his approach and committing to a structure he could execute consistently.",
-    era: "Pack Alumni",
-  },
-];
-
 const VIDEO_PLACEHOLDERS: ReadonlyArray<string> = [
   "Jack Kellogg — Coming Soon",
   "Brian @wareagletrader — $10M+ Career Profits",
   "Student Testimonial — Coming Soon",
-];
-
-const PROOF_PHOTOS = [
-  {
-    src: "/images/proof/jack-over-20mil.jpg",
-    alt: "Jack Kellogg over $20M",
-    label: "Jack Kellogg — $20M+",
-  },
-  {
-    src: "/images/proof/suragh-first-millionaire.jpg",
-    alt: "Suragh first millionaire student",
-    label: "Suragh — First Millionaire Student",
-  },
-  {
-    src: "/images/proof/aaron-1-2-mil.jpg",
-    alt: "Aaron $1.2M+",
-    label: "Aaron — $1.2M+",
-  },
-  {
-    src: "/images/proof/huddie-7-figures.jpg",
-    alt: "Huddie seven figures",
-    label: "Huddie — Seven Figures",
-  },
-  {
-    src: "/images/proof/sebastien-500k.jpg",
-    alt: "Sebastien $500K+",
-    label: "Sebastien — $500K+",
-  },
-  {
-    src: "/images/proof/sandra-200k.jpg",
-    alt: "Sandra $200K+",
-    label: "Sandra — $200K+",
-  },
-  {
-    src: "/images/proof/brandon-approaching-1mil.jpg",
-    alt: "Brandon approaching $1M",
-    label: "Brandon — Approaching $1M",
-  },
-  {
-    src: "/images/proof/carlos-6-figures.jpg",
-    alt: "Carlos six figures",
-    label: "Carlos — Six Figures",
-  },
-  {
-    src: "/images/proof/stock-sniper-mike-6-figures.jpg",
-    alt: "Stock Sniper Mike six figures",
-    label: "Stock Sniper Mike — Six Figures",
-  },
 ];
 
 const COMMUNITY_PHOTOS = [
@@ -291,70 +140,31 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* SECTION 3 — HALL OF FAME */}
+      {/* SECTION 3 — HALL OF FAME CAROUSEL (unified) */}
       <section className="bg-black px-6 py-20">
-        <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
-            The Wolf Hall of Fame
-          </p>
-          <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
-            The names that define the Pack.
-          </h2>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {HALL_OF_FAME.map((card) => (
-              <article
-                key={card.name}
-                className="border border-bull/40 bg-black2 p-8"
-              >
-                <div
-                  aria-hidden
-                  className="mb-6 flex h-16 w-16 items-center justify-center border border-parchment/10 bg-black font-display text-xl text-bull"
-                >
-                  {card.initials}
-                </div>
-                <p className="mb-1 text-xs uppercase tracking-widest text-bull">
-                  {card.label}
-                </p>
-                <p className="mb-1 font-display text-4xl text-gold">
-                  {card.stat}
-                </p>
-                <p className="mb-4 text-sm text-gray">{card.substat}</p>
-                <p className="mb-3 font-display text-xl uppercase text-parchment">
-                  {card.name}
-                </p>
-                <p className="mb-4 text-sm leading-relaxed text-parchment/70">
-                  {card.story}
-                </p>
-                <span className="inline-flex items-center border border-parchment/10 bg-black px-3 py-1 text-xs uppercase tracking-wider text-gray">
-                  {card.era}
-                </span>
-              </article>
-            ))}
-          </div>
+        <div className="mx-auto w-full max-w-7xl">
+          <HallOfFameCarousel
+            eyebrow="The Wolf Hall of Fame"
+            headline="The names that define the Pack."
+          />
         </div>
       </section>
 
-      {/* SECTION 4 — PROOF WALL + COMMUNITY */}
+      {/* SECTION 4 — COMMUNITY PHOTOS */}
       <section className="overflow-hidden border-y border-white/5 bg-black2 py-20">
         <div className="mx-auto mb-10 w-full max-w-5xl px-6">
           <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             From the Pack
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
-            Wins, breakthroughs, and real messages.
+            The community at work.
           </h2>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-parchment/80">
-            The Hall of Fame is just part of the story. Inside the Pack,
-            traders are constantly improving — better entries, cleaner plans,
-            stronger discipline, smarter decisions. These are the moments
-            where things start to click.
+            Bootcamps. Retreats. Conferences. The Pack shows up — together.
           </p>
         </div>
 
-        <PhotoCarousel photos={PROOF_PHOTOS} variant="proof" />
-
-        <div className="mx-auto mt-12 grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3">
+        <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3">
           {COMMUNITY_PHOTOS.map((photo) => (
             <div
               key={photo.src}

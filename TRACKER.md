@@ -1,6 +1,6 @@
 # Wolf Trades — Master Tracker
 
-**Last updated:** 2026-05-01 (post-/pro removal)
+**Last updated:** 2026-05-01 (Hall of Fame carousel unified across 3 pages)
 **Maintainer:** Roland + Claude (via chat)
 **Format:** Anyone can edit. Bump the `Last updated` line when you do.
 
@@ -64,6 +64,8 @@ These are tracked but require Roland's call on which side is canonical before fi
 | R-6 | Drop a soccer-era photo if one exists | E-1 (`/about` Section 2 enhancement) |
 | ~~R-7~~ | ~~Decide on hero video swap~~ — **DONE** Roland approved 2026-05-01, video shipped in `37a970a` | ✅ |
 | R-8 | Provide DNS cutover go-ahead for `wolftrades.com` | A-2 |
+| R-9 | Drop headshots for **Brian, Tony, Dom, Phil, John** — 5 Hall of Fame cards currently render with initials placeholders. Files go in `public/images/proof/`. | Visual completeness on /, /results, /wolfpack carousels |
+| R-10 | Approve/edit the 5 DRAFT story sentences in `lib/hall-of-fame.ts` for: **Dom, Huddie, John, Phil, Stock Sniper Mike**. Currently published as drafts. | Brand-voice integrity on Hall of Fame copy |
 
 ## §5 Platform-team action items — separate repo
 
@@ -142,7 +144,10 @@ Last 10 commits, most recent first:
 
 | Hash | Commit |
 |---|---|
-| _pending_ | chore: remove /pro page — Pro is now in-funnel upsell only |
+| _pending_ | feat: unified Hall of Fame carousel — single component across /results, /, /wolfpack (14 members, 5 with initials placeholders) |
+| `806d41d` | feat: 301 redirect /pro → /wolfpack (preserve link equity) |
+| `0cdaf09` | chore: remove /pro page — Pro is now in-funnel upsell only |
+| `9c1f880` | fix: sync photo assets — rename + commit images referenced by recent enhancement work (was 404ing in production) |
 | `9bb8305` | docs: TRACKER — E-7 shipped, R-7 closed |
 | `37a970a` | feat: homepage hero — video loop replaces static portrait (E-7) |
 | `3293992` | docs: TRACKER — mark E-4, E-8 shipped |
