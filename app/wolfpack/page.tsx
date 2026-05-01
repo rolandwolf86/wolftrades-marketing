@@ -45,9 +45,9 @@ const SCHEDULE = [
 
 const FEATURE_BLOCKS = [
   {
-    image: "/screenshots/chat.png",
-    alt: "Wolf Trades live trading room",
-    label: "Community",
+    image: "/images/roland/roland-room-scanner.jpg",
+    alt: "Roland teaching live in the trading room",
+    label: "Live",
     title: "Live Trading Room",
     body: "Watch Roland trade every market day. Real entries. Real exits. Real decisions. Chat with 2,500+ traders.",
   },
@@ -59,11 +59,11 @@ const FEATURE_BLOCKS = [
     body: "Know the names Roland is watching, the levels that matter, and the context behind the plan.",
   },
   {
-    image: "/screenshots/chat.png",
-    alt: "Wolf Trades replay workflow",
-    label: "Replays",
-    title: "Full Replay Library",
-    body: "Every session recorded. Every trade breakdown archived. Study the room at your pace.",
+    image: "/images/roland/wolf hero teaching (2).JPG",
+    alt: "Roland breaking down a chart pattern with engaged students",
+    label: "Coaching",
+    title: "Trader Therapy",
+    body: "Real feedback, live. Roland reviews your trades, your plans, your habits — in front of the room.",
   },
   {
     image: "/screenshots/community.png",
@@ -361,30 +361,48 @@ export default function WolfpackPage() {
         </div>
       </section>
 
-      {/* SECTION 7 — GRITTANI QUOTE */}
-      <section className="border-y border-white/5 bg-black2 px-6 py-20">
-        <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
-            Endorsed. Unsolicited. Unpaid.
-          </p>
-          <blockquote className="mt-8 font-display text-5xl leading-[0.95] text-parchment md:text-7xl">
-            &ldquo;He has my respect.&rdquo;
-          </blockquote>
-          <p className="mt-8 max-w-3xl border-l-2 border-gold/40 pl-6 text-lg italic leading-8 text-parchment/85">
-            &ldquo;If I were looking to jump into a new service and see what I
-            could pick up and maybe get a couple new ideas, this is probably
-            where I would start.&rdquo;
-          </p>
-          <p className="mt-4 max-w-3xl border-l-2 border-gold/40 pl-6 text-base italic leading-7 text-parchment/70">
-            &ldquo;He has no idea that I&rsquo;m putting any of this in here.
-            He didn&rsquo;t ask me to say any of this, there&rsquo;s no
-            affiliate hookup or anything like that, this is all just my honest
-            opinion.&rdquo;
-          </p>
-          <p className="mt-6 text-sm text-gray">
-            — Tim Grittani · $15M+ verified trader · Trading Tickers 2 ·
-            Unsolicited · Unpaid
-          </p>
+      {/* SECTION 7 — GRITTANI QUOTE (subtle Roland-teaching bg) */}
+      <section className="relative overflow-hidden border-y border-white/5 bg-black2">
+        <Image
+          src="/images/roland/wolf hero teaching.JPG"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="object-cover object-center opacity-15"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.85) 100%)",
+          }}
+        />
+        <div className="relative px-6 py-20">
+          <div className="mx-auto w-full max-w-5xl">
+            <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+              Endorsed. Unsolicited. Unpaid.
+            </p>
+            <blockquote className="mt-8 font-display text-5xl leading-[0.95] text-parchment md:text-7xl">
+              &ldquo;He has my respect.&rdquo;
+            </blockquote>
+            <p className="mt-8 max-w-3xl border-l-2 border-gold/40 pl-6 text-lg italic leading-8 text-parchment/85">
+              &ldquo;If I were looking to jump into a new service and see what I
+              could pick up and maybe get a couple new ideas, this is probably
+              where I would start.&rdquo;
+            </p>
+            <p className="mt-4 max-w-3xl border-l-2 border-gold/40 pl-6 text-base italic leading-7 text-parchment/70">
+              &ldquo;He has no idea that I&rsquo;m putting any of this in here.
+              He didn&rsquo;t ask me to say any of this, there&rsquo;s no
+              affiliate hookup or anything like that, this is all just my honest
+              opinion.&rdquo;
+            </p>
+            <p className="mt-6 text-sm text-gray">
+              — Tim Grittani · $15M+ verified trader · Trading Tickers 2 ·
+              Unsolicited · Unpaid
+            </p>
+          </div>
         </div>
       </section>
 
