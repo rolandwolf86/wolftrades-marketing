@@ -100,7 +100,7 @@ export function Header() {
             href={START_FREE_URL}
             className="inline-flex bg-bull px-4 py-2 font-display text-sm uppercase tracking-wider text-black transition-all duration-150 ease-out hover:bg-[#1fc35a] active:scale-[0.98] motion-reduce:active:scale-100"
           >
-            Start
+            Get Started
           </Link>
         </div>
 

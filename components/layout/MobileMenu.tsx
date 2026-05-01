@@ -110,7 +110,7 @@ export function MobileMenu({ links }: { links: ReadonlyArray<NavLink> }) {
               href={START_FREE_URL}
               className="flex min-h-[48px] w-full items-center justify-center bg-bull px-6 py-3 font-display text-sm uppercase tracking-wider text-black transition-opacity hover:opacity-90"
             >
-              Start
+              Get Started
             </Link>
           </div>
         </nav>
