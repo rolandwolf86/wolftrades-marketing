@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { FormEvent, Suspense, useState } from "react";
 import { APP_REGISTER_URL } from "@/lib/links";
 import styles from "./page.module.css";
 
@@ -15,7 +16,57 @@ const freeIncludes = [
   "Basic Trade Journal - upload and track your trades",
 ] as const;
 
-export default function StartPage() {
+interface IntentVariant {
+  headline: string;
+  subhead: string;
+  source: string;
+  intent: string;
+}
+
+// Drives copy + form metadata based on `?intent=` query param.
+// Intent values must match the zod enum in app/api/lead/route.ts.
+const INTENT_VARIANTS: Record<string, IntentVariant> = {
+  watchlist: {
+    headline: "Get the free pre-market watchlist.",
+    subhead:
+      "Start with Roland's market prep, then build your workflow inside Wolf Trades.",
+    source: "start-watchlist",
+    intent: "watchlist",
+  },
+  risk: {
+    headline: "Get the free risk calculator.",
+    subhead: "Know your risk before you enter the trade.",
+    source: "start-risk-calculator",
+    intent: "risk",
+  },
+  journal: {
+    headline: "Start your free trading journal.",
+    subhead:
+      "Track your trades, review your behavior, and build repeatable rules.",
+    source: "start-journal",
+    intent: "journal",
+  },
+  scanner: {
+    headline: "Start with the free scanner preview.",
+    subhead:
+      "See how Wolf Trades helps you find movement without guessing.",
+    source: "start-scanner",
+    intent: "scanner",
+  },
+  default: {
+    headline: "Start free.",
+    subhead:
+      "Create your account, inspect the platform, and build your workflow.",
+    source: "start-page",
+    intent: "general",
+  },
+};
+
+function StartContent() {
+  const params = useSearchParams();
+  const intentParam = params?.get("intent") ?? "";
+  const variant = INTENT_VARIANTS[intentParam] ?? INTENT_VARIANTS.default;
+
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,18 +84,22 @@ export default function StartPage() {
         body: JSON.stringify({
           name: firstName,
           email,
-          source: "start-page",
+          source: variant.source,
+          intent: variant.intent,
         }),
       });
 
       if (!response.ok) {
-        throw new Error("Lead request failed");
+        const detail = await response.text().catch(() => "");
+        console.error("[start form] /api/lead failed", response.status, detail);
+        throw new Error(`Lead request failed (${response.status})`);
       }
 
       window.location.href = `${APP_REGISTER_URL}?email=${encodeURIComponent(
         email,
       )}`;
-    } catch {
+    } catch (err) {
+      console.error("[start form] submit error", err);
       setError("Something went wrong. Try again.");
       setIsSubmitting(false);
     }
@@ -65,11 +120,8 @@ export default function StartPage() {
         </header>
 
         <section className={styles.hero}>
-          <h1>Get Roland&apos;s Daily Watchlist Free.</h1>
-          <p className={styles.subhead}>
-            Every trading day, Roland shares the names he&apos;s watching, the
-            plans, the levels, and the market context behind the move.
-          </p>
+          <h1>{variant.headline}</h1>
+          <p className={styles.subhead}>{variant.subhead}</p>
           <p className={styles.microcopy}>
             No card. No commitment. Cancel nothing.
           </p>
@@ -147,5 +199,13 @@ export default function StartPage() {
         </footer>
       </div>
     </main>
+  );
+}
+
+export default function StartPage() {
+  return (
+    <Suspense fallback={null}>
+      <StartContent />
+    </Suspense>
   );
 }

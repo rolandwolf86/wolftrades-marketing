@@ -16,7 +16,18 @@ const leadSchema = z.object({
   name: z.string().trim().min(1).max(120).optional(),
   phone: z.string().trim().min(5).max(40).optional(),
   source: z.string().trim().max(80).optional(),
-  intent: z.enum(["wolfpack", "pro", "apex", "platform", "general"]).optional(),
+  intent: z
+    .enum([
+      "watchlist",
+      "risk",
+      "journal",
+      "scanner",
+      "wolfpack",
+      "apex",
+      "platform",
+      "general",
+    ])
+    .optional(),
   notes: z.string().trim().max(2000).optional(),
   // APEX application extensions:
   accountSize: z.string().trim().max(80).optional(),
@@ -104,6 +115,10 @@ async function insertLead(
     source: lead.source ?? null,
     intent: lead.intent ?? null,
     notes: lead.notes ?? null,
+    account_size: lead.accountSize ?? null,
+    experience: lead.experience ?? null,
+    challenge: lead.challenge ?? null,
+    why_apex: lead.whyApex ?? null,
   });
 
   return { error: error ? error.message : null };

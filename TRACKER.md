@@ -1,6 +1,6 @@
 # Wolf Trades — Master Tracker
 
-**Last updated:** 2026-05-01 (HOF synced, /apex video hero shipped)
+**Last updated:** 2026-05-01 (P0.1 + P0.4 code shipped — awaiting Supabase SQL run + GHL Workflow build)
 **Maintainer:** Roland + Claude (via chat)
 **Format:** Anyone can edit. Bump the `Last updated` line when you do.
 
@@ -144,7 +144,12 @@ Last 10 commits, most recent first:
 
 | Hash | Commit |
 |---|---|
-| _pending_ | feat: /apex hero — APEX video (apex-hero.mp4) replaces mountain graphic |
+| _pending_ | feat: P0.1 + P0.4 — leads schema extended (4 APEX cols), zod enum expanded (8 intents, dropped `pro`), /start now intent-aware via useSearchParams |
+| `5ffdba0` | fix: health check Resend probe — presence-only (no API call) to support send-only API keys |
+| `6569dda` | fix: HOF crop overrides (Suragh center, Huddie mirrored) + Section 3 photo swap |
+| `530885f` | fix: drop redundant logo from homepage hero, move /about brand block to bottom |
+| `c57d3a9` | feat: homepage hero photo (wolf hero teaching) + apex form error logging |
+| `aeeffb3` | feat: /apex hero — APEX video loop replaces mountain graphic |
 | `261c198` | feat: HOF — sync proof folder, add Jack Schwarze + Sean, swap /results hero to new shot (16 members; 12 photos + 4 initials) |
 | `695d849` | feat: HOF carousel — recessed side cards (stack effect) + bull-green arrows + Phil photo wired |
 | `8a06adf` | feat: unified Hall of Fame carousel — single component across /results, /, /wolfpack |
