@@ -113,14 +113,14 @@ export default function PlatformPage() {
 
           <div className="relative min-h-[300px] overflow-hidden border border-white/10 bg-black2 sm:min-h-[430px] md:min-h-[520px]">
             <Image
-              src="/screenshots/chat.png"
-              alt="Wolf Trades command center preview"
+              src="/images/roland/IMG_8338.JPG"
+              alt="Roland mentoring traders in the loft studio"
               fill
               priority
               sizes="(min-width: 768px) 58vw, 100vw"
-              className="scale-[1.04] object-cover object-left-top opacity-70 blur-[1.5px]"
+              className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.15),rgba(10,10,10,0.72))]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.25),rgba(10,10,10,0.55))]" />
             <div className="absolute inset-0 border border-bull/20" />
             <div className="absolute bottom-0 left-0 right-0 grid grid-cols-3 border-t border-white/10 bg-black/82">
               {["Live room", "Watchlist", "Review"].map((item) => (

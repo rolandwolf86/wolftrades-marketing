@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
-import { Hero } from "@/components/Hero";
 import {
   PRO_ANNUAL_CHECKOUT_URL,
   PRO_CHECKOUT_URL,
@@ -36,21 +36,59 @@ const FEATURES = [
 export default function ProPage() {
   return (
     <>
-      <Hero
-        eyebrow="Wolfpack Pro - $197/month"
-        headline="The edge layer for serious review."
-        subhead="Wolfpack is the foundation. Pro adds scanner, AI coach, analytics, and backtesting to help traders review with more structure."
-        primaryCta={
-          <CTAButton href={PRO_MONTHLY_URL} variant="primary">
-            Join Pro - $197/mo
-          </CTAButton>
-        }
-        secondaryCta={
-          <CTAButton href={START_FREE_URL} variant="secondary">
-            Start Free
-          </CTAButton>
-        }
-      />
+      {/* HERO — split with Roland at the trading terminal */}
+      <section className="relative overflow-hidden bg-black md:min-h-[80vh]">
+        <div className="grid md:grid-cols-[45fr_55fr] md:min-h-[80vh]">
+          <div className="flex flex-col justify-center px-6 py-16 md:px-16 md:py-24">
+            <p className="font-display text-sm uppercase tracking-[0.2em] text-bull">
+              Wolfpack Pro - $197/month
+            </p>
+            <h1 className="mt-4 font-display text-5xl leading-none text-parchment md:text-7xl">
+              The edge layer for serious review.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-gray">
+              Wolfpack is the foundation. Pro adds scanner, AI coach,
+              analytics, and backtesting to help traders review with more
+              structure.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <CTAButton href={PRO_MONTHLY_URL} variant="primary">
+                Join Pro - $197/mo
+              </CTAButton>
+              <CTAButton href={START_FREE_URL} variant="secondary">
+                Start Free
+              </CTAButton>
+            </div>
+          </div>
+
+          <div className="relative h-[60vw] w-full md:h-auto md:border-l md:border-parchment/[0.06]">
+            <Image
+              src="/images/roland/roland-room-scanner.jpg"
+              alt="Roland teaching live in the trading room"
+              fill
+              sizes="(min-width: 768px) 55vw, 100vw"
+              className="object-cover object-center"
+              priority
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 hidden md:block"
+              style={{
+                background:
+                  "linear-gradient(to right, #0a0a0a 0%, transparent 25%)",
+              }}
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent 75%, #0a0a0a 100%)",
+              }}
+            />
+          </div>
+        </div>
+      </section>
 
       <section className="border-t border-white/5 bg-black2">
         <div className="mx-auto w-full max-w-7xl px-6 py-20 md:py-24">
