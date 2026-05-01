@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { WOLFPACK_MONTHLY_URL } from "@/lib/links";
@@ -137,15 +136,17 @@ export default function ApexClient() {
 
   return (
     <>
-      {/* SECTION 1 — HERO (full-bleed mountain peak graphic) */}
+      {/* SECTION 1 — HERO (full-bleed APEX video, mountain graphic as poster fallback) */}
       <section className="relative overflow-hidden bg-black min-h-[70vh] md:min-h-[80vh]">
-        <Image
-          src="/images/roland/apex graphic hero.png"
-          alt="APEX — moonlit mountain peak above the clouds"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-          priority
+        <video
+          src="/videos/apex-hero.mp4"
+          poster="/images/roland/apex graphic hero.png"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div
           aria-hidden

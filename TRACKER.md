@@ -1,6 +1,6 @@
 # Wolf Trades — Master Tracker
 
-**Last updated:** 2026-05-01 (Hall of Fame carousel unified across 3 pages)
+**Last updated:** 2026-05-01 (HOF synced, /apex video hero shipped)
 **Maintainer:** Roland + Claude (via chat)
 **Format:** Anyone can edit. Bump the `Last updated` line when you do.
 
@@ -64,8 +64,8 @@ These are tracked but require Roland's call on which side is canonical before fi
 | R-6 | Drop a soccer-era photo if one exists | E-1 (`/about` Section 2 enhancement) |
 | ~~R-7~~ | ~~Decide on hero video swap~~ — **DONE** Roland approved 2026-05-01, video shipped in `37a970a` | ✅ |
 | R-8 | Provide DNS cutover go-ahead for `wolftrades.com` | A-2 |
-| R-9 | Drop headshots for **Brian, Tony, Dom, Phil, John** — 5 Hall of Fame cards currently render with initials placeholders. Files go in `public/images/proof/`. | Visual completeness on /, /results, /wolfpack carousels |
-| R-10 | Approve/edit the 5 DRAFT story sentences in `lib/hall-of-fame.ts` for: **Dom, Huddie, John, Phil, Stock Sniper Mike**. Currently published as drafts. | Brand-voice integrity on Hall of Fame copy |
+| R-9 | Drop headshots for **Brian, Brandon, Dom, Tony** — 4 Hall of Fame cards still render with initials placeholders. Files go in `public/images/proof/` with lowercase-hyphenated names. (Brandon WAS done; photo got removed in 2026-05-01 folder shuffle and needs a re-drop.) | Visual completeness on /, /results, /wolfpack carousels |
+| R-10 | Approve/edit the 7 DRAFT story sentences in `lib/hall-of-fame.ts` for: **Dom, Huddie, Jack Schwarze, John, Phil, Sean, Stock Sniper Mike**. Currently published as drafts. | Brand-voice integrity on Hall of Fame copy |
 
 ## §5 Platform-team action items — separate repo
 
@@ -144,7 +144,10 @@ Last 10 commits, most recent first:
 
 | Hash | Commit |
 |---|---|
-| _pending_ | feat: unified Hall of Fame carousel — single component across /results, /, /wolfpack (14 members, 5 with initials placeholders) |
+| _pending_ | feat: /apex hero — APEX video (apex-hero.mp4) replaces mountain graphic |
+| `261c198` | feat: HOF — sync proof folder, add Jack Schwarze + Sean, swap /results hero to new shot (16 members; 12 photos + 4 initials) |
+| `695d849` | feat: HOF carousel — recessed side cards (stack effect) + bull-green arrows + Phil photo wired |
+| `8a06adf` | feat: unified Hall of Fame carousel — single component across /results, /, /wolfpack |
 | `806d41d` | feat: 301 redirect /pro → /wolfpack (preserve link equity) |
 | `0cdaf09` | chore: remove /pro page — Pro is now in-funnel upsell only |
 | `9c1f880` | fix: sync photo assets — rename + commit images referenced by recent enhancement work (was 404ing in production) |
