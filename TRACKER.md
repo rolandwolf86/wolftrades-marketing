@@ -1,6 +1,6 @@
 # Wolf Trades — Master Tracker
 
-**Last updated:** 2026-05-01 (commit `c585148`)
+**Last updated:** 2026-05-01 (commit `37a970a`)
 **Maintainer:** Roland + Claude (via chat)
 **Format:** Anyone can edit. Bump the `Last updated` line when you do.
 
@@ -62,7 +62,7 @@ These are tracked but require Roland's call on which side is canonical before fi
 | R-4 | Confirm Aaron / Sebastien / Sandra / Carlos / Brandon Hanna / Tony / Michael Huddie figures (currently PENDING in Drive doc) | Several `/results` and `/page.tsx` proof claims rely on these |
 | R-5 | Crop or replace `stage.JPG` / `wolf on stage.JPG` — both currently show old `www.rwtrades.com` URL on the conference screen behind him | E-3 (events page enhancement) |
 | R-6 | Drop a soccer-era photo if one exists | E-1 (`/about` Section 2 enhancement) |
-| R-7 | Decide on hero video swap — replace `roland-standing.jpg` static portrait with `lonewolfshothero.mp4` autoplay loop on homepage right column | E-7 (homepage hero v2) |
+| ~~R-7~~ | ~~Decide on hero video swap~~ — **DONE** Roland approved 2026-05-01, video shipped in `37a970a` | ✅ |
 | R-8 | Provide DNS cutover go-ahead for `wolftrades.com` | A-2 |
 
 ## §5 Platform-team action items — separate repo
@@ -131,7 +131,7 @@ Tracked from prior site audits. Each is one isolated commit. Priority **E**-pref
 | ~~E-4~~ | ~~Atmospheric chart-overlay backgrounds~~ | **SHIPPED** `c585148` (wired to `/events` hero) | ✅ |
 | ~~E-5~~ | ~~Mobile menu drawer — add `Log In` button~~ | **SHIPPED** `53dd25c` | ✅ |
 | ~~E-6~~ | ~~`/results` §4 community photos 3 → 6~~ | **SHIPPED** `ffea336` | ✅ |
-| E-7 | Homepage hero — swap static `roland-standing.jpg` for `lonewolfshothero.mp4` autoplay loop | Pending Roland's call (R-7) | P1 (high impact) |
+| ~~E-7~~ | ~~Homepage hero — video loop swap~~ | **SHIPPED** `37a970a` (autoplay/muted/loop/playsInline, `roland-standing.jpg` as poster fallback for slow connections) | ✅ |
 | ~~E-8~~ | ~~`/platform` Workflow Map — Roland-laptop section bg~~ | **SHIPPED** `c708b43` (subtle 10% opacity bg behind whole grid, dark gradient overlay for legibility) | ✅ |
 | ~~E-9~~ | ~~Wolfpack feature grid — Daily Watchlist + Trader Community swaps~~ | **SHIPPED** `9990f58` (4 of 6 now Roland-presence; Playbook Builder + Replay Library kept as screenshots since they're tool screens) | ✅ |
 | E-10 | `/start` page — separate redesign session per Roland's earlier note ("That redesign is a separate session") | Roland-led | P2 |
@@ -142,6 +142,8 @@ Last 10 commits, most recent first:
 
 | Hash | Commit |
 |---|---|
+| `37a970a` | feat: homepage hero — video loop replaces static portrait (E-7) |
+| `3293992` | docs: TRACKER — mark E-4, E-8 shipped |
 | `c585148` | feat: /events hero — atmospheric chart bg overlay (E-4) |
 | `c708b43` | feat: /platform Workflow Map — subtle Roland-laptop bg behind grid (E-8) |
 | `f6ae1e8` | docs: TRACKER — mark E-5, E-6, E-9 shipped |
