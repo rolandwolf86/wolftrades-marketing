@@ -60,7 +60,7 @@ export default function ProPage() {
           <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none text-parchment md:text-6xl">
             More visibility after every session.
           </h2>
-          <div className="mt-10 grid gap-px bg-white/10 md:grid-cols-2">
+          <div className="mt-10 grid gap-px bg-parchment/10 md:grid-cols-2">
             {FEATURES.map((feature) => (
               <article key={feature.title} className="bg-black p-8">
                 <h3 className="font-display text-3xl text-parchment">

@@ -138,7 +138,7 @@ export default function PlatformPage() {
       <section className="border-y border-white/10 bg-black2">
         <div className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
           <SectionLabel>Workflow Map</SectionLabel>
-          <div className="mt-8 grid gap-px bg-white/10 md:grid-cols-5">
+          <div className="mt-8 grid gap-px bg-parchment/10 md:grid-cols-5">
             {WORKFLOW.map((item, index) => (
               <article key={item.step} className="bg-black p-6">
                 <p className="font-display text-sm uppercase tracking-[0.18em] text-bull">
@@ -198,7 +198,7 @@ export default function PlatformPage() {
               where repetition becomes visible.
             </p>
           </div>
-          <div className="grid gap-px bg-white/10 sm:grid-cols-2">
+          <div className="grid gap-px bg-parchment/10 sm:grid-cols-2">
             {[
               "Setup screenshots",
               "Entry and exit rules",
@@ -227,7 +227,7 @@ export default function PlatformPage() {
               setups, and test ideas before they become larger habits.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-px bg-white/10 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-px bg-parchment/10 sm:grid-cols-2">
             {LABS.map((item) => (
               <div key={item} className="bg-black px-5 py-5">
                 <p className="font-display text-sm uppercase tracking-[0.16em] text-parchment/82">
