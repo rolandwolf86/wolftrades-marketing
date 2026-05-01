@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WOLFPACK_MONTHLY_URL } from "@/lib/links";
-import { HomeHeroShowcase } from "./HomeHeroShowcase";
+import { TickerTape } from "./TickerTape";
 
 const NOISE_BG =
   "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>\")";
@@ -9,7 +9,7 @@ const NOISE_BG =
 export function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden md:min-h-[100vh]">
-      {/* Directional gradient — warm glow center-right where the showcase sits */}
+      {/* Bull-green warm glow — keeps the hero alive without dominating the portrait */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-0"
@@ -26,7 +26,7 @@ export function HomeHero() {
         style={{ backgroundImage: NOISE_BG }}
       />
 
-      <div className="relative z-[1] flex min-h-[100vh] flex-col md:grid md:grid-cols-[45fr_55fr]">
+      <div className="relative z-[1] flex flex-col md:grid md:min-h-[100vh] md:grid-cols-[45fr_55fr]">
         {/* Left column — copy */}
         <div className="flex flex-col justify-center px-6 py-10 md:px-20 md:py-16">
           <Image
@@ -46,17 +46,17 @@ export function HomeHero() {
               letterSpacing: "-0.02em",
             }}
           >
-            <span className="block">I trade Nasdaq live.</span>
-            <span className="block">Every single day.</span>
-            <span className="block">This is where I do it.</span>
+            <span className="block">Process,</span>
+            <span className="block">not signals.</span>
+            <span className="block">Proof, not hype.</span>
           </h1>
 
           <p
-            className="mt-6 max-w-[380px] text-gray"
+            className="mt-6 max-w-[460px] text-gray"
             style={{ fontSize: "18px", lineHeight: 1.6 }}
           >
-            Roland Wolf has traded Nasdaq live since 2017. This is the platform
-            he built. Now it&rsquo;s yours.
+            Roland Wolf &mdash; verified 7-figure trader. 10+ seven-figure
+            students. Tim Grittani&rsquo;s respect.
           </p>
 
           <div className="mt-10">
@@ -84,13 +84,43 @@ export function HomeHero() {
           </p>
         </div>
 
-        {/* Right column — showcase */}
-        <div
-          className="relative h-[50vw] w-full md:h-auto md:border-l md:border-parchment/[0.06]"
-          style={{ background: "rgba(17,17,17,0.6)" }}
-        >
-          <HomeHeroShowcase />
+        {/* Right column — Roland portrait */}
+        <div className="relative h-[100vw] w-full md:h-auto md:border-l md:border-parchment/[0.06]">
+          <Image
+            src="/images/roland/roland-standing.jpg"
+            alt="Roland Wolf"
+            fill
+            sizes="(min-width: 768px) 55vw, 100vw"
+            className="object-cover object-top"
+            priority
+          />
+          {/* Left-edge fade — bleeds the portrait into the copy column on desktop */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 hidden md:block"
+            style={{
+              background:
+                "linear-gradient(to right, #0a0a0a 0%, transparent 25%)",
+            }}
+          />
+          {/* Bottom fade — keeps ticker tape strip legible */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent 70%, #0a0a0a 100%)",
+            }}
+          />
         </div>
+      </div>
+
+      {/* Animated ticker — desktop only, full-bleed at bottom of hero */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[2] hidden h-8 border-t border-parchment/[0.06] bg-black/80 backdrop-blur md:block"
+      >
+        <TickerTape className="h-full" />
       </div>
     </section>
   );
