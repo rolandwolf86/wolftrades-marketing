@@ -52,8 +52,8 @@ const FEATURE_BLOCKS = [
     body: "Watch Roland trade every market day. Real entries. Real exits. Real decisions. Chat with 2,500+ traders.",
   },
   {
-    image: "/screenshots/community.png",
-    alt: "Wolf Trades watchlist and prep workflow",
+    image: "/images/roland/roland-laptop.jpg",
+    alt: "Roland doing daily morning prep at the laptop",
     label: "Tools",
     title: "Daily Watchlist",
     body: "Know the names Roland is watching, the levels that matter, and the context behind the plan.",
@@ -73,8 +73,8 @@ const FEATURE_BLOCKS = [
     body: "Document setups, screenshots, rules, and review notes so your process becomes repeatable.",
   },
   {
-    image: "/screenshots/community.png",
-    alt: "Wolf Trades community",
+    image: "/images/roland/wolfpack-group-arms.jpg",
+    alt: "Wolfpack community at the Tahoe retreat",
     label: "Community",
     title: "Trader Community",
     body: "2,500+ traders sharing wins, setups, and feedback. The most active trading community online.",
