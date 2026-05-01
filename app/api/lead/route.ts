@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { sendToGHL, type GHLLeadPayload } from "@/lib/ghl";
 import {
   resend,
   LEAD_NOTIFICATION_FROM,
@@ -43,9 +44,10 @@ export async function POST(request: Request) {
   }
   const lead = parsed.data;
 
-  const [supabaseResult, resendResult] = await Promise.allSettled([
+  const [supabaseResult, resendResult, ghlResult] = await Promise.allSettled([
     insertLead(lead),
     notifyLead(lead),
+    syncToGHL(lead),
   ]);
 
   const supabaseError =
@@ -56,10 +58,21 @@ export async function POST(request: Request) {
     resendResult.status === "rejected"
       ? String(resendResult.reason)
       : resendResult.value.error;
+  const ghlError =
+    ghlResult.status === "rejected"
+      ? String(ghlResult.reason)
+      : ghlResult.value.error;
 
-  if (supabaseError && resendError) {
+  // Only hard-fail if every downstream is broken — otherwise we still have at
+  // least one record of the lead and the user can be salvaged manually.
+  if (supabaseError && resendError && ghlError) {
     return NextResponse.json(
-      { error: "Lead capture failed", supabase: supabaseError, resend: resendError },
+      {
+        error: "Lead capture failed",
+        supabase: supabaseError,
+        resend: resendError,
+        ghl: ghlError,
+      },
       { status: 502 },
     );
   }
@@ -69,9 +82,10 @@ export async function POST(request: Request) {
       ok: true,
       stored: !supabaseError,
       notified: !resendError,
-      // Surface partial-failure detail so we can monitor without retrying:
+      synced: !ghlError,
       ...(supabaseError ? { supabaseError } : {}),
       ...(resendError ? { resendError } : {}),
+      ...(ghlError ? { ghlError } : {}),
     },
     { status: 200 },
   );
@@ -123,4 +137,31 @@ async function notifyLead(
   });
 
   return { error: result.error ? result.error.message : null };
+}
+
+async function syncToGHL(
+  lead: Lead,
+): Promise<{ error: string | null }> {
+  // Tags help the GHL workflow route to the right pipeline.
+  // Always include "wolf-trades-marketing" + the intent (or source) so the
+  // workflow can branch by intent without re-parsing the source string.
+  const tags = ["wolf-trades-marketing"];
+  if (lead.intent) tags.push(lead.intent);
+  if (lead.source) tags.push(lead.source);
+
+  const payload: GHLLeadPayload = {
+    email: lead.email,
+    first_name: lead.name ?? undefined,
+    phone: lead.phone ?? undefined,
+    source: lead.source ?? undefined,
+    intent: lead.intent ?? undefined,
+    tags,
+    account_size: lead.accountSize ?? undefined,
+    experience: lead.experience ?? undefined,
+    challenge: lead.challenge ?? undefined,
+    why_apex: lead.whyApex ?? undefined,
+    notes: lead.notes ?? undefined,
+  };
+
+  return sendToGHL(payload);
 }
