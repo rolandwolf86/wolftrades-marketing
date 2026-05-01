@@ -26,6 +26,18 @@ export interface HallOfFameMember {
   story: string;
   /** Era pill — currently always "Pack Alumni" */
   era: string;
+  /**
+   * CSS `object-position` override for the card photo. Default is
+   * `top` (focus on faces near the top of the source image). Use
+   * `center` or specific values like `center 40%` when faces sit
+   * lower in the source frame.
+   */
+  objectPosition?: string;
+  /**
+   * Mirror the photo horizontally (`transform: scaleX(-1)`). Use when
+   * the subject sits on the wrong side of the frame for the card crop.
+   */
+  mirrored?: boolean;
 }
 
 export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
@@ -61,6 +73,8 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
     story:
       "Suragh became Roland's first documented millionaire student — proof that the process, applied consistently, produces life-changing results.",
     era: "Pack Alumni",
+    // Photo includes Roland + Suragh standing side-by-side mid-frame.
+    objectPosition: "center",
   },
   {
     name: "Aaron",
@@ -107,6 +121,9 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
     story:
       "Co-founder of Clover Trading. Huddie's path is a process story — disciplined entries, real risk management, and steady progression to seven figures inside the Pack.",
     era: "Pack Alumni",
+    // Source photo has Huddie on the left looking right; mirroring centers
+    // him on the right side of the card crop where his face stays in frame.
+    mirrored: true,
   },
   {
     name: "Jack Schwarze",

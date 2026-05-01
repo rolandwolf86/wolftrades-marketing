@@ -138,7 +138,11 @@ export function HallOfFameCarousel({
                     alt={`${member.name} — ${member.label}`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 85vw"
-                    className="object-cover object-top"
+                    className="object-cover"
+                    style={{
+                      objectPosition: member.objectPosition ?? "top",
+                      transform: member.mirrored ? "scaleX(-1)" : undefined,
+                    }}
                     loading={index < 3 ? "eager" : "lazy"}
                   />
                 ) : (

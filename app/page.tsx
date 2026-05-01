@@ -127,8 +127,8 @@ export default function HomePage() {
         <div className="grid md:grid-cols-[55fr_45fr]">
           <div className="relative h-[55vw] md:h-auto md:min-h-[500px]">
             <Image
-              src="/images/roland/roland-laptop.jpg"
-              alt="Roland Wolf at laptop, daily morning prep"
+              src="/images/roland/roland-standing.jpg"
+              alt="Roland Wolf"
               fill
               sizes="(min-width: 768px) 55vw, 100vw"
               className="object-cover object-top"
