@@ -192,27 +192,53 @@ const SHIMMER_BG =
 export default function ResultsPage() {
   return (
     <>
-      {/* SECTION 1 — HERO */}
-      <section className="bg-black px-6 py-24">
-        <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
-            Wolf Trades Results
-          </p>
-          <h1 className="mt-4 font-display text-5xl leading-none text-parchment md:text-7xl">
-            The Wolf Hall of Fame.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment/80">
-            These are traders who came through Roland&apos;s world, studied
-            the process, built their own edge, and went on to do serious
-            things in the market.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <CTAButton href={WOLFPACK_MONTHLY_URL} variant="primary">
-              Join Wolfpack
-            </CTAButton>
-            <CTAButton href="/apex" variant="secondary">
-              Apply for APEX 1-on-1
-            </CTAButton>
+      {/* SECTION 1 — HERO (full-bleed conference scale shot) */}
+      <section className="relative overflow-hidden bg-black min-h-[60vh] md:min-h-[70vh]">
+        <Image
+          src="/images/roland/HUGE CONFERENCE.JPG"
+          alt="Roland presenting to a packed trader conference"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.45) 100%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 60%, rgba(10,10,10,1) 100%)",
+          }}
+        />
+        <div className="relative flex min-h-[60vh] flex-col justify-center px-6 py-24 md:min-h-[70vh]">
+          <div className="mx-auto w-full max-w-5xl">
+            <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
+              Wolf Trades Results
+            </p>
+            <h1 className="mt-4 font-display text-5xl leading-none text-parchment md:text-7xl">
+              The Wolf Hall of Fame.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment/85">
+              These are traders who came through Roland&apos;s world, studied
+              the process, built their own edge, and went on to do serious
+              things in the market.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <CTAButton href={WOLFPACK_MONTHLY_URL} variant="primary">
+                Join Wolfpack
+              </CTAButton>
+              <CTAButton href="/apex" variant="secondary">
+                Apply for APEX 1-on-1
+              </CTAButton>
+            </div>
           </div>
         </div>
       </section>
