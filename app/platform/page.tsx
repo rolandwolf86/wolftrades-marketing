@@ -135,12 +135,28 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-black2">
-        <div className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+      <section className="relative overflow-hidden border-y border-white/10 bg-black2">
+        <Image
+          src="/images/roland/roland-laptop.jpg"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="object-cover object-top opacity-10"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.78) 50%, rgba(17,17,17,0.95) 100%)",
+          }}
+        />
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
           <SectionLabel>Workflow Map</SectionLabel>
           <div className="mt-8 grid gap-px bg-parchment/10 md:grid-cols-5">
             {WORKFLOW.map((item, index) => (
-              <article key={item.step} className="bg-black p-6">
+              <article key={item.step} className="bg-black/95 p-6">
                 <p className="font-display text-sm uppercase tracking-[0.18em] text-bull">
                   0{index + 1}
                 </p>
