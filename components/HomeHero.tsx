@@ -84,17 +84,19 @@ export function HomeHero() {
           </p>
         </div>
 
-        {/* Right column — Roland portrait */}
+        {/* Right column — Roland video loop (poster falls back to portrait) */}
         <div className="relative h-[100vw] w-full md:h-auto md:border-l md:border-parchment/[0.06]">
-          <Image
-            src="/images/roland/roland-standing.jpg"
-            alt="Roland Wolf"
-            fill
-            sizes="(min-width: 768px) 55vw, 100vw"
-            className="object-cover object-top"
-            priority
+          <video
+            src="/images/roland/lonewolfshothero.mp4"
+            poster="/images/roland/roland-standing.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 h-full w-full object-cover object-top"
           />
-          {/* Left-edge fade — bleeds the portrait into the copy column on desktop */}
+          {/* Left-edge fade — bleeds the video into the copy column on desktop */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 hidden md:block"
