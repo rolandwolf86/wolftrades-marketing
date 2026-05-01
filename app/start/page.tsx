@@ -55,10 +55,10 @@ export default function StartPage() {
       <div className={styles.shell}>
         <header className={styles.header}>
           <Image
-            src="/wolf-trades-logo-horizontal-dark.png"
+            src="/images/logos/wt-lockup-horizontal-white.png"
             alt="Wolf Trades"
-            width={180}
-            height={102}
+            width={1200}
+            height={300}
             priority
             className="h-10 w-auto object-contain object-left"
           />

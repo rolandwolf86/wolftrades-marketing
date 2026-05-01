@@ -61,21 +61,13 @@ export default function GoPage() {
       <div className={styles.shell}>
         {/* SECTION 1 — IDENTITY HEADER */}
         <header className={styles.identity}>
-          <div className="flex items-center justify-center gap-2 mb-2">
+          <div className="flex items-center justify-center mb-2">
             <Image
-              src="/images/logos/wt-wolf-white-transparent.png"
+              src="/images/logos/wt-lockup-horizontal-white.png"
               alt="Wolf Trades"
-              width={48}
-              height={48}
-              className="w-12 h-12 object-contain"
-              priority
-            />
-            <Image
-              src="/images/logos/wt-wordmark-dark.png"
-              alt="Wolf Trades"
-              width={200}
-              height={63}
-              className="h-8 w-auto object-contain"
+              width={1200}
+              height={300}
+              className="h-10 w-auto object-contain"
               priority
             />
           </div>

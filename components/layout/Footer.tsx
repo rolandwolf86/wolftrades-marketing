@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   INSTAGRAM_URL,
@@ -29,35 +30,13 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <div className="flex items-center gap-[4px]">
-              <span className="font-display text-[16px] uppercase tracking-[.06em] text-parchment leading-none">
-                Wolf
-              </span>
-              <div
-                className="flex flex-col items-center gap-[2px]"
-                style={{ height: "13px", justifyContent: "center" }}
-              >
-                <span
-                  style={{
-                    display: "block",
-                    width: "2px",
-                    height: "8px",
-                    background: "#16A34A",
-                  }}
-                />
-                <span
-                  style={{
-                    display: "block",
-                    width: "2px",
-                    height: "5px",
-                    background: "#C1121F",
-                  }}
-                />
-              </div>
-              <span className="font-display text-[16px] uppercase tracking-[.06em] text-parchment leading-none">
-                Trades
-              </span>
-            </div>
+            <Image
+              src="/images/logos/wt-lockup-horizontal-white.png"
+              alt="Wolf Trades"
+              width={1200}
+              height={300}
+              className="h-7 w-auto object-contain object-left"
+            />
             <p className="mt-2 max-w-xs text-sm text-gray">
               The trading operating system for serious traders.
             </p>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LOGIN_URL, START_FREE_URL } from "@/lib/links";
@@ -43,35 +44,14 @@ export function Header() {
           className="flex items-center"
           aria-label="Wolf Trades home"
         >
-          <div className="flex items-center gap-[5px]">
-            <span className="font-display text-[22px] uppercase tracking-[.06em] text-parchment leading-none">
-              Wolf
-            </span>
-            <div
-              className="flex flex-col items-center gap-[2px]"
-              style={{ height: "18px", justifyContent: "center" }}
-            >
-              <span
-                style={{
-                  display: "block",
-                  width: "3px",
-                  height: "10px",
-                  background: "#16A34A",
-                }}
-              />
-              <span
-                style={{
-                  display: "block",
-                  width: "3px",
-                  height: "7px",
-                  background: "#C1121F",
-                }}
-              />
-            </div>
-            <span className="font-display text-[22px] uppercase tracking-[.06em] text-parchment leading-none">
-              Trades
-            </span>
-          </div>
+          <Image
+            src="/images/logos/wt-lockup-horizontal-white.png"
+            alt="Wolf Trades"
+            width={1200}
+            height={300}
+            className="h-10 w-auto object-contain object-left"
+            priority
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">

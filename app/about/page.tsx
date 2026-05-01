@@ -16,10 +16,10 @@ export default function AboutPage() {
       {/* SECTION 0 — BRAND HERO */}
       <div className="flex flex-col items-center py-16 bg-black">
         <Image
-          src="/images/logos/wt-wolf-white-transparent.png"
+          src="/images/logos/wt-icon-white.png"
           alt="Wolf Trades"
-          width={120}
-          height={120}
+          width={240}
+          height={240}
           className="w-24 h-24 mb-4 opacity-95"
           priority
         />
