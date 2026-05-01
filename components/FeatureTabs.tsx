@@ -19,8 +19,8 @@ const TABS: ReadonlyArray<Tab> = [
     label: "Live Trading",
     headline: "Watch Roland trade in real time.",
     body: "Every market day. The setups he's watching, the entries, the exits, the decisions — as they happen. Not replays. Not summaries. Live.",
-    image: "/screenshots/chat.png",
-    alt: "Wolf Trades live trading room",
+    image: "/images/roland/roland-room-scanner.jpg",
+    alt: "Roland teaching live in the trading room",
   },
   {
     icon: "📋",
@@ -35,8 +35,8 @@ const TABS: ReadonlyArray<Tab> = [
     label: "Trader Therapy",
     headline: "Real feedback from Roland. Live.",
     body: "Ask questions. Talk through your trades. Get direct correction in front of the group. This is where habits change.",
-    image: "/screenshots/community.png",
-    alt: "Wolf Trades community feedback",
+    image: "/images/roland/wolf hero teaching (2).JPG",
+    alt: "Roland breaking down a chart pattern with engaged students",
   },
   {
     icon: "📹",

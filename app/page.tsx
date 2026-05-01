@@ -72,16 +72,40 @@ const HALL_OF_FAME = [
 
 const TIMELINE_PHOTOS = [
   {
+    src: "/images/roland/HUGE CONFERENCE.JPG",
+    alt: "Roland presenting to a packed trader conference",
+    year: "2024",
+    caption: "Trader & Investor Summit",
+  },
+  {
     src: "/images/roland/roland-teaching-hero.jpg",
     alt: "Roland teaching at NYC Bootcamp 2024",
     year: "2024",
     caption: "NYC Bootcamp — 30+ traders",
   },
   {
+    src: "/images/roland/wolf hero teaching.JPG",
+    alt: "Roland teaching at the whiteboard",
+    year: "2024",
+    caption: "Live workshop",
+  },
+  {
     src: "/images/roland/wolfpack-group-drone.jpg",
     alt: "Wolfpack at Tahoe retreat 2024",
     year: "2024",
     caption: "Wolfpack Tahoe Retreat",
+  },
+  {
+    src: "/images/roland/CLASSROOM4.JPG",
+    alt: "Wolf Trades classroom in session",
+    year: "2024",
+    caption: "Bootcamp classroom",
+  },
+  {
+    src: "/images/roland/dallasgroup.JPG",
+    alt: "Wolfpack Dallas meetup",
+    year: "2024",
+    caption: "Dallas meetup",
   },
   {
     src: "/images/roland/roland-teaching-wide.jpg",
