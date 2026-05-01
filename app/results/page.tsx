@@ -170,6 +170,11 @@ const PROOF_PHOTOS = [
 
 const COMMUNITY_PHOTOS = [
   {
+    src: "/images/roland/HUGE CONFERENCE.JPG",
+    alt: "Roland presenting at the Trader & Investor Summit",
+    caption: "Trader & Investor Summit — main stage",
+  },
+  {
     src: "/images/roland/wolfpack-group-drone.jpg",
     alt: "Wolfpack group Tahoe 2024",
     caption: "Wolfpack — Tahoe Retreat 2024",
@@ -178,6 +183,16 @@ const COMMUNITY_PHOTOS = [
     src: "/images/roland/wolfpack-group-arms.jpg",
     alt: "Wolfpack community celebration",
     caption: "The Pack — Tahoe 2024",
+  },
+  {
+    src: "/images/roland/CLASSROOM4.JPG",
+    alt: "Wolf Trades classroom in session",
+    caption: "Bootcamp classroom",
+  },
+  {
+    src: "/images/roland/dallasgroup.JPG",
+    alt: "Wolfpack Dallas meetup at American Airlines Center",
+    caption: "Dallas meetup",
   },
   {
     src: "/images/roland/roland-teaching-wide.jpg",
