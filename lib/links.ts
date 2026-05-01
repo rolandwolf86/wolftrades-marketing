@@ -6,16 +6,15 @@ export const LOGIN_URL = "https://app.wolftrades.com/login";
 
 export const WOLFPACK_MONTHLY_URL = "/wolfpack#pricing";
 export const WOLFPACK_ANNUAL_URL = "/wolfpack#annual";
-export const PRO_MONTHLY_URL = "/pro";
-export const PRO_ANNUAL_URL = "/pro#annual";
 
 // GHL order page is paused until pricing, copy, contrast, and proof are verified.
 export const WOLFPACK_CHECKOUT_URL = "/wolfpack#pricing";
 
-// TODO: Confirm dedicated annual and Pro GHL order paths before sending traffic.
+// TODO: Confirm dedicated annual GHL order path before sending traffic.
 export const WOLFPACK_ANNUAL_CHECKOUT_URL = "/wolfpack#pricing";
-export const PRO_CHECKOUT_URL = "/pro#pricing";
-export const PRO_ANNUAL_CHECKOUT_URL = "/pro#pricing";
+
+// Wolfpack Pro is now an in-funnel upsell only — no public /pro page.
+// Pro is reachable post-Wolfpack inside the platform; not from marketing.
 
 // On /go specifically: Join Wolfpack routes to the sales page.
 // Start Free is the only direct app link in that funnel.

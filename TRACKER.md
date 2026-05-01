@@ -1,6 +1,6 @@
 # Wolf Trades — Master Tracker
 
-**Last updated:** 2026-05-01 (commit `37a970a`)
+**Last updated:** 2026-05-01 (post-/pro removal)
 **Maintainer:** Roland + Claude (via chat)
 **Format:** Anyone can edit. Bump the `Last updated` line when you do.
 
@@ -50,7 +50,7 @@ These are tracked but require Roland's call on which side is canonical before fi
 |---|---|---|---|---|
 | D-1 | Jack Kellogg career profits | $20M+ (in `HALL_OF_FAME` + `AnimatedStats`) | $13M+ (verified-proof doc) | Roland confirms, then update one side |
 | D-2 | APEX Cohort 1 seats | "2 spots left" | 7 filled / 3 open (platform constants) | Roland confirms, then update one side |
-| D-3 | Wolfpack pricing structure copy | `/wolfpack` references `$127/mo or $997/yr` | Source of truth: `$127/mo or $997/yr`, plus separate Wolfpack Pro at `$197/mo` | Looks consistent; flag for periodic re-check |
+| ~~D-3~~ | ~~Wolfpack Pro pricing structure copy~~ | **Resolved** 2026-05-01 — `/pro` page removed entirely; Pro is now in-funnel upsell only, not a public marketing page. Copy that mentions "3 years of Wolfpack Pro" as part of the APEX bundle (homepage tier card + `/apex` page) intentionally retained — those describe an upsell benefit, not a public sales offer. | ✅ |
 
 ## §4 Roland action items — only Roland can do these
 
@@ -142,6 +142,8 @@ Last 10 commits, most recent first:
 
 | Hash | Commit |
 |---|---|
+| _pending_ | chore: remove /pro page — Pro is now in-funnel upsell only |
+| `9bb8305` | docs: TRACKER — E-7 shipped, R-7 closed |
 | `37a970a` | feat: homepage hero — video loop replaces static portrait (E-7) |
 | `3293992` | docs: TRACKER — mark E-4, E-8 shipped |
 | `c585148` | feat: /events hero — atmospheric chart bg overlay (E-4) |
