@@ -6,8 +6,8 @@
 //
 // Story policy: real, verifiable copy only. No fake urgency, no guru
 // language. Stories carry over verbatim from the prior /results inline
-// array unless flagged DRAFT (Dom, Huddie, John, Phil, Mike) — those
-// require Roland's approval before publish.
+// array unless flagged DRAFT — those require Roland's approval before
+// publish.
 
 export interface HallOfFameMember {
   /** Full display name */
@@ -32,7 +32,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Jack Kellogg",
     initials: "JK",
-    photo: "/images/proof/jack-over-20mil.jpg",
+    photo: "/images/proof/jack-kellogg.jpg",
     label: "Breakout Trader",
     stat: "$20M+",
     substat: "career profits",
@@ -54,7 +54,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Suragh",
     initials: "SU",
-    photo: "/images/proof/suragh-first-millionaire.jpg",
+    photo: "/images/proof/suragh.jpg",
     label: "First Millionaire Student",
     stat: "$1M+",
     substat: "documented",
@@ -65,7 +65,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Aaron",
     initials: "AA",
-    photo: "/images/proof/aaron-1-2-mil.jpg",
+    photo: "/images/proof/aaron.jpg",
     label: "Seven-Figure Track",
     stat: "$1.2M+",
     substat: "and growing",
@@ -76,7 +76,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Brandon Hanna",
     initials: "BH",
-    photo: "/images/proof/brandon-approaching-1mil.jpg",
+    photo: null,
     label: "Approaching Seven Figures",
     stat: "~$1M",
     substat: "and rising",
@@ -99,7 +99,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Huddie",
     initials: "MH",
-    photo: "/images/proof/huddie-7-figures.jpg",
+    photo: "/images/proof/huddie.jpg",
     label: "Seven-Figure Trader",
     stat: "Seven figures",
     substat: "documented",
@@ -109,9 +109,21 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
     era: "Pack Alumni",
   },
   {
+    name: "Jack Schwarze",
+    initials: "JS",
+    photo: "/images/proof/jack-schwarze.jpg",
+    label: "Seven-Figure Club",
+    stat: "Seven figures",
+    substat: "documented",
+    // DRAFT — Roland approval pending.
+    story:
+      "Jack Schwarze joined the seven-figure club through the Pack's process — disciplined entries, real risk management, and the long arc of consistent execution.",
+    era: "Pack Alumni",
+  },
+  {
     name: "John",
     initials: "JO",
-    photo: null,
+    photo: "/images/proof/john.png",
     label: "Seven-Figure Club",
     stat: "Seven figures",
     substat: "crossed in 2021",
@@ -123,7 +135,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Sebastien",
     initials: "SE",
-    photo: "/images/proof/sebastien-500k.jpg",
+    photo: "/images/proof/sebastien.jpg",
     label: "Consistent Builder",
     stat: "$500K+",
     substat: "documented",
@@ -134,7 +146,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Sandra",
     initials: "SA",
-    photo: "/images/proof/sandra-200k.jpg",
+    photo: "/images/proof/sandra.jpg",
     label: "First Female Six-Figure",
     stat: "$200K+",
     substat: "and climbing",
@@ -145,7 +157,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Carlos",
     initials: "CA",
-    photo: "/images/proof/carlos-6-figures.jpg",
+    photo: "/images/proof/carlos-m.jpg",
     label: "Six-Figure Trader",
     stat: "$200K+",
     substat: "documented",
@@ -156,7 +168,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Phil",
     initials: "PH",
-    photo: "/images/proof/phil-6-figures.jpg",
+    photo: "/images/proof/phil.jpg",
     label: "Small-Cap Trader",
     stat: "Six figures",
     substat: "long-biased",
@@ -166,9 +178,21 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
     era: "Pack Alumni",
   },
   {
+    name: "Sean",
+    initials: "SN",
+    photo: "/images/proof/sean.jpeg",
+    label: "Six-Figure Trader",
+    stat: "Six figures",
+    substat: "documented",
+    // DRAFT — Roland approval pending.
+    story:
+      "Sean's path is the steady-progression case study — process work in the Pack turning into a documented six-figure track.",
+    era: "Pack Alumni",
+  },
+  {
     name: "Stock Sniper Mike",
     initials: "SM",
-    photo: "/images/proof/stock-sniper-mike-6-figures.jpg",
+    photo: "/images/proof/stock-sniper-mike.jpg",
     label: "Six-Figure Trader",
     stat: "Six figures",
     substat: "documented",

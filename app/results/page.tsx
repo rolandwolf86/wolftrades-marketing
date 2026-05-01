@@ -56,11 +56,11 @@ const SHIMMER_BG =
 export default function ResultsPage() {
   return (
     <>
-      {/* SECTION 1 — HERO (full-bleed conference scale shot) */}
+      {/* SECTION 1 — HERO (Wolf Hall of Fame hero shot) */}
       <section className="relative overflow-hidden bg-black min-h-[60vh] md:min-h-[70vh]">
         <Image
-          src="/images/roland/HUGE CONFERENCE.JPG"
-          alt="Roland presenting to a packed trader conference"
+          src="/images/proof/hall-of-fame-hero.jpg"
+          alt="Wolf Hall of Fame"
           fill
           sizes="100vw"
           className="object-cover object-center"
