@@ -13,24 +13,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* SECTION 0 — BRAND HERO */}
-      <div className="flex flex-col items-center py-16 bg-black">
-        <Image
-          src="/images/logos/wt-icon-white.png"
-          alt="Wolf Trades"
-          width={240}
-          height={240}
-          className="w-24 h-24 mb-4 opacity-95"
-          priority
-        />
-        <p className="font-display text-xs uppercase tracking-[.25em] text-bull">
-          Wolf Trades
-        </p>
-        <p className="text-sm text-gray mt-1">
-          Est. 2018 · 2,500+ Traders
-        </p>
-      </div>
-
       {/* SECTION 1 — HERO (full-bleed Roland teaching) */}
       <section className="relative overflow-hidden bg-black min-h-[60vh] md:min-h-[70vh]">
         <Image
@@ -333,6 +315,23 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      {/* SECTION 8 — BRAND CLOSER */}
+      <div className="flex flex-col items-center border-t border-white/5 bg-black py-16">
+        <Image
+          src="/images/logos/wt-icon-white.png"
+          alt="Wolf Trades"
+          width={240}
+          height={240}
+          className="w-24 h-24 mb-4 opacity-95"
+        />
+        <p className="font-display text-xs uppercase tracking-[.25em] text-bull">
+          Wolf Trades
+        </p>
+        <p className="text-sm text-gray mt-1">
+          Est. 2018 · 2,500+ Traders
+        </p>
+      </div>
     </>
   );
 }

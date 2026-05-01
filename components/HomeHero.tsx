@@ -29,17 +29,8 @@ export function HomeHero() {
       <div className="relative z-[1] flex flex-col md:grid md:min-h-[100vh] md:grid-cols-[45fr_55fr]">
         {/* Left column — copy */}
         <div className="flex flex-col justify-center px-6 py-10 md:px-20 md:py-16">
-          <Image
-            src="/images/logos/wt-lockup-horizontal-white.png"
-            alt="Wolf Trades"
-            width={1200}
-            height={300}
-            className="h-10 w-auto object-contain object-left"
-            priority
-          />
-
           <h1
-            className="mt-12 font-display font-black uppercase text-parchment md:mt-16"
+            className="font-display font-black uppercase text-parchment"
             style={{
               fontSize: "clamp(40px, 9vw, 112px)",
               lineHeight: 0.88,
