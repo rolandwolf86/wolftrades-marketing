@@ -123,10 +123,19 @@ export default function ApexClient() {
         }),
       });
       if (!response.ok) {
-        throw new Error("Lead request failed");
+        // Surface full server response in console so we can diagnose
+        // (validation 422 vs downstream 502 vs anything else).
+        const detail = await response.text().catch(() => "");
+        console.error(
+          "[apex form] /api/lead failed",
+          response.status,
+          detail,
+        );
+        throw new Error(`Lead request failed (${response.status})`);
       }
       setSubmitted(true);
-    } catch {
+    } catch (err) {
+      console.error("[apex form] submit error", err);
       setError(
         "Something went wrong. Email roland@wolftrades.com to apply.",
       );

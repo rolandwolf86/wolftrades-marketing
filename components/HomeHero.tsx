@@ -84,17 +84,15 @@ export function HomeHero() {
           </p>
         </div>
 
-        {/* Right column — Roland video loop (poster falls back to portrait) */}
+        {/* Right column — Roland teaching hero shot */}
         <div className="relative h-[100vw] w-full md:h-auto md:border-l md:border-parchment/[0.06]">
-          <video
-            src="/images/roland/lonewolfshothero.mp4"
-            poster="/images/roland/roland-standing.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="absolute inset-0 h-full w-full object-cover object-top"
+          <Image
+            src="/images/roland/wolf hero teaching.JPG"
+            alt="Roland Wolf teaching"
+            fill
+            sizes="(min-width: 768px) 55vw, 100vw"
+            className="object-cover object-top"
+            priority
           />
           {/* Left-edge fade — bleeds the video into the copy column on desktop */}
           <div
