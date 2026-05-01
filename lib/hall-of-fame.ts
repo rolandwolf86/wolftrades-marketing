@@ -156,7 +156,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
   {
     name: "Phil",
     initials: "PH",
-    photo: null,
+    photo: "/images/proof/phil-6-figures.jpg",
     label: "Small-Cap Trader",
     stat: "Six figures",
     substat: "long-biased",

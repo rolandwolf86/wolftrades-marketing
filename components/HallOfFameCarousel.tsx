@@ -38,22 +38,39 @@ export function HallOfFameCarousel({
     if (!el) return;
     const card = el.querySelectorAll<HTMLElement>("[data-hof-card]")[index];
     if (!card) return;
-    el.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+    // Center the target card in the viewport.
+    const target = card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2;
+    el.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
   };
 
-  // Track active card by scroll position so dots stay in sync with manual swipe.
+  // Track active card by which one is closest to the container's center.
+  // This drives the stack/recess effect on neighbors.
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    const onScroll = () => {
+    const recompute = () => {
       const cards = el.querySelectorAll<HTMLElement>("[data-hof-card]");
       if (cards.length === 0) return;
-      const cardWidth = cards[0].offsetWidth + 16;
-      const idx = Math.round(el.scrollLeft / cardWidth);
-      setActiveIndex(Math.min(Math.max(idx, 0), members.length - 1));
+      const center = el.scrollLeft + el.clientWidth / 2;
+      let bestIdx = 0;
+      let bestDist = Infinity;
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const dist = Math.abs(cardCenter - center);
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestIdx = i;
+        }
+      });
+      setActiveIndex(bestIdx);
     };
-    el.addEventListener("scroll", onScroll, { passive: true });
-    return () => el.removeEventListener("scroll", onScroll);
+    recompute();
+    el.addEventListener("scroll", recompute, { passive: true });
+    window.addEventListener("resize", recompute);
+    return () => {
+      el.removeEventListener("scroll", recompute);
+      window.removeEventListener("resize", recompute);
+    };
   }, [members.length]);
 
   return (
@@ -78,13 +95,14 @@ export function HallOfFameCarousel({
       )}
 
       <div className="relative">
+        {/* Prev arrow — bull-green, high contrast against any photo */}
         <button
           type="button"
           onClick={() => scrollByCard(-1)}
-          className="absolute left-2 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center border border-parchment/20 bg-black/80 transition-colors hover:border-bull/60 md:flex"
+          className="absolute left-2 top-1/2 z-20 hidden h-14 w-14 -translate-y-1/2 items-center justify-center border-2 border-bull bg-black/85 text-2xl font-bold text-bull shadow-lg transition-all hover:bg-bull hover:text-black md:flex"
           aria-label="Scroll to previous"
         >
-          <span className="text-lg text-parchment">←</span>
+          ←
         </button>
 
         <div
@@ -92,66 +110,83 @@ export function HallOfFameCarousel({
           className="flex gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           style={{ scrollSnapType: "x mandatory" }}
         >
-          {members.map((member, index) => (
-            <article
-              key={member.name}
-              data-hof-card
-              className="relative flex-none w-[85vw] aspect-[3/4] overflow-hidden border border-parchment/10 bg-black2 md:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)]"
-              style={{ scrollSnapAlign: "start" }}
-            >
-              {member.photo ? (
-                <Image
-                  src={member.photo}
-                  alt={`${member.name} — ${member.label}`}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 85vw"
-                  className="object-cover object-top"
-                  loading={index < 3 ? "eager" : "lazy"}
-                />
-              ) : (
-                <InitialsPanel initials={member.initials} />
-              )}
+          {members.map((member, index) => {
+            const distance = Math.abs(index - activeIndex);
+            // Stacked recess effect — neighbors fade and shrink so the
+            // active card visually pops, signaling more cards on either side.
+            const opacity =
+              distance === 0 ? 1 : distance === 1 ? 0.55 : distance === 2 ? 0.35 : 0.2;
+            const scale =
+              distance === 0 ? 1 : distance === 1 ? 0.92 : distance === 2 ? 0.86 : 0.82;
 
-              {/* Bottom darken gradient — keeps overlay text legible */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0"
+            return (
+              <article
+                key={member.name}
+                data-hof-card
+                className="relative flex-none w-[85vw] aspect-[3/4] overflow-hidden border border-parchment/10 bg-black2 md:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)]"
                 style={{
-                  background:
-                    "linear-gradient(to bottom, transparent 35%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.95) 100%)",
+                  scrollSnapAlign: "center",
+                  opacity,
+                  transform: `scale(${scale})`,
+                  transition:
+                    "opacity 400ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1)",
                 }}
-              />
+              >
+                {member.photo ? (
+                  <Image
+                    src={member.photo}
+                    alt={`${member.name} — ${member.label}`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 85vw"
+                    className="object-cover object-top"
+                    loading={index < 3 ? "eager" : "lazy"}
+                  />
+                ) : (
+                  <InitialsPanel initials={member.initials} />
+                )}
 
-              {/* Content overlay */}
-              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 md:p-6">
-                <p className="font-display text-xs uppercase tracking-widest text-bull">
-                  {member.label}
-                </p>
-                <p className="font-display text-3xl leading-none text-gold tabular-nums md:text-4xl">
-                  {member.stat}
-                </p>
-                <p className="text-xs text-parchment/60">{member.substat}</p>
-                <h3 className="mt-3 font-display text-xl uppercase leading-tight text-parchment">
-                  {member.name}
-                </h3>
-                <p className="mt-2 text-sm leading-snug text-parchment/75">
-                  {member.story}
-                </p>
-                <span className="mt-3 inline-flex w-fit items-center border border-parchment/15 bg-black/40 px-3 py-1 font-display text-[10px] uppercase tracking-[0.18em] text-parchment/60">
-                  {member.era}
-                </span>
-              </div>
-            </article>
-          ))}
+                {/* Bottom darken gradient */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, transparent 35%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.95) 100%)",
+                  }}
+                />
+
+                {/* Content overlay */}
+                <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-5 md:p-6">
+                  <p className="font-display text-xs uppercase tracking-widest text-bull">
+                    {member.label}
+                  </p>
+                  <p className="font-display text-3xl leading-none text-gold tabular-nums md:text-4xl">
+                    {member.stat}
+                  </p>
+                  <p className="text-xs text-parchment/60">{member.substat}</p>
+                  <h3 className="mt-3 font-display text-xl uppercase leading-tight text-parchment">
+                    {member.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-snug text-parchment/75">
+                    {member.story}
+                  </p>
+                  <span className="mt-3 inline-flex w-fit items-center border border-parchment/15 bg-black/40 px-3 py-1 font-display text-[10px] uppercase tracking-[0.18em] text-parchment/60">
+                    {member.era}
+                  </span>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
+        {/* Next arrow */}
         <button
           type="button"
           onClick={() => scrollByCard(1)}
-          className="absolute right-2 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center border border-parchment/20 bg-black/80 transition-colors hover:border-bull/60 md:flex"
+          className="absolute right-2 top-1/2 z-20 hidden h-14 w-14 -translate-y-1/2 items-center justify-center border-2 border-bull bg-black/85 text-2xl font-bold text-bull shadow-lg transition-all hover:bg-bull hover:text-black md:flex"
           aria-label="Scroll to next"
         >
-          <span className="text-lg text-parchment">→</span>
+          →
         </button>
       </div>
 
