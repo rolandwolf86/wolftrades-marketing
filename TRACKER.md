@@ -1,6 +1,6 @@
 # Wolf Trades — Master Tracker
 
-**Last updated:** 2026-05-01 (commit `9990f58`)
+**Last updated:** 2026-05-01 (commit `c585148`)
 **Maintainer:** Roland + Claude (via chat)
 **Format:** Anyone can edit. Bump the `Last updated` line when you do.
 
@@ -128,11 +128,11 @@ Tracked from prior site audits. Each is one isolated commit. Priority **E**-pref
 | E-1 | `/about` §2 ORIGIN — soccer-era photo | Need photo from Roland (R-6) | P3 |
 | E-2 | `/about` §4 FAMILY — currently single shot, could rotate to other family photos as added | Future asset adds | P3 |
 | E-3 | `/events` Next Event section bg | Cropped `stage.JPG` once URL issue resolved (R-5) | P2 |
-| E-4 | Atmospheric chart-overlay backgrounds — use `hf_20260429_165852_7a5b62e0.png` instead of/in addition to existing radial pulse | Optional polish | P3 |
+| ~~E-4~~ | ~~Atmospheric chart-overlay backgrounds~~ | **SHIPPED** `c585148` (wired to `/events` hero) | ✅ |
 | ~~E-5~~ | ~~Mobile menu drawer — add `Log In` button~~ | **SHIPPED** `53dd25c` | ✅ |
 | ~~E-6~~ | ~~`/results` §4 community photos 3 → 6~~ | **SHIPPED** `ffea336` | ✅ |
 | E-7 | Homepage hero — swap static `roland-standing.jpg` for `lonewolfshothero.mp4` autoplay loop | Pending Roland's call (R-7) | P1 (high impact) |
-| E-8 | `/platform` Workflow Map cell 01 (Prep) — add `roland-laptop.jpg` darkened bg | Skipped in last sprint (minor) | P3 |
+| ~~E-8~~ | ~~`/platform` Workflow Map — Roland-laptop section bg~~ | **SHIPPED** `c708b43` (subtle 10% opacity bg behind whole grid, dark gradient overlay for legibility) | ✅ |
 | ~~E-9~~ | ~~Wolfpack feature grid — Daily Watchlist + Trader Community swaps~~ | **SHIPPED** `9990f58` (4 of 6 now Roland-presence; Playbook Builder + Replay Library kept as screenshots since they're tool screens) | ✅ |
 | E-10 | `/start` page — separate redesign session per Roland's earlier note ("That redesign is a separate session") | Roland-led | P2 |
 
@@ -142,6 +142,9 @@ Last 10 commits, most recent first:
 
 | Hash | Commit |
 |---|---|
+| `c585148` | feat: /events hero — atmospheric chart bg overlay (E-4) |
+| `c708b43` | feat: /platform Workflow Map — subtle Roland-laptop bg behind grid (E-8) |
+| `f6ae1e8` | docs: TRACKER — mark E-5, E-6, E-9 shipped |
 | `9990f58` | feat: /wolfpack feature grid — Daily Watchlist + Trader Community Roland-presence shots (E-9) |
 | `ffea336` | feat: /results — community photos expanded 3→6 (E-6) |
 | `53dd25c` | feat: mobile menu — add LOGIN ghost button (E-5) |
