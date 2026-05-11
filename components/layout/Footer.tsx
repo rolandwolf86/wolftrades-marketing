@@ -9,6 +9,7 @@ import {
 
 const FOOTER_LINKS: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/wolfpack", label: "Wolfpack" },
+  { href: "/pro", label: "Pro" },
   { href: "/apex", label: "APEX" },
   { href: "/platform", label: "Platform" },
   { href: "/results", label: "Results" },
