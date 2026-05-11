@@ -6,7 +6,13 @@ import { FeatureTabs } from "@/components/FeatureTabs";
 import { HallOfFameCarousel } from "@/components/HallOfFameCarousel";
 import { HomeHero } from "@/components/HomeHero";
 import { PhotoCarousel } from "@/components/PhotoCarousel";
-import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
+import { PricingCard } from "@/components/PricingCard";
+import {
+  START_FREE_URL,
+  WOLFPACK_MONTHLY_URL,
+  WOLFPACK_PRO_URL,
+} from "@/lib/links";
+import { PRICING, PROMO } from "@/lib/pricing";
 
 const STATS = [
   { value: "2500", suffix: "+", label: "Traders Inside" },
@@ -101,6 +107,14 @@ const WOLFPACK_FEATURES = [
   "Roland’s playbook",
   "Journal + analytics",
   "Community",
+];
+
+const PRO_FEATURES = [
+  "Everything in Wolfpack",
+  "Wolf Scanner",
+  "Wolf AI",
+  "Edge Lab",
+  "Backtest Lab",
 ];
 
 const APEX_FEATURES = [
@@ -218,18 +232,18 @@ export default function HomePage() {
       {/* SECTION 6 — GRITTANI */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Endorsed. Unsolicited. Unpaid.
           </p>
           <blockquote className="mt-8 font-display text-5xl leading-[0.95] text-parchment md:text-7xl">
             &ldquo;He has my respect.&rdquo;
           </blockquote>
-          <p className="mt-8 max-w-3xl border-l-2 border-gold/40 pl-6 text-lg italic leading-8 text-parchment/85">
+          <p className="mt-8 max-w-3xl border-l-2 border-parchment/30 pl-6 text-lg italic leading-8 text-parchment/85">
             &ldquo;If I were looking to jump into a new service and see what I
             could pick up and maybe get a couple new ideas, this is probably
             where I would start.&rdquo;
           </p>
-          <p className="mt-4 max-w-3xl border-l-2 border-gold/40 pl-6 text-base italic leading-7 text-parchment/70">
+          <p className="mt-4 max-w-3xl border-l-2 border-parchment/30 pl-6 text-base italic leading-7 text-parchment/70">
             &ldquo;He has no idea that I&rsquo;m putting any of this in here.
             He didn&rsquo;t ask me to say any of this, there&rsquo;s no
             affiliate hookup or anything like that, this is all just my honest
@@ -252,14 +266,14 @@ export default function HomePage() {
         />
       </section>
 
-      {/* SECTION 8 — THREE TIER PRICING */}
+      {/* SECTION 8 — FOUR TIER PRICING */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-7xl">
           <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Start Where You Are
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
-            Three paths. One destination.
+            Four paths. One destination.
           </h2>
           <div className="mt-6 max-w-2xl space-y-1">
             <p className="font-display text-lg leading-tight text-parchment md:text-xl">
@@ -269,106 +283,63 @@ export default function HomePage() {
               Wolfpack gives you the room.
             </p>
             <p className="font-display text-lg leading-tight text-parchment md:text-xl">
+              Pro gives you the toolkit.
+            </p>
+            <p className="font-display text-lg leading-tight text-parchment md:text-xl">
               APEX gives you me personally in your corner.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {/* Free */}
-            <article className="flex flex-col border border-white/10 bg-black p-6 md:p-8">
-              <span className="font-display text-xs uppercase tracking-[0.2em] text-bull">
-                Free
-              </span>
-              <p className="mt-4 font-display text-5xl text-parchment">$0</p>
-              <p className="mt-4 text-base leading-7 text-parchment/76">
-                Start with Roland&rsquo;s daily watchlist and community
-                preview.
-              </p>
-              <ul className="mt-6 flex-1 space-y-2 text-sm text-parchment/80">
-                {FREE_FEATURES.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span aria-hidden className="text-bull">
-                      •
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <CTAButton href={START_FREE_URL} variant="secondary">
-                  Start Free
-                </CTAButton>
-              </div>
-            </article>
-
-            {/* Wolfpack — featured */}
-            <article className="relative flex flex-col border border-bull bg-black p-6 shadow-[0_0_0_1px_rgba(22,163,74,0.4)] md:p-8">
-              <span className="absolute -top-3 left-6 bg-bull px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
-                Most Popular
-              </span>
-              <span className="font-display text-xs uppercase tracking-[0.2em] text-bull">
-                Wolfpack
-              </span>
-              <p className="mt-4 font-display text-5xl text-parchment">
-                $127
-                <span className="ml-2 text-base font-normal text-gray">
-                  /mo
-                </span>
-              </p>
-              <p className="mt-2 text-sm text-bull">
-                or $997/yr — save $527
-              </p>
-              <p className="mt-4 text-base leading-7 text-parchment/76">
-                The complete trading environment.
-              </p>
-              <ul className="mt-6 flex-1 space-y-2 text-sm text-parchment/80">
-                {WOLFPACK_FEATURES.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span aria-hidden className="text-bull">
-                      •
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <CTAButton href={WOLFPACK_MONTHLY_URL} variant="primary">
-                  Join Wolfpack
-                </CTAButton>
-              </div>
-            </article>
-
-            {/* APEX */}
-            <article className="flex flex-col border border-white/10 bg-black p-6 md:p-8">
-              <span className="font-display text-xs uppercase tracking-[0.2em] text-gold">
-                APEX 1-on-1
-              </span>
-              <p className="mt-4 font-display text-3xl leading-tight text-parchment">
-                Application Only
-              </p>
-              <p className="mt-4 text-base leading-7 text-parchment/76">
-                Direct mentorship with Roland. 4 months. Max 10 traders per
-                cohort.
-              </p>
-              <ul className="mt-6 flex-1 space-y-2 text-sm text-parchment/80">
-                {APEX_FEATURES.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span aria-hidden className="text-gold">
-                      •
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-4 text-xs uppercase tracking-wider text-gray">
-                No public price. Phone close only.
-              </p>
-              <div className="mt-6">
-                <CTAButton href="/apex" variant="secondary">
-                  Apply Now
-                </CTAButton>
-              </div>
-            </article>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <PricingCard
+              name="Free"
+              price="$0"
+              description="Start with Roland's daily watchlist and community preview."
+              features={FREE_FEATURES}
+              ctaLabel="Start Free"
+              ctaHref={START_FREE_URL}
+              ctaVariant="secondary"
+              className="order-4 md:order-1"
+            />
+            <PricingCard
+              name="Wolfpack"
+              price={PRICING.wolfpack.monthly}
+              cadence="mo"
+              description="The complete trading environment."
+              features={WOLFPACK_FEATURES}
+              ctaLabel="Join Wolfpack"
+              ctaHref={WOLFPACK_MONTHLY_URL}
+              ctaVariant="primary"
+              badge="Most Popular"
+              featured
+              promo={PROMO.wolfpack}
+              className="order-1 md:order-2"
+            />
+            <PricingCard
+              name="Wolfpack Pro"
+              price={PRICING.pro.monthly}
+              cadence="mo"
+              description="Same room. Sharper tools."
+              features={PRO_FEATURES}
+              ctaLabel="See Pro"
+              ctaHref={WOLFPACK_PRO_URL}
+              ctaVariant="secondary"
+              promo={PROMO.pro}
+              className="order-2 md:order-3"
+            />
+            <PricingCard
+              name="APEX 1-on-1"
+              price="Application Only"
+              priceVariant="compact"
+              description="Direct mentorship with Roland. 4 months. Max 10 traders per cohort."
+              features={APEX_FEATURES}
+              ctaLabel="Apply Now"
+              ctaHref="/apex"
+              ctaVariant="secondary"
+              apexAccent
+              footnote="No public price. Phone close only."
+              className="order-3 md:order-4"
+            />
           </div>
         </div>
       </section>
@@ -388,6 +359,9 @@ export default function HomePage() {
             </p>
             <p className="font-display text-xl leading-tight text-parchment md:text-2xl">
               Wolfpack gives you the room.
+            </p>
+            <p className="font-display text-xl leading-tight text-parchment md:text-2xl">
+              Pro gives you the toolkit.
             </p>
             <p className="font-display text-xl leading-tight text-parchment md:text-2xl">
               APEX gives you me personally in your corner.

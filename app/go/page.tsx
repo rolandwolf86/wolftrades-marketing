@@ -133,7 +133,7 @@ export default function GoPage() {
           <p>
             Live trading every day. Daily watchlist. Trader Therapy. Full
             replay library. Roland&apos;s playbook. Scanner. Wolf AI.{" "}
-            {"$127/month"}.
+            {"$147/month"}.
           </p>
           <Link href={WOLFPACK_MONTHLY_URL} className={styles.pathCta}>
             Join Wolfpack →
@@ -161,7 +161,7 @@ export default function GoPage() {
         {/* SECTION 6 — APEX CARD */}
         <section className={styles.apexCard} aria-label="APEX application">
           <span className={styles.apexBadge}>
-            Cohort 1 · Starts May 1 · 2 Spots Left
+            Applications open · Cohorts of 10
           </span>
           <p className={styles.apexLabel}>APEX 1-on-1</p>
           <h2>Direct mentorship with Roland</h2>

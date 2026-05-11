@@ -99,7 +99,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <blockquote className="my-8 border-l-4 border-gold py-2 pl-6">
+            <blockquote className="my-8 border-l-4 border-bull py-2 pl-6">
               <p className="font-display text-2xl italic leading-tight text-parchment md:text-3xl">
                 &ldquo;He was finding different points in the chart patterns to
                 take his longs, and he was actually having good performance

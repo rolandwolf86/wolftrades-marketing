@@ -219,7 +219,7 @@ export default function ResultsPage() {
       {/* SECTION 6 — GRITTANI */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
             Industry Trust
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -231,17 +231,17 @@ export default function ResultsPage() {
             of how he thinks, trades, and teaches.
           </p>
 
-          <blockquote className="my-8 border-l-4 border-gold pl-6 font-display text-3xl italic leading-tight text-parchment md:text-5xl">
+          <blockquote className="my-8 border-l-4 border-bull pl-6 font-display text-3xl italic leading-tight text-parchment md:text-5xl">
             &ldquo;He has my respect.&rdquo;
           </blockquote>
 
-          <p className="mb-4 border-l-2 border-gold/40 pl-6 text-lg italic leading-8 text-parchment/80">
+          <p className="mb-4 border-l-2 border-parchment/30 pl-6 text-lg italic leading-8 text-parchment/80">
             &ldquo;If I were looking to jump into a new service and see what
             I could pick up and maybe get a couple new ideas, this is
             probably where I would start.&rdquo;
           </p>
 
-          <p className="mb-4 border-l-2 border-gold/40 pl-6 text-base italic leading-7 text-parchment/70">
+          <p className="mb-4 border-l-2 border-parchment/30 pl-6 text-base italic leading-7 text-parchment/70">
             &ldquo;He has no idea that I am putting any of this in here. He
             did not ask me to say any of this, there is no affiliate hookup
             or anything like that, this is all just my honest opinion.&rdquo;
@@ -253,9 +253,9 @@ export default function ResultsPage() {
           </p>
 
           <div
-            className={`mt-8 flex aspect-video w-full items-center justify-center border border-gold/40 ${SHIMMER_BG} animate-shimmer motion-reduce:animate-none`}
+            className={`mt-8 flex aspect-video w-full items-center justify-center border border-parchment/30 ${SHIMMER_BG} animate-shimmer motion-reduce:animate-none`}
           >
-            <p className="px-6 text-center font-display text-lg uppercase tracking-wider text-gold">
+            <p className="px-6 text-center font-display text-lg uppercase tracking-wider text-bull">
               Tim Grittani — Trading Tickers 2 — Video Coming Soon
             </p>
           </div>

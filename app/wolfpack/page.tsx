@@ -4,16 +4,19 @@ import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import { HallOfFameCarousel } from "@/components/HallOfFameCarousel";
 import { Hero } from "@/components/Hero";
+import { PricingCard } from "@/components/PricingCard";
 import {
   START_FREE_URL,
   WOLFPACK_ANNUAL_CHECKOUT_URL,
   WOLFPACK_CHECKOUT_URL,
+  WOLFPACK_PRO_URL,
 } from "@/lib/links";
+import { PRICING, PROMO } from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: "Wolfpack",
   description:
-    "Wolfpack is the room. $127/month. Live trading every market day, Roland's daily watchlist, Trader Therapy, full replays, complete playbook, tools, and community.",
+    "Wolfpack is the room. $147/month. Live trading every market day, Roland's daily watchlist, Trader Therapy, full replays, complete playbook, tools, and community.",
 };
 
 const SCHEDULE = [
@@ -103,7 +106,7 @@ const FAQ = [
     a: "Everything is recorded. Watch when you can. Consistency matters more than catching every session live.",
   },
   {
-    q: "$127 is a lot for me right now.",
+    q: "$147 is a lot for me right now.",
     a: "Start free. No card required. Get the daily watchlist, community preview, and risk calculator. Upgrade when you're ready.",
   },
   {
@@ -117,7 +120,7 @@ export default function WolfpackPage() {
     <>
       {/* SECTION 1 — HERO */}
       <Hero
-        eyebrow="Wolfpack — $127/month"
+        eyebrow="Wolfpack — $147/month"
         headline="This is the room."
         subhead={
           <>
@@ -131,7 +134,7 @@ export default function WolfpackPage() {
         }
         primaryCta={
           <CTAButton href="#pricing" variant="primary">
-            Join Wolfpack — $127/mo
+            Join Wolfpack — $147/mo
           </CTAButton>
         }
         secondaryCta={
@@ -144,7 +147,7 @@ export default function WolfpackPage() {
       {/* SECTION 2 — VALUE SHOCK STRIP */}
       <section className="bg-bull px-6 py-12 text-center">
         <p className="font-display text-5xl font-black uppercase leading-none text-black md:text-7xl">
-          $127/month.
+          $147/month.
         </p>
         <p className="mx-auto mt-4 max-w-3xl text-xl leading-8 text-black/80">
           Live trading sessions. Daily watchlist. Trader Therapy. Full replay
@@ -156,7 +159,7 @@ export default function WolfpackPage() {
           $3,000+ · coaching programs $10,000+/yr
         </p>
         <p className="mt-6 font-display text-2xl font-black uppercase text-black md:text-3xl">
-          Wolf Trades: $127. Everything. Done.
+          Wolf Trades: $147. Everything. Done.
         </p>
       </section>
 
@@ -324,18 +327,18 @@ export default function WolfpackPage() {
         />
         <div className="relative px-6 py-20">
           <div className="mx-auto w-full max-w-5xl">
-            <p className="font-display text-xs uppercase tracking-[0.25em] text-gold">
+            <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
               Endorsed. Unsolicited. Unpaid.
             </p>
             <blockquote className="mt-8 font-display text-5xl leading-[0.95] text-parchment md:text-7xl">
               &ldquo;He has my respect.&rdquo;
             </blockquote>
-            <p className="mt-8 max-w-3xl border-l-2 border-gold/40 pl-6 text-lg italic leading-8 text-parchment/85">
+            <p className="mt-8 max-w-3xl border-l-2 border-parchment/30 pl-6 text-lg italic leading-8 text-parchment/85">
               &ldquo;If I were looking to jump into a new service and see what I
               could pick up and maybe get a couple new ideas, this is probably
               where I would start.&rdquo;
             </p>
-            <p className="mt-4 max-w-3xl border-l-2 border-gold/40 pl-6 text-base italic leading-7 text-parchment/70">
+            <p className="mt-4 max-w-3xl border-l-2 border-parchment/30 pl-6 text-base italic leading-7 text-parchment/70">
               &ldquo;He has no idea that I&rsquo;m putting any of this in here.
               He didn&rsquo;t ask me to say any of this, there&rsquo;s no
               affiliate hookup or anything like that, this is all just my honest
@@ -383,57 +386,62 @@ export default function WolfpackPage() {
             fits your trading.&rdquo;
           </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {/* Monthly */}
-            <article className="border border-white/10 bg-black p-6 md:p-8">
-              <p className="font-display text-sm uppercase tracking-[0.25em] text-bull">
-                Monthly
+          {/* Pro upsell banner — sends Pro-curious traffic to /pro for the full pitch */}
+          <Link
+            href={WOLFPACK_PRO_URL}
+            className="mt-10 flex items-center justify-between gap-6 border border-parchment/15 bg-black px-6 py-5 transition-colors hover:border-bull/60"
+          >
+            <div>
+              <p className="font-display text-xs uppercase tracking-[0.2em] text-bull">
+                Want more?
               </p>
-              <div className="mt-4 font-display text-5xl text-parchment">
-                $127
-                <span className="ml-2 text-base font-normal text-gray">
-                  /mo
-                </span>
-              </div>
-              <p className="mt-4 text-base leading-7 text-parchment/76">
-                The complete trading environment. Daily live sessions,
-                watchlist, Trader Therapy, replays, playbook, journal, and
-                community. Cancel anytime.
+              <p className="mt-1 font-display text-base uppercase text-parchment md:text-lg">
+                Wolf Trades Pro is +{PRICING.pro.upgradeDelta}/mo
               </p>
-              <div className="mt-8">
-                <CTAButton href={WOLFPACK_CHECKOUT_URL} variant="primary">
-                  Join Wolfpack
-                </CTAButton>
-              </div>
-            </article>
+              <p className="mt-1 text-sm text-parchment/70">
+                Unlocks Wolf Scanner, Wolf AI, Edge Lab, and Backtest Lab.
+              </p>
+            </div>
+            <span aria-hidden className="text-2xl text-bull">
+              →
+            </span>
+          </Link>
 
-            {/* Annual — featured */}
-            <article className="relative border border-bull/60 bg-black p-6 md:p-8">
-              <span className="absolute -top-3 left-6 bg-bull px-3 py-1 font-display text-xs uppercase tracking-wider text-black">
-                Best Value
-              </span>
-              <p className="font-display text-sm uppercase tracking-[0.25em] text-bull">
-                Annual
-              </p>
-              <div className="mt-4 font-display text-5xl text-parchment">
-                $997
-                <span className="ml-2 text-base font-normal text-gray">
-                  /yr
-                </span>
-              </div>
-              <p className="mt-2 text-base leading-7 text-parchment/76">
-                $83.08/mo &middot; Save $527
-              </p>
-              <div className="mt-8">
-                <CTAButton href={WOLFPACK_ANNUAL_CHECKOUT_URL} variant="primary">
-                  Join Annually
-                </CTAButton>
-              </div>
-              <p className="mt-4 text-sm leading-relaxed text-parchment/60">
-                If you&apos;re serious, commit. Annual members get priority
-                consideration when APEX spots open.
-              </p>
-            </article>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <PricingCard
+              name="Monthly"
+              price={PRICING.wolfpack.monthly}
+              cadence="mo"
+              description="The complete trading environment. Daily live sessions, watchlist, Trader Therapy, replays, playbook, journal, and community. Cancel anytime."
+              features={[]}
+              ctaLabel="Join Wolfpack"
+              ctaHref={WOLFPACK_CHECKOUT_URL}
+              ctaVariant="primary"
+              promo={PROMO.wolfpack}
+            />
+            <PricingCard
+              name="Annual"
+              price={PRICING.wolfpack.annual}
+              cadence="yr"
+              description={
+                <>
+                  <span className="block font-medium text-parchment">
+                    {PRICING.wolfpack.annualPerMonth}/mo · Save{" "}
+                    {PRICING.wolfpack.annualSavings}
+                  </span>
+                  <span className="mt-3 block text-sm leading-relaxed text-parchment/60">
+                    If you&apos;re serious, commit. Annual members get priority
+                    consideration when APEX spots open.
+                  </span>
+                </>
+              }
+              features={[]}
+              ctaLabel="Join Annually"
+              ctaHref={WOLFPACK_ANNUAL_CHECKOUT_URL}
+              ctaVariant="primary"
+              badge="Best Value"
+              featured
+            />
           </div>
         </div>
       </section>
@@ -485,7 +493,7 @@ export default function WolfpackPage() {
           </div>
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
             <CTAButton href={WOLFPACK_CHECKOUT_URL} variant="primary">
-              Join Wolfpack — $127/mo
+              Join Wolfpack — $147/mo
             </CTAButton>
             <CTAButton href="/apex" variant="secondary">
               Apply for APEX 1-on-1
