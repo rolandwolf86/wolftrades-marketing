@@ -37,38 +37,66 @@ export function HomeHero() {
               letterSpacing: "-0.02em",
             }}
           >
-            <span className="block">Process,</span>
-            <span className="block">not signals.</span>
-            <span className="block">Proof, not hype.</span>
+            <span className="block">No gurus.</span>
+            <span className="block">No hype.</span>
+            <span className="block">Just proof.</span>
           </h1>
 
           <p
             className="mt-6 max-w-[460px] text-gray"
             style={{ fontSize: "18px", lineHeight: 1.6 }}
           >
-            Roland Wolf &mdash; verified 7-figure trader. 10+ seven-figure
-            students. Tim Grittani&rsquo;s respect.
+            Wolf Trades is the platform built by real traders for real traders.
+            Verified P&amp;L. Real community. Tools that work. Trading since
+            2017, teaching since 2018.
           </p>
 
-          <div className="mt-10">
+          {/* Founder pricing callout */}
+          <div className="mt-6 max-w-[460px] border-l-2 border-bull/60 bg-black2 p-4">
+            <p className="text-[13px] leading-relaxed text-parchment/75">
+              Launch pricing is live. Use code{" "}
+              <span className="bg-bull/10 px-1.5 py-0.5 font-mono text-xs tracking-wider text-bull">
+                LAUNCH97
+              </span>{" "}
+              for $97 first month on Wolfpack. Code{" "}
+              <span className="bg-bull/10 px-1.5 py-0.5 font-mono text-xs tracking-wider text-bull">
+                LAUNCH147
+              </span>{" "}
+              for $147 first month on Wolfpack Pro. Founder rate, while it
+              lasts.
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href={WOLFPACK_MONTHLY_URL}
-              className="inline-flex w-full items-center gap-2 bg-bull font-bold uppercase text-black transition-colors duration-150 ease-out hover:bg-[#1fc35a] active:scale-[0.98] motion-reduce:active:scale-100 animate-pulse-bull motion-reduce:animate-none sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 bg-bull font-bold uppercase text-black transition-colors duration-150 ease-out hover:bg-[#1fc35a] active:scale-[0.98] motion-reduce:active:scale-100 animate-pulse-bull motion-reduce:animate-none sm:w-auto"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
                 fontSize: "0.88rem",
                 letterSpacing: "0.2em",
-                padding: "18px 48px",
-                justifyContent: "center",
+                padding: "18px 40px",
               }}
             >
-              <span>Join the Wolfpack</span>
+              <span>Lock in founder pricing</span>
               <span aria-hidden>→</span>
+            </Link>
+            <Link
+              href="/live"
+              className="inline-flex w-full items-center justify-center border border-parchment/40 bg-transparent font-bold uppercase text-parchment transition-colors duration-150 ease-out hover:border-bull hover:text-bull sm:w-auto"
+              style={{
+                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                fontSize: "0.88rem",
+                letterSpacing: "0.2em",
+                padding: "18px 40px",
+              }}
+            >
+              Watch a live session
             </Link>
           </div>
 
           <p
-            className="mt-4 max-w-[420px] text-gray"
+            className="mt-6 max-w-[460px] text-gray"
             style={{ fontSize: "11px", letterSpacing: "0.1em" }}
           >
             Jack Kellogg $25M+ · Brian $10M (2024) · 10+ seven-figure students
