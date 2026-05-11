@@ -219,7 +219,7 @@ export default function ResultsPage() {
       {/* SECTION 6 — GRITTANI */}
       <section className="border-y border-white/5 bg-black2 px-6 py-20">
         <div className="mx-auto w-full max-w-5xl">
-          <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
+          <p className="font-display text-xs uppercase tracking-[0.25em] text-parchment/60">
             Industry Trust
           </p>
           <h2 className="mt-4 font-display text-4xl leading-none text-parchment md:text-6xl">
@@ -253,9 +253,9 @@ export default function ResultsPage() {
           </p>
 
           <div
-            className={`mt-8 flex aspect-video w-full items-center justify-center border border-parchment/30 ${SHIMMER_BG} animate-shimmer motion-reduce:animate-none`}
+            className={`mt-8 flex aspect-video w-full items-center justify-center border border-parchment/20 ${SHIMMER_BG} animate-shimmer motion-reduce:animate-none`}
           >
-            <p className="px-6 text-center font-display text-lg uppercase tracking-wider text-bull">
+            <p className="px-6 text-center font-display text-lg uppercase tracking-wider text-parchment">
               Tim Grittani — Trading Tickers 2 — Video Coming Soon
             </p>
           </div>

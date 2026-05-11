@@ -327,7 +327,7 @@ export default function WolfpackPage() {
         />
         <div className="relative px-6 py-20">
           <div className="mx-auto w-full max-w-5xl">
-            <p className="font-display text-xs uppercase tracking-[0.25em] text-bull">
+            <p className="font-display text-xs uppercase tracking-[0.25em] text-parchment/60">
               Endorsed. Unsolicited. Unpaid.
             </p>
             <blockquote className="mt-8 font-display text-5xl leading-[0.95] text-parchment md:text-7xl">
