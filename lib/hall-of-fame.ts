@@ -47,7 +47,7 @@ export const HALL_OF_FAME: ReadonlyArray<HallOfFameMember> = [
     photo: "/images/proof/jack-kellogg.jpg",
     label: "Breakout Trader",
     stat: "$25M+",
-    substat: "career profits · live count via profit.ly",
+    substat: "career trading profits",
     story:
       "Jack represents what happens when a trader stops chasing and builds real conviction around a process. He studied the environment, refined his edge, and scaled it.",
     era: "Pack Alumni",

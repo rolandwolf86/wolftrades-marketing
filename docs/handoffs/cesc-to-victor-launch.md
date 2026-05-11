@@ -28,7 +28,7 @@ components/HomeHero.tsx:74
   +            Jack Kellogg $25M+ · Brian $10M (2024) · 10+ seven-figure students
 ```
 
-Cesc already updated `lib/hall-of-fame.ts` (Jack `stat: "$25M+"`, substat now reads `"career profits · live count via profit.ly"`). No action needed there.
+Cesc already updated `lib/hall-of-fame.ts` (Jack `stat: "$25M+"`, substat `"career trading profits"`). The `$25M+` figure stands alone — **no profit.ly reference, no "live count" caption, no source link** anywhere on the marketing site (locked spec). No action needed there.
 
 `components/TickerTape.tsx` checked — does not currently carry a Jack-specific figure. No edit.
 
@@ -71,28 +71,24 @@ app/go/page.tsx:186
 
 Note: the trailing `·` (interpunct) is part of the original line; check each file's context — some lines feed into more text after. Keep prose grammatical; remove orphan separators if needed.
 
-### 1.4 profit.ly "live count" caption under Jack figures
+### 1.4 Jack `$25M+` figure stands alone — no profit.ly
 
-Cesc shipped `<ProofBadge>` with an `href` + `liveCount` variant for this. Suggested wiring (Victor's call where exactly to place):
+**Locked spec: no profit.ly reference, no "live count" caption, no external source link anywhere on the marketing site.** The `$25M+` figure is the proof, full stop.
+
+`<ProofBadge>` is available for displaying the figure cleanly:
 
 ```tsx
 import { ProofBadge } from "@/components/ProofBadge";
 
-<ProofBadge
-  value="$25M+"
-  label="Jack Kellogg"
-  href="https://profit.ly/user/jackaroo"
-  liveCount
-/>
+<ProofBadge value="$25M+" label="Jack Kellogg" />
 ```
 
-Recommended placements:
+Recommended placements (just the figure — nothing appended):
 - `app/page.tsx` — near the AnimatedStats grid or under the home hero
 - `app/go/page.tsx` — replace the inline `<p className={styles.proofStat}>` Jack block
 - `app/results/page.tsx` — at the top of the Hall of Fame section
-- `components/HomeHero.tsx` — optional, only if it doesn't crowd the existing copy
 
-If you keep the existing visual treatment instead, append a small caption manually with the same href and `rel="noopener noreferrer nofollow"`. The locked copy for the caption: **"Live count via profit.ly →"**.
+`<ProofBadge>` still has an optional generic `href` prop, but **do not** point it at profit.ly or any external "verification" link.
 
 ---
 
@@ -213,7 +209,7 @@ Cesc shipped these. Victor can adopt where it makes the page simpler.
 
 | Component | Use case |
 |---|---|
-| `components/ProofBadge.tsx` | Inline figure tag (e.g. `$25M+ · Jack Kellogg`); optional href + liveCount |
+| `components/ProofBadge.tsx` | Inline figure tag (e.g. `$25M+ · Jack Kellogg`); optional generic `href` (not for profit.ly) |
 | `components/VerifiedQuote.tsx` | Drop-in for Grittani sections — fixes gold violations + dedupes 4 copies |
 | `components/Testimonial.tsx` | Single student card (photo + quote + optional ProofBadge + optional VideoEmbed) |
 | `components/StudentSpotlight.tsx` | Full-width spotlight section for Jack/Brian/Kevin/Ethan |
@@ -275,7 +271,9 @@ DEL   public/images/roland/bostond - Copy - Copy - Copy.jpg
 NEW   docs/handoffs/cesc-to-victor-launch.md   (this file)
 ```
 
-Open questions still live in `C:\Users\rolan\.claude\plans\you-are-a-marketing-bright-brooks.md` §"Open questions for Ros". Most relevant for you:
-- Gold-replacement default (Cesc shipped parchment; the table above uses parchment + bull-green — confirm before bulk-applying)
-- Kevin/Ethan identities (needed before `StudentSpotlight` ships for those two)
-- profit.ly link visibility scope (under every Jack figure vs. only `/` and `/results`)
+Resolved decisions:
+- Gold-replacement: parchment/60 eyebrows + quote text, parchment/30 quote borders, bull-green markers/accents — the swap matrix in §2 reflects this. OK to bulk-apply.
+- profit.ly: **stripped entirely. No profit.ly reference anywhere — the `$25M+` figure stands alone.**
+
+Still open:
+- Kevin/Ethan identities (needed before `StudentSpotlight` ships for those two — held until post-launch)

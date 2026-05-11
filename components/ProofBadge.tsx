@@ -4,7 +4,6 @@ export interface ProofBadgeProps {
   value: string;
   label: string;
   href?: string;
-  liveCount?: boolean;
   size?: "sm" | "md";
   tone?: "neutral" | "bull";
 }
@@ -23,7 +22,6 @@ export function ProofBadge({
   value,
   label,
   href,
-  liveCount = false,
   size = "md",
   tone = "neutral",
 }: ProofBadgeProps) {
@@ -37,12 +35,6 @@ export function ProofBadge({
       <div className="mt-1 text-xs uppercase tracking-[0.2em] text-gray">
         {label}
       </div>
-      {liveCount ? (
-        <div className="mt-2 text-[0.65rem] uppercase tracking-[0.25em] text-gray/80">
-          Live count via profit.ly
-          {href ? <span aria-hidden> →</span> : null}
-        </div>
-      ) : null}
     </>
   );
 
