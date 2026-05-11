@@ -16,6 +16,7 @@ const config: Config = {
         bull: "var(--bull)",
         bear: "var(--bear)",
         "apex-green": "var(--apex-green)",
+        electric: "var(--electric)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
