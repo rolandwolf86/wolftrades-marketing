@@ -13,6 +13,14 @@ import {
   WOLFPACK_PRO_URL,
 } from "@/lib/links";
 import { PRICING, PROMO } from "@/lib/pricing";
+import { buildPageMetadata, ORG_JSON_LD } from "@/lib/seo/metadata";
+
+export const metadata = buildPageMetadata({
+  title: "Process, not signals. Proof, not hype.",
+  description:
+    "A complete trading environment built by a verified 7-figure trader — live sessions, daily watchlist, scanner, AI coach, and a 2,500+ trader community.",
+  path: "/",
+});
 
 const STATS = [
   { value: "2500", suffix: "+", label: "Traders Inside" },
@@ -128,6 +136,10 @@ const APEX_FEATURES = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}
+      />
       {/* SECTION 1 — HERO */}
       <HomeHero />
 

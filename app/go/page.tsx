@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -9,11 +9,12 @@ import {
 } from "@/lib/links";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Links",
   description:
     "Wolf Trades. Start with the free watchlist or join 2,500+ traders inside Wolfpack.",
-};
+  path: "/go",
+});
 
 type ActionLink = {
   label: string;

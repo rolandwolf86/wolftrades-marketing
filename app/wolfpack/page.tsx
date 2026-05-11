@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
@@ -12,12 +11,14 @@ import {
   WOLFPACK_PRO_URL,
 } from "@/lib/links";
 import { PRICING, PROMO } from "@/lib/pricing";
+import { buildPageMetadata, ORG_JSON_LD } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Wolfpack",
   description:
     "Wolfpack is the room. $147/month. Live trading every market day, Roland's daily watchlist, Trader Therapy, full replays, complete playbook, tools, and community.",
-};
+  path: "/wolfpack",
+});
 
 const SCHEDULE = [
   {
@@ -118,6 +119,10 @@ const FAQ = [
 export default function WolfpackPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}
+      />
       {/* SECTION 1 — HERO */}
       <Hero
         eyebrow="Wolfpack — $147/month"

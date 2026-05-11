@@ -1,18 +1,33 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
+import {
+  buildPageMetadata,
+  ORG_JSON_LD,
+  PERSON_JSON_LD_ROLAND,
+} from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "About Roland Wolf",
   description:
     "Why Wolf Trades exists. Roland's story — from professional soccer to a decade of Nasdaq momentum — and the anti-guru philosophy behind the platform.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(PERSON_JSON_LD_ROLAND),
+        }}
+      />
       {/* SECTION 1 — HERO (full-bleed Roland teaching) */}
       <section className="relative overflow-hidden bg-black min-h-[60vh] md:min-h-[70vh]">
         <Image

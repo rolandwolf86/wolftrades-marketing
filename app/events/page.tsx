@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
 import { WOLFPACK_MONTHLY_URL } from "@/lib/links";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Live Events",
   description:
     "Wolf Trades live trading bootcamps and in-person events with Roland Wolf.",
-};
+  path: "/events",
+});
 
 export default function EventsPage() {
   return (

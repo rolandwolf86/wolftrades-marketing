@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import { HallOfFameCarousel } from "@/components/HallOfFameCarousel";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Wolf Hall of Fame",
   description:
     "Real traders. Real results. See how traders built their edge with process and structure inside Wolf Trades.",
-};
+  path: "/results",
+});
 
 const VIDEO_PLACEHOLDERS: ReadonlyArray<string> = [
   "Jack Kellogg — Coming Soon",

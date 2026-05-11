@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import { NotifyForm } from "./NotifyForm";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Live Trading",
   description:
     "In-person trading events with Roland and the Pack. Dates and locations announced to the community first.",
-};
+  path: "/live",
+});
 
 export default function LivePage() {
   return (
