@@ -143,13 +143,13 @@ export default function GoPage() {
         {/* SECTION 5 — PROOF STRIP */}
         <section className={styles.proofStrip} aria-label="Wolf Trades proof">
           <div className={styles.proofItem}>
-            <p className={styles.proofStat}>{"$20M+"}</p>
+            <p className={styles.proofStat}>{"$25M+"}</p>
             <p className={styles.proofLabel}>Jack Kellogg</p>
           </div>
           <div className={styles.proofDivider} aria-hidden />
           <div className={styles.proofItem}>
             <p className={styles.proofStat}>{"$10M+"}</p>
-            <p className={styles.proofLabel}>Brian — career profits</p>
+            <p className={styles.proofLabel}>Brian — $10M in 2024</p>
           </div>
           <div className={styles.proofDivider} aria-hidden />
           <div className={styles.proofItem}>
@@ -183,7 +183,7 @@ export default function GoPage() {
             &ldquo;He has my respect.&rdquo;
           </blockquote>
           <p className={styles.grittaniAttribution}>
-            — Tim Grittani · {"$15M+"} verified trader · Trading Tickers 2
+            — Tim Grittani · Trading Tickers 2
           </p>
         </section>
 

@@ -18,7 +18,7 @@ const STATS = [
   { value: "2500", suffix: "+", label: "Traders Inside" },
   { value: "10", suffix: "+", label: "Seven-Figure Students" },
   { value: "2", suffix: "", label: "Eight-Figure Students" },
-  { value: "20", prefix: "$", suffix: "M+", label: "Jack Kellogg Career" },
+  { value: "25", prefix: "$", suffix: "M+", label: "Jack Kellogg Career" },
   { value: "7", suffix: "", label: "Years Teaching" },
 ] as const;
 
@@ -250,7 +250,7 @@ export default function HomePage() {
             opinion.&rdquo;
           </p>
           <p className="mt-6 text-sm text-gray">
-            — Tim Grittani · $15M+ verified trader · Trading Tickers 2 ·
+            — Tim Grittani · Trading Tickers 2 ·
             Unsolicited · Unpaid
           </p>
         </div>

@@ -106,7 +106,7 @@ export default function AboutPage() {
                 without a herd of sheep on his back.&rdquo;
               </p>
               <p className="mt-3 text-sm text-gray">
-                — Tim Grittani · $15M+ verified trader · Trading Tickers 2 ·
+                — Tim Grittani · Trading Tickers 2 ·
                 Unsolicited · Unpaid
               </p>
             </blockquote>

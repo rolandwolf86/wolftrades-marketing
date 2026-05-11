@@ -345,7 +345,7 @@ export default function WolfpackPage() {
               opinion.&rdquo;
             </p>
             <p className="mt-6 text-sm text-gray">
-              — Tim Grittani · $15M+ verified trader · Trading Tickers 2 ·
+              — Tim Grittani · Trading Tickers 2 ·
               Unsolicited · Unpaid
             </p>
           </div>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const VIDEO_PLACEHOLDERS: ReadonlyArray<string> = [
   "Jack Kellogg — Coming Soon",
-  "Brian @wareagletrader — $10M+ Career Profits",
+  "Brian @wareagletrader — $10M in 2024",
   "Student Testimonial — Coming Soon",
 ];
 
@@ -248,7 +248,7 @@ export default function ResultsPage() {
           </p>
 
           <p className="mt-4 text-sm text-gray">
-            — Tim Grittani · $15M+ verified trader · Trading Tickers 2 ·
+            — Tim Grittani · Trading Tickers 2 ·
             Unsolicited · Unpaid
           </p>
 
