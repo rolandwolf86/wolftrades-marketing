@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SiteChrome } from "@/components/layout/SiteChrome";
+import { PixelLoader } from "@/components/PixelLoader";
 import { barlowCondensed, inter } from "@/lib/fonts";
 import "./globals.css";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         </SiteChrome>
         <Analytics />
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+        <PixelLoader />
       </body>
     </html>
   );

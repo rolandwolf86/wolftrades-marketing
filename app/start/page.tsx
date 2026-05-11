@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { FormEvent, Suspense, useState } from "react";
 import { APP_REGISTER_URL } from "@/lib/links";
+import { getDiscountCode } from "@/lib/discount";
+import { trackLead, trackRegistration } from "@/lib/pixels";
 import styles from "./page.module.css";
 
 const freeIncludes = [
@@ -78,6 +80,7 @@ function StartContent() {
     setIsSubmitting(true);
 
     try {
+      const discountCode = getDiscountCode();
       const response = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -86,6 +89,7 @@ function StartContent() {
           email,
           source: variant.source,
           intent: variant.intent,
+          ...(discountCode ? { discount_code: discountCode } : {}),
         }),
       });
 
@@ -95,6 +99,8 @@ function StartContent() {
         throw new Error(`Lead request failed (${response.status})`);
       }
 
+      trackLead({ intent: variant.intent });
+      trackRegistration({ intent: variant.intent });
       window.location.href = `${APP_REGISTER_URL}?email=${encodeURIComponent(
         email,
       )}`;
