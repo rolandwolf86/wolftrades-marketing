@@ -11,6 +11,10 @@ export const LOGIN_URL = "https://app.wolftrades.com/login";
 // pricing or discounts lives in this codebase. GHL also owns the full payment
 // lifecycle (it posts to the platform-side inbound webhook), so there is no
 // payment webhook receiver here.
+// These use the NEXT_PUBLIC_ prefix so the values are available in client
+// bundles too (lib/links.ts is imported by client components) — Next inlines
+// NEXT_PUBLIC_* at build time, so they must be set in the build environment,
+// not just at runtime. The URLs are GHL order forms — public, not secrets.
 // If an env var is unset (dev/preview), we fall back to the on-page pricing
 // anchor so links never 404.
 const FALLBACK_PRICING_ANCHOR = "/wolfpack#pricing";
@@ -22,19 +26,19 @@ function checkoutUrl(value: string | undefined): string {
 }
 
 export const GHL_WOLFPACK_MONTHLY_URL = checkoutUrl(
-  process.env.GHL_WOLFPACK_MONTHLY_URL,
+  process.env.NEXT_PUBLIC_GHL_WOLFPACK_MONTHLY_URL,
 );
 export const GHL_WOLFPACK_ANNUAL_URL = checkoutUrl(
-  process.env.GHL_WOLFPACK_ANNUAL_URL,
+  process.env.NEXT_PUBLIC_GHL_WOLFPACK_ANNUAL_URL,
 );
 export const GHL_PRO_MONTHLY_URL = checkoutUrl(
-  process.env.GHL_PRO_MONTHLY_URL,
+  process.env.NEXT_PUBLIC_GHL_PRO_MONTHLY_URL,
 );
 export const GHL_PRO_ANNUAL_URL = checkoutUrl(
-  process.env.GHL_PRO_ANNUAL_URL,
+  process.env.NEXT_PUBLIC_GHL_PRO_ANNUAL_URL,
 );
 export const GHL_LEGACY_PRO_URL = checkoutUrl(
-  process.env.GHL_LEGACY_PRO_URL,
+  process.env.NEXT_PUBLIC_GHL_LEGACY_PRO_URL,
 );
 
 // ---- Back-compat aliases ----
