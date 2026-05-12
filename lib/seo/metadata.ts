@@ -5,8 +5,6 @@ export const SITE_URL =
 
 export const SITE_NAME = "Wolf Trades";
 
-const DEFAULT_OG = "/og-default.png";
-
 export interface BuildPageMetadataInput {
   title: string;
   description: string;
@@ -19,8 +17,13 @@ export interface BuildPageMetadataInput {
 
 export function buildPageMetadata(input: BuildPageMetadataInput): Metadata {
   const url = `${SITE_URL}${input.path}`;
-  const og = input.ogImage ?? DEFAULT_OG;
   const ogType = input.type ?? "website";
+  // When no explicit ogImage is passed, omit the images keys entirely so the
+  // app/opengraph-image.tsx file convention supplies the default card. Setting
+  // an explicit images array here would shadow that generated image.
+  const images = input.ogImage
+    ? [{ url: input.ogImage, width: 1200, height: 630, alt: input.title }]
+    : undefined;
 
   return {
     title: input.title,
@@ -32,7 +35,7 @@ export function buildPageMetadata(input: BuildPageMetadataInput): Metadata {
       url,
       siteName: SITE_NAME,
       type: ogType,
-      images: [{ url: og, width: 1200, height: 630, alt: input.title }],
+      ...(images ? { images } : {}),
       locale: "en_US",
       ...(input.publishedTime ? { publishedTime: input.publishedTime } : {}),
     },
@@ -40,7 +43,7 @@ export function buildPageMetadata(input: BuildPageMetadataInput): Metadata {
       card: "summary_large_image",
       title: input.title,
       description: input.description,
-      images: [og],
+      ...(input.ogImage ? { images: [input.ogImage] } : {}),
     },
     ...(input.noIndex
       ? { robots: { index: false, follow: false } }
