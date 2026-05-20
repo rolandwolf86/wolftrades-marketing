@@ -172,7 +172,7 @@ export default function ApexClient() {
               APEX 1-on-1 · Private Mentorship with Roland Wolf
             </p>
             <span className="mt-4 inline-flex border border-parchment/30 bg-transparent px-3 py-1 font-display text-xs uppercase tracking-wider text-parchment/85">
-              Applications open continuously · Cohorts of 10
+              Cohorts of 10 · Applications open continuously
             </span>
             <h1 className="mt-6 font-display text-5xl leading-none text-parchment md:text-7xl">
               If you want me personally in your corner, this is APEX.
@@ -190,7 +190,7 @@ export default function ApexClient() {
               Apply for APEX 1-on-1
             </a>
             <p className="mt-3 text-sm text-parchment/60">
-              Application only. Limited seats. No public checkout.
+              Application only. No public checkout.
             </p>
           </div>
         </div>
@@ -388,7 +388,7 @@ export default function ApexClient() {
               If your application looks like a fit, we will schedule a call
               and discuss next steps.
             </p>
-            <p>Applications open continuously. Each cohort takes 10 traders.</p>
+            <p>Cohorts of 10. Applications open continuously.</p>
           </div>
         </div>
       </section>
