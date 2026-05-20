@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CTAButton } from "@/components/CTAButton";
-import { LEGACY_UPGRADE_CHECKOUT_URL } from "@/lib/links";
+import { GHL_LEGACY_PRO_URL } from "@/lib/links";
 import { PRICING } from "@/lib/pricing";
 
 export const metadata: Metadata = {
@@ -121,7 +121,7 @@ export default function LegacyUpgradePage() {
       {/* SECTION 4 — CTA */}
       <section className="border-t border-white/5 bg-black2 px-6 py-20 text-center">
         <div className="mx-auto w-full max-w-2xl">
-          <CTAButton href={LEGACY_UPGRADE_CHECKOUT_URL} variant="primary">
+          <CTAButton href={GHL_LEGACY_PRO_URL} variant="primary">
             Claim your lifetime rate
           </CTAButton>
           <p className="mt-6 text-sm text-parchment/60">

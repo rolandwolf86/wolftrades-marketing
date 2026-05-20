@@ -6,9 +6,9 @@ import { HallOfFameCarousel } from "@/components/HallOfFameCarousel";
 import { Hero } from "@/components/Hero";
 import { PricingCard } from "@/components/PricingCard";
 import {
+  GHL_PRO_ANNUAL_URL,
+  GHL_PRO_MONTHLY_URL,
   START_FREE_URL,
-  WOLFPACK_MONTHLY_URL,
-  WOLFPACK_PRO_CHECKOUT_URL,
 } from "@/lib/links";
 import { PRICING, PROMO } from "@/lib/pricing";
 
@@ -102,7 +102,7 @@ export default function ProPage() {
           </CTAButton>
         }
         secondaryCta={
-          <CTAButton href={WOLFPACK_MONTHLY_URL} variant="secondary">
+          <CTAButton href="/wolfpack" variant="secondary">
             Wolfpack Basics →
           </CTAButton>
         }
@@ -297,7 +297,7 @@ export default function ProPage() {
               description="Wolfpack live room, replays, Trader Therapy, playbook, journal, community — plus Wolf Scanner, Wolf AI, Edge Lab, and Backtest Lab. Cancel anytime."
               features={[]}
               ctaLabel="Join Pro"
-              ctaHref={WOLFPACK_PRO_CHECKOUT_URL}
+              ctaHref={GHL_PRO_MONTHLY_URL}
               ctaVariant="primary"
               promo={PROMO.pro}
             />
@@ -319,7 +319,7 @@ export default function ProPage() {
               }
               features={[]}
               ctaLabel="Join Annually"
-              ctaHref={WOLFPACK_PRO_CHECKOUT_URL}
+              ctaHref={GHL_PRO_ANNUAL_URL}
               ctaVariant="primary"
               badge="Best Value"
               featured
