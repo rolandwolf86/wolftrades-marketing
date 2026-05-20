@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo/metadata";
-import { INSIGHTS } from "@/lib/insights";
+import { getAllInsights } from "@/lib/insights";
 
 const STATIC_ROUTES: ReadonlyArray<string> = [
   "",
@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1.0 : 0.7,
   }));
 
-  const insightEntries = INSIGHTS.map((post) => ({
+  const insightEntries = getAllInsights().map((post) => ({
     url: `${SITE_URL}/insights/${post.slug}`,
     lastModified: new Date(post.publishedAt),
     changeFrequency: "monthly" as const,

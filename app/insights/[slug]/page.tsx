@@ -36,6 +36,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     type: "article",
     publishedTime: new Date(post.publishedAt).toISOString(),
     ogImage: post.heroImage,
+    noIndex: post.draft ?? false,
   });
 }
 

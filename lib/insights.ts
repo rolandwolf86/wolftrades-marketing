@@ -13,6 +13,8 @@ export interface Insight {
   author: { name: string; href?: string };
   heroImage?: string;
   body: ReadonlyArray<InsightBlock>;
+  /** Hide from index + sitemap and noindex the page until copy lands. */
+  draft?: boolean;
 }
 
 export const INSIGHTS: ReadonlyArray<Insight> = [
@@ -25,6 +27,7 @@ export const INSIGHTS: ReadonlyArray<Insight> = [
     author: { name: "Roland Wolf", href: "/about" },
     heroImage: "/images/roland/wolf hero teaching.JPG",
     body: [],
+    draft: true, // hidden for launch — unhide when Claudia's copy lands
   },
 ];
 
@@ -32,8 +35,9 @@ export function getInsightBySlug(slug: string): Insight | undefined {
   return INSIGHTS.find((p) => p.slug === slug);
 }
 
+/** Published (non-draft) posts, newest first. Drives the index + sitemap. */
 export function getAllInsights(): ReadonlyArray<Insight> {
-  return [...INSIGHTS].sort((a, b) =>
+  return INSIGHTS.filter((p) => !p.draft).sort((a, b) =>
     b.publishedAt.localeCompare(a.publishedAt),
   );
 }
