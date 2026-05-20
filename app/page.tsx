@@ -16,7 +16,9 @@ import { PRICING, PROMO } from "@/lib/pricing";
 import { buildPageMetadata, ORG_JSON_LD } from "@/lib/seo/metadata";
 
 export const metadata = buildPageMetadata({
-  title: "Process, not signals. Proof, not hype.",
+  // Root-segment pages don't inherit the layout's "%s | Wolf Trades" title
+  // template (it applies to child segments only), so bake the suffix in here.
+  title: "No Gurus. No Hype. Just Proof. | Wolf Trades",
   description:
     "A complete trading environment built by a verified 7-figure trader — live sessions, daily watchlist, scanner, AI coach, and a 2,500+ trader community.",
   path: "/",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { WOLFPACK_MONTHLY_URL } from "@/lib/links";
+import { APP_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
 import { TickerTape } from "./TickerTape";
 
 const NOISE_BG =
@@ -82,7 +82,7 @@ export function HomeHero() {
               <span aria-hidden>→</span>
             </Link>
             <Link
-              href="/live"
+              href={APP_URL}
               className="inline-flex w-full items-center justify-center border border-parchment/40 bg-transparent font-bold uppercase text-parchment transition-colors duration-150 ease-out hover:border-bull hover:text-bull sm:w-auto"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
