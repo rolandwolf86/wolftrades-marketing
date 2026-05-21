@@ -13,6 +13,9 @@ export interface GHLLeadPayload {
   source?: string;
   intent?: string;
   tags?: string[];
+  // Promo code the lead arrived with, if any. Validation/redemption happens in
+  // GHL; this is recorded for attribution and so the GHL workflow can branch.
+  discount_code?: string;
   // APEX application extras — only present on /apex submissions:
   account_size?: string;
   experience?: string;

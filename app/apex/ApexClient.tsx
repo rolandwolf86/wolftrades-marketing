@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { WOLFPACK_MONTHLY_URL } from "@/lib/links";
+import { getDiscountCode } from "@/lib/discount";
+import { trackLead } from "@/lib/pixels";
 
 const DIFFERENTIATORS: ReadonlyArray<{ title: string; body: string }> = [
   {
@@ -105,6 +107,7 @@ export default function ApexClient() {
     const experience = String(data.get("experience") ?? "").trim();
     const challenge = String(data.get("challenge") ?? "").trim();
     const whyApex = String(data.get("whyApex") ?? "").trim();
+    const discountCode = getDiscountCode();
 
     try {
       const response = await fetch("/api/lead", {
@@ -120,6 +123,7 @@ export default function ApexClient() {
           experience: experience || undefined,
           challenge: challenge || undefined,
           whyApex: whyApex || undefined,
+          discount_code: discountCode || undefined,
         }),
       });
       if (!response.ok) {
@@ -133,6 +137,7 @@ export default function ApexClient() {
         );
         throw new Error(`Lead request failed (${response.status})`);
       }
+      trackLead({ intent: "apex" });
       setSubmitted(true);
     } catch (err) {
       console.error("[apex form] submit error", err);

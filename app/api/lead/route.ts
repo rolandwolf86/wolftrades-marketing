@@ -29,6 +29,13 @@ const leadSchema = z.object({
     ])
     .optional(),
   notes: z.string().trim().max(2000).optional(),
+  // Promo code from ?disc= — validated/redeemed in GHL, recorded here for
+  // attribution. Strict pattern: alphanumerics, dash, underscore only.
+  discount_code: z
+    .string()
+    .trim()
+    .regex(/^[A-Z0-9_-]{2,40}$/i)
+    .optional(),
   // APEX application extensions:
   accountSize: z.string().trim().max(80).optional(),
   experience: z.string().trim().max(80).optional(),
@@ -115,6 +122,7 @@ async function insertLead(
     source: lead.source ?? null,
     intent: lead.intent ?? null,
     notes: lead.notes ?? null,
+    discount_code: lead.discount_code ?? null,
     account_size: lead.accountSize ?? null,
     experience: lead.experience ?? null,
     challenge: lead.challenge ?? null,
@@ -136,6 +144,7 @@ async function notifyLead(
     lead.phone ? `Phone: ${lead.phone}` : null,
     lead.intent ? `Intent: ${lead.intent}` : null,
     lead.source ? `Source: ${lead.source}` : null,
+    lead.discount_code ? `Discount code: ${lead.discount_code}` : null,
     lead.accountSize ? `Account size: ${lead.accountSize}` : null,
     lead.experience ? `Experience: ${lead.experience}` : null,
     lead.challenge ? `\nBiggest challenge:\n${lead.challenge}` : null,
@@ -163,6 +172,7 @@ async function syncToGHL(
   const tags = ["wolf-trades-marketing"];
   if (lead.intent) tags.push(lead.intent);
   if (lead.source) tags.push(lead.source);
+  if (lead.discount_code) tags.push(`disc:${lead.discount_code.toLowerCase()}`);
 
   const payload: GHLLeadPayload = {
     email: lead.email,
@@ -171,6 +181,7 @@ async function syncToGHL(
     source: lead.source ?? undefined,
     intent: lead.intent ?? undefined,
     tags,
+    discount_code: lead.discount_code ?? undefined,
     account_size: lead.accountSize ?? undefined,
     experience: lead.experience ?? undefined,
     challenge: lead.challenge ?? undefined,

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { getDiscountCode } from "@/lib/discount";
+import { trackLead } from "@/lib/pixels";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -15,6 +17,7 @@ export function NotifyForm() {
 
     const data = new FormData(event.currentTarget);
     const email = String(data.get("email") ?? "").trim();
+    const discountCode = getDiscountCode();
 
     try {
       const res = await fetch("/api/lead", {
@@ -24,6 +27,7 @@ export function NotifyForm() {
           email,
           intent: "general",
           source: "live-events",
+          ...(discountCode ? { discount_code: discountCode } : {}),
         }),
       });
       if (!res.ok) {
@@ -32,6 +36,7 @@ export function NotifyForm() {
           typeof body?.error === "string" ? body.error : `HTTP ${res.status}`,
         );
       }
+      trackLead({ intent: "general" });
       setStatus("success");
     } catch (err) {
       setStatus("error");
