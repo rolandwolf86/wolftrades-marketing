@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -9,11 +9,12 @@ import {
 } from "@/lib/links";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Links",
   description:
     "Wolf Trades. Start with the free watchlist or join 2,500+ traders inside Wolfpack.",
-};
+  path: "/go",
+});
 
 type ActionLink = {
   label: string;
@@ -133,7 +134,7 @@ export default function GoPage() {
           <p>
             Live trading every day. Daily watchlist. Trader Therapy. Full
             replay library. Roland&apos;s playbook. Scanner. Wolf AI.{" "}
-            {"$127/month"}.
+            {"$147/month"}.
           </p>
           <Link href={WOLFPACK_MONTHLY_URL} className={styles.pathCta}>
             Join Wolfpack →
@@ -143,13 +144,13 @@ export default function GoPage() {
         {/* SECTION 5 — PROOF STRIP */}
         <section className={styles.proofStrip} aria-label="Wolf Trades proof">
           <div className={styles.proofItem}>
-            <p className={styles.proofStat}>{"$20M+"}</p>
+            <p className={styles.proofStat}>{"$25M+"}</p>
             <p className={styles.proofLabel}>Jack Kellogg</p>
           </div>
           <div className={styles.proofDivider} aria-hidden />
           <div className={styles.proofItem}>
             <p className={styles.proofStat}>{"$10M+"}</p>
-            <p className={styles.proofLabel}>Brian — career profits</p>
+            <p className={styles.proofLabel}>Brian — $10M in 2024</p>
           </div>
           <div className={styles.proofDivider} aria-hidden />
           <div className={styles.proofItem}>
@@ -161,7 +162,7 @@ export default function GoPage() {
         {/* SECTION 6 — APEX CARD */}
         <section className={styles.apexCard} aria-label="APEX application">
           <span className={styles.apexBadge}>
-            Cohort 1 · Starts May 1 · 2 Spots Left
+            Applications open · Cohorts of 10
           </span>
           <p className={styles.apexLabel}>APEX 1-on-1</p>
           <h2>Direct mentorship with Roland</h2>
@@ -183,7 +184,7 @@ export default function GoPage() {
             &ldquo;He has my respect.&rdquo;
           </blockquote>
           <p className={styles.grittaniAttribution}>
-            — Tim Grittani · {"$15M+"} verified trader · Trading Tickers 2
+            — Tim Grittani · Trading Tickers 2
           </p>
         </section>
 

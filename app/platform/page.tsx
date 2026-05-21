@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
 import { START_FREE_URL, WOLFPACK_MONTHLY_URL } from "@/lib/links";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Platform",
   description:
     "The Wolf Trades platform brings prep, live execution, review, playbooks, scanning, AI coaching, and community into one trader workflow.",
-};
+  path: "/platform",
+});
 
 const WORKFLOW = [
   {

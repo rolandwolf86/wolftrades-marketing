@@ -6,11 +6,12 @@
   --black: #0a0a0a;
   --black2: #111111;
   --gold: #C9A84C;
-  --parchment: #F7F4EE;
+  --parchment: #F7F4EF;
   --gray: #6B7280;
   --bull: #16A34A;
   --bear: #C1121F;
   --apex-green: #4ade80;
+  --electric: #00D4FF;
 }
 
 @layer base {

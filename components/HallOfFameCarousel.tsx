@@ -164,7 +164,7 @@ export function HallOfFameCarousel({
                   <p className="font-display text-xs uppercase tracking-widest text-bull">
                     {member.label}
                   </p>
-                  <p className="font-display text-3xl leading-none text-gold tabular-nums md:text-4xl">
+                  <p className="font-display text-3xl leading-none text-parchment tabular-nums md:text-4xl">
                     {member.stat}
                   </p>
                   <p className="text-xs text-parchment/60">{member.substat}</p>

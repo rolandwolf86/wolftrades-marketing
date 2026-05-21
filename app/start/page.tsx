@@ -197,7 +197,7 @@ function StartContent() {
 
         <section className={styles.upgrade}>
           <p>Already know you want the full system?</p>
-          <Link href="/wolfpack">Join Wolfpack — $127/mo →</Link>
+          <Link href="/wolfpack">Join Wolfpack — $147/mo →</Link>
         </section>
 
         <footer className={styles.footer}>

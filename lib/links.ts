@@ -1,8 +1,16 @@
-// All public marketing CTAs route through the /start gateway page.
+// Canonical link/URL registry for the marketing site.
+// Merged from feat/marketing-conversion (Mesut — GHL checkout constants) and
+// feat/marketing-pages (Victor — page routes + promo codes). Checkout CTAs use
+// the GHL_* constants directly; there are no Pro/legacy checkout aliases.
+
+// All public lead-capture CTAs route through the /start gateway page.
 // /register on the app is reachable ONLY by the /start form submission.
 export const START_FREE_URL = "/start";
 export const APP_REGISTER_URL = "https://app.wolftrades.com/register";
 export const LOGIN_URL = "https://app.wolftrades.com/login";
+
+// The platform app — where the live trading room + member account live.
+export const APP_URL = "https://app.wolftrades.com";
 
 // ---- GHL checkout / Payment Links ----
 // Checkout is handled by GoHighLevel (Authorize.Net via GHL order forms). Each
@@ -41,6 +49,12 @@ export const GHL_LEGACY_PRO_URL = checkoutUrl(
   process.env.NEXT_PUBLIC_GHL_LEGACY_PRO_URL,
 );
 
+// ---- Marketing page routes (informational, not checkout) ----
+export const WOLFPACK_PRO_URL = "/pro";
+// Lifetime-member loyalty surface ($40/mo or $399/yr Pro forever).
+// Discoverable by direct link only — not in primary nav.
+export const LEGACY_UPGRADE_URL = "/legacy-upgrade";
+
 // ---- Back-compat aliases ----
 // Existing page components import these names. They now resolve to the GHL
 // checkout links above. Remove these aliases once all consumers reference the
@@ -55,6 +69,14 @@ export const WOLFPACK_ANNUAL_CHECKOUT_URL = GHL_WOLFPACK_ANNUAL_URL;
 export const PRICING_URL = GHL_WOLFPACK_MONTHLY_URL;
 export const COMMUNITY_URL = GHL_WOLFPACK_MONTHLY_URL;
 
+// ---- Launch promo codes ----
+// Shown as PromoCodeBadge copy on pricing surfaces. Validation/redemption is
+// entirely in GHL. First-period price: LAUNCH97 → $97 first month Wolfpack;
+// LAUNCH147 → $147 first month Pro.
+export const PROMO_CODE_WOLFPACK = "LAUNCH97";
+export const PROMO_CODE_PRO = "LAUNCH147";
+
+// ---- Social ----
 export const YOUTUBE_URL = "https://youtube.com/@rolandwolftrades";
 export const INSTAGRAM_URL = "https://instagram.com/rolandwolftrades";
 export const TIKTOK_URL = "https://tiktok.com/@rolandwolftrades";
