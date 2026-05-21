@@ -48,6 +48,9 @@ export const GHL_PRO_ANNUAL_URL = checkoutUrl(
 export const GHL_LEGACY_PRO_URL = checkoutUrl(
   process.env.NEXT_PUBLIC_GHL_LEGACY_PRO_URL,
 );
+export const GHL_LEGACY_PRO_ANNUAL_URL = checkoutUrl(
+  process.env.NEXT_PUBLIC_GHL_LEGACY_PRO_ANNUAL_URL,
+);
 
 // ---- Marketing page routes (informational, not checkout) ----
 export const WOLFPACK_PRO_URL = "/pro";
